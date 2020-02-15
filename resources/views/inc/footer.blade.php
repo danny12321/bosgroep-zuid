@@ -1,1 +1,2 @@
-FOOTER
+<div class="m-footer">
+</div>
