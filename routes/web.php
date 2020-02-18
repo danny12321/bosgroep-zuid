@@ -13,5 +13,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/gemeentes/{city}','CityController@show');
+
 Auth::routes();
 
