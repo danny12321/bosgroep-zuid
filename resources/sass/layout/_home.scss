@@ -118,10 +118,12 @@
                 font-weight: bold;
                 border: none;
                 border-radius: 10px;
-                transition: 200ms;
+                transition: background 200ms;
 
                 &:hover {
                     background: #4cc150;
+                    color: white;
+                    text-decoration: none;
                 }
 
                 &:focus {

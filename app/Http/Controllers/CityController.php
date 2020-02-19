@@ -11,7 +11,6 @@ class CityController extends Controller
             'tilburg' => 'Welkom bij Gemeente Tilburg',
             'weert' => 'Welkom bij Gemeente Weert',
             'horst' => 'Welkom bij Gemeente Horst'
-
         ];
 
         if (!array_key_exists($city,$cities)){
@@ -21,6 +20,5 @@ class CityController extends Controller
         return view('pages.city',[
             'city' => $cities[$city]
         ]);
-
     }
 }
