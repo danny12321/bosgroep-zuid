@@ -13,5 +13,9 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/cms', function () {
+    return view('pages.cms.home');
+});
+
 Auth::routes();
 
