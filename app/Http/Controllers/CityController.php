@@ -25,17 +25,12 @@ class CityController extends Controller
             'vraag2' => request('vraag2')
         ];
 
-
-       // $antwoord = request('vraag1');
-        //$antwoord = request('vraag2');
-
         if (!array_key_exists($city,$cities)){
             abort(404,'Not Found');
         }
 
         return view('pages.city',[
             'city' => $cities[$city],
-           // 'antwoord'=> $antwoord,
             'answers' => $answers
         ]);
     }

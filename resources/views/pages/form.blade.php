@@ -7,7 +7,6 @@
 
     <form method="GET" action="/gemeentes/{{$cityname}}">
         @csrf
-
         <div class="field" name="form" id="form">
             <label class="label" for="vraag1">Vraag1</label>
 
