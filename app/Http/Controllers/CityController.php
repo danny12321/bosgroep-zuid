@@ -8,28 +8,11 @@ class CityController extends Controller
 
     public function show($city)
     {
-        $cities = [
-            'denhaag' => 'Welkom bij Gemeente Den Haag',
-            'tilburg' => 'Welkom bij Gemeente Tilburg',
-            'weert' => 'Welkom bij Gemeente Weert',
-            'horst' => 'Welkom bij Gemeente Horst'
-        ];
-
-        $antwoord = request('vraag1');
-
-        if (!array_key_exists($city,$cities)){
-            abort(404,'Not Found');
-        }
-
-        return view('pages.city',[
-            'city' => $cities[$city],
-            'antwoord'=> $antwoord
+        request()->validate([
+            'vraag1' => ['required'],
+            'vraag2' => ['required']
         ]);
-    }
-
-    public function showForm($city){  
-
-        $cityName = $city;
+        
         $cities = [
             'denhaag' => 'Welkom bij Gemeente Den Haag',
             'tilburg' => 'Welkom bij Gemeente Tilburg',
@@ -38,15 +21,40 @@ class CityController extends Controller
         ];
 
         $answers = [
-            'Question1' => 'Unanswered',
-            'Question2' => 'Unanswered',
-            'Question3' => 'Unanswered'
+            'vraag1' => request('vraag1'),
+            'vraag2' => request('vraag2')
         ];
+
+
+       // $antwoord = request('vraag1');
+        //$antwoord = request('vraag2');
 
         if (!array_key_exists($city,$cities)){
             abort(404,'Not Found');
         }
 
+        return view('pages.city',[
+            'city' => $cities[$city],
+           // 'antwoord'=> $antwoord,
+            'answers' => $answers
+        ]);
+    }
+
+    public function showForm($city){  
+
+        $cityName = $city;
+
+        //Kan dit niet beter?
+        $cities = [
+            'denhaag' => 'Welkom bij Gemeente Den Haag',
+            'tilburg' => 'Welkom bij Gemeente Tilburg',
+            'weert' => 'Welkom bij Gemeente Weert',
+            'horst' => 'Welkom bij Gemeente Horst'
+        ];
+
+        if (!array_key_exists($city,$cities)){
+            abort(404,'Not Found');
+        }
 
         return view('pages.form',[
             'city' => $cities[$city],
