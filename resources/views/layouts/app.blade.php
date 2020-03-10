@@ -4,10 +4,12 @@
     @include('inc.head')
 </head>
 <body>
-    <div id="app">
+    <div class="app">
         @include('inc.navbar')
-
-        @yield('content')
+            
+        <div class="content-container">
+            @yield('content')
+        </div>
 
         @include('inc.footer')
     </div>
