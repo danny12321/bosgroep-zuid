@@ -17,5 +17,8 @@ Route::get('/gemeentes/{city}/form','CityController@showForm');
 
 Route::get('/gemeentes/{city}','CityController@show');
 
-Auth::routes();
+Route::get('/cms', function () {
+    return view('pages.cms.home');
+})->middleware('auth');
 
+Auth::routes();
