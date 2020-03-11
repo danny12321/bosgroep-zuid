@@ -24,19 +24,19 @@
         <h2>Deelnemende gemeente</h2>
         <div class="l-home__participating--municipalities__municipality">
             <h3 class="l-home__participating--municipalities__municipality__name">Weert</h3>
-            <button class="l-home__participating--municipalities__municipality__button">Bekijk</button>
+            <a class="l-home__participating--municipalities__municipality__button" href="/gemeentes/weert">Bekijk</a>
         </div>
         <div class="l-home__participating--municipalities__municipality">
             <h3 class="l-home__participating--municipalities__municipality__name">Den Haag</h3>
-            <button class="l-home__participating--municipalities__municipality__button">Bekijk</button>
+            <a class="l-home__participating--municipalities__municipality__button" href="/gemeentes/denhaag">Bekijk</a>
         </div>
         <div class="l-home__participating--municipalities__municipality">
             <h3 class="l-home__participating--municipalities__municipality__name">Tilburg</h3>
-            <button class="l-home__participating--municipalities__municipality__button">Bekijk</button>
+            <a class="l-home__participating--municipalities__municipality__button" href="/gemeentes/tilburg">Bekijk</a>
         </div>
         <div class="l-home__participating--municipalities__municipality">
             <h3 class="l-home__participating--municipalities__municipality__name">Horst</h3>
-            <button class="l-home__participating--municipalities__municipality__button">Bekijk</button>
+            <a class="l-home__participating--municipalities__municipality__button" href="/gemeentes/horst">Bekijk</a>
         </div>
     </div>
     {{-- <div class="l-home">
