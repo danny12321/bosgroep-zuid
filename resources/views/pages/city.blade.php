@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+  <div class="container">
+
     <h1>{{ $city }}</h1>
     <?php
-switch ($city) {
+  switch ($city) {
     case "Welkom bij Gemeente Weert":
         $long = "5.7142222"; 
         $lat = "51.2439415";
@@ -23,19 +25,21 @@ switch ($city) {
     default:
         echo "Geen kaart beschikbaar";
         break;
-}
-?>
+  }
+  ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
     <style>
       .map {
         height: 400px;
-        width: 400px;
+        max-width: 1000px;
+        margin: 30px auto;
       }
     </style>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
 
     <h2>Kaart</h2>
     <div id="map" class="map"></div>
+  </div>
     <script type="text/javascript">
 
       var map = new ol.Map({
