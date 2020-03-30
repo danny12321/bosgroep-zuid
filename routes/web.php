@@ -21,4 +21,10 @@ Route::get('/cms', function () {
     return view('pages.cms.home');
 })->middleware('auth');
 
+Route::get('/cms/layers', 'Cms\LayersController@index')->name('cms_layers_index');
+Route::get('/cms/layers/create', 'Cms\LayersController@create')->name('cms_layers_create');
+Route::post('/cms/layers', 'Cms\LayersController@store')->name('cms_layers_store');
+
+
+
 Auth::routes();
