@@ -14,18 +14,27 @@ class LayersController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {
+    public function index()
+    {
         return view('pages.cms.layers.index', [
             'layers' => Layer::all()
         ]);
     }
 
-    public function create() {
+    public function create()
+    {
         return view('pages.cms.layers.create');
     }
 
-    public function store() {
+    public function store()
+    {
         Layer::create($this->validateLayer());
+        return redirect()->route('cms_layers_index');
+    }
+
+    public function destroy(Layer $layer)
+    {
+        $layer->delete();
         return redirect()->route('cms_layers_index');
     }
 

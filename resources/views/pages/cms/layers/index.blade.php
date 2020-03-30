@@ -7,6 +7,13 @@
     @foreach ($layers as $layer)
     <div>
         {{$layer->name}}
+
+        <form action="{{ route('cms_layers_destroy', ['layer' => $layer->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
     </div>
     @endforeach
 @endsection

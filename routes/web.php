@@ -24,6 +24,7 @@ Route::get('/cms', function () {
 Route::get('/cms/layers', 'Cms\LayersController@index')->name('cms_layers_index');
 Route::get('/cms/layers/create', 'Cms\LayersController@create')->name('cms_layers_create');
 Route::post('/cms/layers', 'Cms\LayersController@store')->name('cms_layers_store');
+Route::delete('/cms/layers/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
 
 
