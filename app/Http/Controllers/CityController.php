@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Layer;
+use App\Selection;
 
 class CityController extends Controller
 {
@@ -34,7 +34,7 @@ class CityController extends Controller
         return view('pages.city',[
             'city' => $cities[$city],
             'answers' => $answers,
-            'layers' => Layer::All()
+            'selections' => Selection::whereNull('parent_id')->get()
         ]);
     }
 
