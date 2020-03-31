@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+	<div class="container">
 		<h1>{{ $city }}</h1>
 
 		@for($i = 1; $i <= count($answers); $i++)
