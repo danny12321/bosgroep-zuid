@@ -6,3 +6,12 @@
 .list-group-submenu {
     margin-left: 20px;
 }
+
+.list-group-item i {
+    transform: rotate(180deg);
+    transition: transform 300ms;
+}
+
+.list-group-item.collapsed i {
+    transform: rotate(0deg);
+}

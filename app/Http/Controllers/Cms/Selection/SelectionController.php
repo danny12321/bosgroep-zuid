@@ -15,4 +15,10 @@ class SelectionController extends Controller
             'selections' => Selection::whereNull('parent_id')->orderBy('layer_id')->get()
         ]);
     }
+
+    public function destroy(Selection $selection)
+    {
+        $selection->delete();
+        return redirect()->route('cms_selection_index');
+    }
 }
