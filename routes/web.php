@@ -26,6 +26,13 @@ Route::get('/cms/layers/create', 'Cms\LayersController@create')->name('cms_layer
 Route::post('/cms/layers', 'Cms\LayersController@store')->name('cms_layers_store');
 Route::delete('/cms/layers/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
+Route::get('/cms/selection', 'Cms\Selection\SelectionController@index')->name('cms_selection_index');
+
+Route::get('/cms/selection/create/folder/{selection?}', 'Cms\Selection\FolderController@create')->name('cms_selection_folder_create');
+Route::post('/cms/selection/folder/{selection?}', 'Cms\Selection\FolderController@store')->name('cms_layers_folder_store');
+
+Route::get('/cms/selection/create/layer/{selection?}', 'Cms\Selection\LayerController@create')->name('cms_selection_layer_create');
+Route::post('/cms/selection/layer/{selection?}', 'Cms\Selection\LayerController@store')->name('cms_selection_layer_store');
 
 
 Auth::routes();

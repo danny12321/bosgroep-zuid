@@ -15,13 +15,14 @@ class CreateSelectionsTable extends Migration
     {
         Schema::create('selections', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name', 100)->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->unsignedBigInteger('layer_id')->nullable();
 
             $table->timestamps();
 
-            $table->foreign('parent_id')->references('id')->on('selections');
-            $table->foreign('layer_id')->references('id')->on('layers');
+            $table->foreign('parent_id')->references('id')->on('selections')->onDelete('cascade');
+            $table->foreign('layer_id')->references('id')->on('layers')->onDelete('cascade');
         });
     }
 

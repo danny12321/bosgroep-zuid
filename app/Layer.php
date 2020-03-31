@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Layer extends Model
 {
     //
-    public $fillable = [
+    protected $fillable = [
         'title',
         'name'
     ];
