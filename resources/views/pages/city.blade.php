@@ -44,14 +44,6 @@
 			<div id="map" class="m-map--container__map"></div>
 			<div class="m-map--container__selections">
 				@include('modules.selectionlist', ['selections' => $selections])
-
-
-				{{-- @foreach ($layers as $layer)
-					<div class="form-group">
-						<input type="checkbox" id="{{$layer->name}}" name="{{$layer->name}}" value="{{$layer->name}}">
-						<label for="{{$layer->name}}">{{$layer->title}}</label>
-					</div>
-				@endforeach --}}
 			</div>
 		</div>
 
