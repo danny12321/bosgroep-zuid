@@ -211,9 +211,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var lat = document.querySelector(".m-php__lat").innerHTML;
 var _long = document.querySelector(".m-php__long").innerHTML;
-var map = new _classes_Map__WEBPACK_IMPORTED_MODULE_0__["default"]('map', lat, _long);
-map.addLayer('biodiversiteithorst:Schimmels_std', 0.3);
-map.addLayer('biodiversiteithorst:Reptielen_std', 0.3);
+var map = new _classes_Map__WEBPACK_IMPORTED_MODULE_0__["default"]('map', lat, _long); // map.addLayer('biodiversiteithorst:Schimmels_std', 0.3)
+// map.addLayer('biodiversiteithorst:Reptielen_std', 0.3)
 
 /***/ }),
 

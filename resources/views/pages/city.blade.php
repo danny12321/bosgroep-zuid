@@ -33,24 +33,31 @@
 					break;
 			}
 		?>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
-		<style>
-			.map {
-				height: 400px;
-				max-width: 1000px;
-				margin: 30px auto;
-			}
-		</style>
-		<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
 
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
+
+		<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
+		
 		<h2>Kaart</h2>
-		<div id="map" class="map"></div>
+
+		<div class="m-map--container">
+			<div id="map" class="m-map--container__map"></div>
+			<div class="m-map--container__selections">
+				@foreach ($layers as $layer)
+					<div class="form-group">
+						<input type="checkbox" id="{{$layer->name}}" name="{{$layer->name}}" value="{{$layer->name}}">
+						<label for="{{$layer->name}}">{{$layer->title}}</label>
+					</div>
+				@endforeach
+			</div>
+		</div>
+
 	</div>
 
 	<script src="{{ asset('js/map.js') }}" defer></script>
 	
 	{{-- PHP vars to JS --}}
-	<div class="m-php" style="display: none;">
+	<div class="m-php">
 		<div class="m-php__lat">{{$lat}}</div>
 		<div class="m-php__long">{{$long}}</div>
 	</div>

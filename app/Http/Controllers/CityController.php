@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Layer;
+
 class CityController extends Controller
 {
     
@@ -31,7 +33,8 @@ class CityController extends Controller
 
         return view('pages.city',[
             'city' => $cities[$city],
-            'answers' => $answers
+            'answers' => $answers,
+            'layers' => Layer::All()
         ]);
     }
 
