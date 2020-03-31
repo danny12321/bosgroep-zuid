@@ -223,7 +223,7 @@ var map = new _classes_Map__WEBPACK_IMPORTED_MODULE_0__["default"]('map', lat, _
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Documenten\School\bosgroepzuid\bosgroep-zuid\resources\js\map.js */"./resources/js/map.js");
+module.exports = __webpack_require__(/*! C:\Users\berke\Documents\School\Projecten\Bosgroep zuid\code\resources\js\map.js */"./resources/js/map.js");
 
 
 /***/ })
