@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/contact', function(){
+    return view('pages.contact');
+})->name('contact');
+
 Route::get('/gemeentes/{city}/form','CityController@showForm');
 
 Route::get('/gemeentes/{city}','CityController@show');
