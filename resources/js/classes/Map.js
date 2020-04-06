@@ -18,8 +18,16 @@ export default class Map {
         this.inputs.forEach(i => {
             i.addEventListener('change', e => {
                 if(e.target.checked) {
+                    var checkboxes = document.getElementsByName(i.name);
+                for(var j=0; j < checkboxes.length; ++j) {
+                    checkboxes[j].checked = true;
+                        }
                     this.map.addLayer(this.findLayer(i.value).layer)
                 } else {
+                    var checkboxes = document.getElementsByName(i.name);
+                for(var j=0; j < checkboxes.length; ++j) {
+                    checkboxes[j].checked = false;
+                        }
                     this.map.removeLayer(this.findLayer(i.value).layer)
                 }
             })
