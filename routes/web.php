@@ -11,11 +11,12 @@
 |
 */
 
+
+
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/contact', function(){
-    return view('pages.contact');
-})->name('contact');
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::Post('/contact/send', 'ContactController@send')->name('send');
 
 Route::get('/gemeentes/{city}/form','CityController@showForm');
 

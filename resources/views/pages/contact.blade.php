@@ -15,7 +15,7 @@
                 
                 <div class="text">
                     <label>
-                        <input  class="text" required type="text" name="naam" id="vraag1">
+                        <input  class="text" required type="text" name="naam" id="naam">
                         
                     </label>
                 
@@ -24,7 +24,7 @@
                 <label class="label" for="feedback">Wat is uw feedback?</label>
                 <div class="text">
                     <label>
-                        <input class="text" required type="text" name="feedback" id="vraag2">
+                        <input class="text" required type="text" name="feedback" id="feedback">
                       
                     </label>
                 </div> 
