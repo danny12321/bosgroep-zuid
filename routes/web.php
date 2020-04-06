@@ -17,6 +17,8 @@ Route::get('/gemeentes/{city}/form','CityController@showForm');
 
 Route::get('/gemeentes/{city}','CityController@show');
 
+Route::get('/map/{lat}/{long}','MapController@index')->name('map');
+
 Route::get('/cms', function () {
     return view('pages.cms.home');
 })->middleware('auth');

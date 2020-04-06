@@ -1,16 +1,16 @@
 .m-map--container {
-    display: flex;
-    height: 400px;
+    position: relative;
+    height: 100%;
 
     &__map {
-        flex: 1;
         height: 100%;
-        max-width: 1000px;
     }
 
     &__selections {
         width: 300px;
-        height: 100%;
         overflow-y: auto;
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 }

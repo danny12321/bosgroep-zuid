@@ -34,27 +34,28 @@
 			}
 		?>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
-
-		<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
-		
 		<h2>Kaart</h2>
 
-		<div class="m-map--container">
-			<div id="map" class="m-map--container__map"></div>
-			<div class="m-map--container__selections">
-				@include('modules.selectionlist', ['selections' => $selections])
-			</div>
+		<a 
+		target="_blank"
+		href="{{route('map', [
+			'lat'=> $lat,
+			'long' => $long
+		])}}">Open in volledig scherm</a>
+
+
+		<div class="l-city__map">
+			<iframe 
+				src="{{route('map', [
+					'lat'=> $lat,
+					'long' => $long
+					])}}" 
+				frameborder="0">
+			</iframe>
 		</div>
-
+		
 	</div>
 
-	<script src="{{ asset('js/map.js') }}" defer></script>
 	
-	{{-- PHP vars to JS --}}
-	<div class="m-php">
-		<div class="m-php__lat">{{$lat}}</div>
-		<div class="m-php__long">{{$long}}</div>
-	</div>
 	
 @endsection
