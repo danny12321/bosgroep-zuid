@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 class CityController extends Controller
 {
     
@@ -31,7 +32,7 @@ class CityController extends Controller
 
         return view('pages.city',[
             'city' => $cities[$city],
-            'answers' => $answers
+            'answers' => $answers,
         ]);
     }
 
