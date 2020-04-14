@@ -1,0 +1,829 @@
+{
+  "id": "ccc991a6-daa9-45cc-9d06-7427e28259ae",
+  "version": "2.0",
+  "name": "BosgroepZuid",
+  "url": "http://127.0.0.1:8000",
+  "tests": [{
+    "id": "44df19a3-c076-40dc-b008-800000edd25f",
+    "name": "HomepaginaWeertKaart",
+    "commands": [{
+      "id": "f4615ead-e1e6-4b38-adf8-e29f81af9c4e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e93ffb8b-7fca-4631-ac69-64cab1243f7c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1058x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04016046-a24e-4fef-a630-0156b90797ef",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bekijk",
+      "targets": [
+        ["linkText=Bekijk", "linkText"],
+        ["css=.l-home__participating--municipalities__municipality:nth-child(2) > .l-home__participating--municipalities__municipality__button", "css:finder"],
+        ["xpath=//a[contains(text(),'Bekijk')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/gemeentes/weert/form')]", "xpath:href"],
+        ["xpath=//div[4]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bekijk')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc796f77-a854-4057-ad3d-8daaaecacacc",
+      "comment": "",
+      "command": "click",
+      "target": "id=vraag1",
+      "targets": [
+        ["id=vraag1", "id"],
+        ["name=vraag1", "name"],
+        ["css=.radio:nth-child(2) #vraag1", "css:finder"],
+        ["xpath=//input[@id='vraag1']", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div/label/input", "xpath:idRelative"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49955e6a-18d5-47c6-8681-ac7ea3ad7023",
+      "comment": "",
+      "command": "click",
+      "target": "css=.radio:nth-child(7) #vraag2",
+      "targets": [
+        ["css=.radio:nth-child(7) #vraag2", "css:finder"],
+        ["xpath=(//input[@id='vraag2'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div[5]/label/input", "xpath:idRelative"],
+        ["xpath=//div[5]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee0e59a9-fba2-4196-86ec-4f3c66d20651",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e1312fa-df41-459c-a016-d959174d7890",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d4080f9-e2b7-4c73-943f-419fe2b03de5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c398c65-24e1-4285-902c-6a3fba3b6ae5",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "450.7777786254883,216.44444274902344"
+    }, {
+      "id": "7259a110-14bc-487c-9b97-e36fc0bfa7a0",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "450.7777786254883,216.44444274902344"
+    }, {
+      "id": "68de6bbf-9087-4020-990d-55603bef862d",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "450.7777786254883,216.44444274902344"
+    }, {
+      "id": "8d6c6d16-6609-4ed3-adaa-5a11ce19ac54",
+      "comment": "",
+      "command": "click",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91547d27-9072-485d-941b-5a373ebc4014",
+      "comment": "",
+      "command": "click",
+      "target": "css=h2",
+      "targets": [
+        ["css=h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Kaart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e332111e-feb0-4313-ae85-5a2ee66e3fb3",
+    "name": "HomepaginaDenHaagKaart",
+    "commands": [{
+      "id": "dc2dca82-da08-430b-984e-303bc3e0be0a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c50cdd7f-d2cd-4e42-9f34-db251103ee1b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1058x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59a7c104-e5ce-4724-8a0e-515fce5c5c58",
+      "comment": "",
+      "command": "click",
+      "target": "css=.l-home__participating--municipalities__municipality:nth-child(3) > .l-home__participating--municipalities__municipality__button",
+      "targets": [
+        ["css=.l-home__participating--municipalities__municipality:nth-child(3) > .l-home__participating--municipalities__municipality__button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Bekijk')])[2]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/gemeentes/denhaag/form')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad61a3ee-562d-448d-ad7e-522993be7e2e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.radio:nth-child(3) #vraag1",
+      "targets": [
+        ["css=.radio:nth-child(3) #vraag1", "css:finder"],
+        ["xpath=(//input[@id='vraag1'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div[2]/label/input", "xpath:idRelative"],
+        ["xpath=//div[2]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75743c54-8065-43d3-bb38-9596dbe5ec42",
+      "comment": "",
+      "command": "click",
+      "target": "css=.radio:nth-child(8) #vraag2",
+      "targets": [
+        ["css=.radio:nth-child(8) #vraag2", "css:finder"],
+        ["xpath=(//input[@id='vraag2'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div[6]/label/input", "xpath:idRelative"],
+        ["xpath=//div[6]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78c65203-0771-4c22-9604-97c22d5d58a2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff439971-295c-4811-8c26-5e7c9f650621",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "148f2083-b808-425c-b3bc-3e536f084c12",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "509854b1-c5ce-4391-97aa-10ee400a8302",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "240.77777862548828,121.44444274902344"
+    }, {
+      "id": "2bbce4cc-7c34-49dd-9cf2-1aa92e7fe563",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "240.77777862548828,121.44444274902344"
+    }, {
+      "id": "d3e2bd0f-8f9c-41ef-ac86-b7d47968797d",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "240.77777862548828,121.44444274902344"
+    }, {
+      "id": "5a084b6a-f658-4df8-ab53-f7842aa6672e",
+      "comment": "",
+      "command": "click",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e16df099-f8c4-4fed-8790-53c1f3b664a1",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "462.7777786254883,282.44444274902344"
+    }, {
+      "id": "affdc770-7eec-48a6-936c-8d06420e7720",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "462.7777786254883,282.44444274902344"
+    }, {
+      "id": "df925e1c-3226-49bb-a7f2-86b44b7b7327",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "462.7777786254883,282.44444274902344"
+    }, {
+      "id": "a19074dd-3288-43dd-8ba7-2d4bf97edbf9",
+      "comment": "",
+      "command": "click",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "357542f5-7cf1-4c1f-bda4-b98f344aef54",
+    "name": "HomepaginaTilburgKaart",
+    "commands": [{
+      "id": "8652af20-8877-42e5-8277-c84e7912f0b5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf482ff8-a546-43f7-8303-4bf5e8d542e8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1058x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a8d471ec-4773-4cab-9533-96b3fd223d9a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.l-home__participating--municipalities__municipality:nth-child(4) > .l-home__participating--municipalities__municipality__button",
+      "targets": [
+        ["css=.l-home__participating--municipalities__municipality:nth-child(4) > .l-home__participating--municipalities__municipality__button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Bekijk')])[3]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/gemeentes/tilburg/form')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6523e489-792c-4a1d-b37a-05cbd135bc61",
+      "comment": "",
+      "command": "click",
+      "target": "css=.radio:nth-child(8) #vraag2",
+      "targets": [
+        ["css=.radio:nth-child(8) #vraag2", "css:finder"],
+        ["xpath=(//input[@id='vraag2'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div[6]/label/input", "xpath:idRelative"],
+        ["xpath=//div[6]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5382eadc-456c-4a4c-8e4e-5a999e74bd06",
+      "comment": "",
+      "command": "click",
+      "target": "css=.radio:nth-child(4) #vraag1",
+      "targets": [
+        ["css=.radio:nth-child(4) #vraag1", "css:finder"],
+        ["xpath=(//input[@id='vraag1'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div[3]/label/input", "xpath:idRelative"],
+        ["xpath=//div[3]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a67c860-8d3c-4706-909c-2ebd035c748c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "66ec9fb7-877c-480f-86ff-a919c677a0a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "495d5b9f-fb16-42ff-a914-714f9ee0d6a3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a24b1a20-d58c-4a62-9dfe-e10c48b8b3c9",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "506.7777786254883,199.44444274902344"
+    }, {
+      "id": "15d5df94-1b78-46ea-9d45-873c2802c106",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "506.7777786254883,199.44444274902344"
+    }, {
+      "id": "665831ce-7514-4c3a-8092-00f95301d95d",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "506.7777786254883,199.44444274902344"
+    }, {
+      "id": "f6271b7c-50e8-44ea-9679-67061bf9c895",
+      "comment": "",
+      "command": "click",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ead8b0d-b334-4e4a-88d4-ffb3617b5a20",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0aba7591-5968-4e44-b099-467679e094eb",
+    "name": "HomepaginaHorstKaart",
+    "commands": [{
+      "id": "4961be1a-4d5b-456f-a449-d58ee5721d10",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a705ef17-2859-436d-8a45-2d51bfcd9903",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1058x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94faeb7e-e373-4dcf-ad45-dfa7cc6e81c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.l-home__participating--municipalities__municipality:nth-child(5) > .l-home__participating--municipalities__municipality__button",
+      "targets": [
+        ["css=.l-home__participating--municipalities__municipality:nth-child(5) > .l-home__participating--municipalities__municipality__button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Bekijk')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/gemeentes/horst/form')]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c96d0f6-9c84-4ee8-b6a2-ae09b1a05d77",
+      "comment": "",
+      "command": "click",
+      "target": "css=.radio:nth-child(3) #vraag1",
+      "targets": [
+        ["css=.radio:nth-child(3) #vraag1", "css:finder"],
+        ["xpath=(//input[@id='vraag1'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div[2]/label/input", "xpath:idRelative"],
+        ["xpath=//div[2]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9b5a4b8-7b1d-47f5-ae64-0a786221c871",
+      "comment": "",
+      "command": "click",
+      "target": "css=.radio:nth-child(7) > label",
+      "targets": [
+        ["css=.radio:nth-child(7) > label", "css:finder"],
+        ["xpath=//div[@id='form']/div[5]/label", "xpath:idRelative"],
+        ["xpath=//div[5]/label", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bffe845b-f34a-498c-9e02-ba0156402747",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a87ba82c-f887-48e8-9fd2-268ba9c9afa6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "389e4d17-4ce2-4304-ab86-a0a6ae057e21",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8736fdff-aa7c-41e1-bc1d-df0faedc0a1f",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "457.7777786254883,195.44444274902344"
+    }, {
+      "id": "518adff8-1008-4fb0-8238-4894408726ac",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "457.7777786254883,195.44444274902344"
+    }, {
+      "id": "1b209414-9868-42ef-b3d8-2e246d9e3971",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "457.7777786254883,195.44444274902344"
+    }, {
+      "id": "6512975d-16f7-4a64-a3a0-4177aa5991da",
+      "comment": "",
+      "command": "click",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ad20ceb-4ca6-4c4e-b185-d37ee53b4c71",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ol-zoom-in",
+      "targets": [
+        ["css=.ol-zoom-in", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "67d61aa5-00a6-44b5-9e87-144ea2400337",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "497.7777786254883,286.44444274902344"
+    }, {
+      "id": "4f415c8d-c8d2-4b9b-b057-6bb0024ab6a6",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "497.7777786254883,286.44444274902344"
+    }, {
+      "id": "34e64248-6832-4180-b9ba-d00100fa224d",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": "497.7777786254883,286.44444274902344"
+    }, {
+      "id": "7c052f48-4cf6-4a9f-8a93-e68154dc034a",
+      "comment": "",
+      "command": "click",
+      "target": "css=canvas",
+      "targets": [
+        ["css=canvas", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "44ab2c9e-150d-4aae-a58f-4c6c96790d42",
+    "name": "HomepaginaLogin",
+    "commands": [{
+      "id": "cf28f592-f731-4786-a58b-c943ddf59040",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4aae2e13-36a3-4fc5-8c99-070c91db2cd3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1060x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2156a9a-bddb-46eb-98b9-1eea86ab006d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/login']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c56fea6-56a2-4d15-b6d5-83b59f93bd98",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Test@test.nl"
+    }, {
+      "id": "d71fadf9-e91a-48cf-aaf0-2af140b2a5f6",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4090b05-6a24-45c7-9769-1aeade6e02d9",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "Testen1234"
+    }, {
+      "id": "44dc81eb-e1de-4853-9ae8-252ac57ca408",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-check",
+      "targets": [
+        ["css=.form-check", "css:finder"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bfeffd0-2fe5-4bd0-9f0e-e86ddea65f2d",
+      "comment": "",
+      "command": "click",
+      "target": "id=remember",
+      "targets": [
+        ["id=remember", "id"],
+        ["name=remember", "name"],
+        ["css=#remember", "css:finder"],
+        ["xpath=//input[@id='remember']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8af1afe2-3060-4f8a-8a5d-8e004b49d0c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,' Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35447445-4998-4fa2-b369-6ee939cde1f2",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbarDropdown",
+      "targets": [
+        ["id=navbarDropdown", "id"],
+        ["linkText=Test", "linkText"],
+        ["css=#navbarDropdown", "css:finder"],
+        ["xpath=//a[contains(text(),'Test')]", "xpath:link"],
+        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "765f1a65-33b6-4be3-84ab-16f16190f29e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [
+        ["linkText=Logout", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Logout')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"event.preventDefault();\n                                                document.getElementById('logout-form').submit();\"]", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/div/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/logout']", "xpath:href"],
+        ["xpath=//li/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b467cdb9-205b-4ce9-a995-aae1e8d5fad2",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["44df19a3-c076-40dc-b008-800000edd25f"]
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}
