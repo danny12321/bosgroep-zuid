@@ -532,6 +532,323 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "89de52c0-ceca-4108-9a6f-d9aaeb13f344",
+    "name": "Logout",
+    "commands": [{
+      "id": "75d15b71-7e17-402a-8c93-3067c558256d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dcb797ae-cb18-46e4-9d78-0bb4505f093a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1288x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "869a5d30-87d2-412b-a80c-3a3768496c1d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.ml-auto > .nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "17050d32-0498-432e-a204-5f06dada1eca",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [],
+      "value": "test@test.com"
+    }, {
+      "id": "9e2e9fb5-db98-43ad-a435-59e7e64f8ccb",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [],
+      "value": "test"
+    }, {
+      "id": "c6f02b11-12ce-4231-8335-7f0bd103b392",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,' Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b30fd19d-b854-4c48-9f58-655519773dbb",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbarDropdown",
+      "targets": [
+        ["id=navbarDropdown", "id"],
+        ["linkText=Test", "linkText"],
+        ["css=#navbarDropdown", "css:finder"],
+        ["xpath=//a[contains(text(),'Test')]", "xpath:link"],
+        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "809821b0-0c9e-4ca5-97e2-38ac6363f916",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [
+        ["linkText=Logout", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Logout')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"event.preventDefault();\n                                                document.getElementById('logout-form').submit();\"]", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/div/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/logout']", "xpath:href"],
+        ["xpath=//li/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "86040fe4-24e0-4459-ba44-dd74d2cb090f",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Login",
+      "targets": [],
+      "value": "Login"
+    }]
+  }, {
+    "id": "eb86a500-9855-438c-a2ee-0b04014ac00b",
+    "name": "Contact form submit",
+    "commands": [{
+      "id": "ef447d35-b534-477d-a8c2-22802c0936e6",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1511d043-de62-433f-9736-bff9053e5ee9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "041415e6-df20-4bf7-a3df-fed57edd8951",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contact",
+      "targets": [
+        ["linkText=Contact", "linkText"],
+        ["css=.mr-auto .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Contact')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/contact']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Contact')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "63359b78-cc0c-4c5f-8dd8-fb705ca7bff2",
+      "comment": "",
+      "command": "click",
+      "target": "id=naam",
+      "targets": [
+        ["id=naam", "id"],
+        ["name=naam", "name"],
+        ["css=#naam", "css:finder"],
+        ["xpath=//input[@id='naam']", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div/label/input", "xpath:idRelative"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5534e6ba-93a7-475e-830b-eaf4ac81a5a7",
+      "comment": "",
+      "command": "type",
+      "target": "id=naam",
+      "targets": [
+        ["id=naam", "id"],
+        ["name=naam", "name"],
+        ["css=#naam", "css:finder"],
+        ["xpath=//input[@id='naam']", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div/label/input", "xpath:idRelative"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": "Peter"
+    }, {
+      "id": "d16f46e5-1c31-49db-baae-8031deded7de",
+      "comment": "",
+      "command": "type",
+      "target": "id=feedback",
+      "targets": [
+        ["id=feedback", "id"],
+        ["name=feedback", "name"],
+        ["css=#feedback", "css:finder"],
+        ["xpath=//input[@id='feedback']", "xpath:attributes"],
+        ["xpath=//div[@id='form']/div[2]/label/input", "xpath:idRelative"],
+        ["xpath=//div[2]/label/input", "xpath:position"]
+      ],
+      "value": "Kaarten zijn mooi"
+    }, {
+      "id": "fb8d3535-c066-4046-ba83-961687cb0aef",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Verstuur')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd937213-cf08-4748-9bf0-67ac8a278a26",
+      "comment": "",
+      "command": "click",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3fd5d795-6df8-423a-8481-dc234ab51682",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(3)",
+      "targets": [
+        ["css=p:nth-child(3)", "css:finder"],
+        ["xpath=//div[3]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Bezoekadres: Huisvenseweg 14, 5591 VD HEEZE')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e62261ce-af28-4e5c-957c-4b5650e12527",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=strong",
+      "targets": [],
+      "value": "Dank voor uw feedback"
+    }]
+  }, {
+    "id": "0047bc37-f7a8-4607-bacd-108a569b4db2",
+    "name": "Empty contact form submit",
+    "commands": [{
+      "id": "7663290f-876c-4925-8cb3-d507bd31427f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "632e7cad-7739-4276-bac6-452e2fcbd8a6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "41520dac-29e4-4668-90aa-363b06cd5f09",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contact",
+      "targets": [
+        ["linkText=Contact", "linkText"],
+        ["css=.mr-auto .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Contact')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/contact']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Contact')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b81e53d-434f-4a6d-9a57-8e7a4c653775",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Verstuur')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09a8f913-bcd8-4302-a350-7918605bd942",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=strong",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d0f3fa05-d921-4af1-b87a-8e9a9a1b34f8",
+    "name": "Not filling in questions",
+    "commands": [{
+      "id": "49597fc5-f318-4dd3-8cad-42b0fa12bfd2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df31005f-bee0-4c59-89a7-ad4ce13a5b1e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "348c312e-f04e-400b-b4f3-f222e4f7ab45",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bekijk",
+      "targets": [
+        ["linkText=Bekijk", "linkText"],
+        ["css=.l-home__participating--municipalities__municipality:nth-child(2) > .l-home__participating--municipalities__municipality__button", "css:finder"],
+        ["xpath=//a[contains(text(),'Bekijk')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/gemeentes/weert/form')]", "xpath:href"],
+        ["xpath=//div[4]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bekijk')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "273ddfa1-5a2c-448c-90f8-c68cad43669e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7016511a-2d48-46dc-9996-e1e49c26ecb9",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.btn",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "b467cdb9-205b-4ce9-a995-aae1e8d5fad2",
