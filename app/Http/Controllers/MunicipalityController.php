@@ -56,9 +56,18 @@ class MunicipalityController extends Controller
         ]);
     }
 
-    public function update()
+    public function update(Municipality $municipality)
     {
+        $this->validateLayer();
+
+        $municipality->name = request("name");
+        $municipality->slug = request("slug");
+        $municipality->lat = request("lat");
+        $municipality->long = request("long");
         
+        $municipality->save();
+
+        return redirect()->route('cms_municipality_index');
     }
 
     protected function validateLayer()

@@ -1,10 +1,11 @@
 @extends('layouts.cms')
 
 @section('content')
-    <h1>Gemeente toevoegen</h1>
+    <h1>Gemeente wijzigen</h1>
 
-    <form method="POST" action="{{ route('cms_municipality_store') }}">
+    <form method="post" action="{{ route('cms_municipality_update', ['municipality' => $municipality->id]) }}">
         @csrf
+        @method('PUT')
 
         <div class="form-group">
             <label for="name">Naam gemeente</label>
@@ -51,6 +52,15 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Opslaan</button>
+        <div class="m-cms__content__action--buttons">
+            <button type="submit" class="btn btn-primary">Opslaan</button>
+            <button class="btn btn-danger" type="submit" form="delete-form">Verwijder</button>
+        </div>
+    </form>
+    
+    <form action="{{ route('cms_municipality_destroy', ['municipality' => $municipality->id]) }}" id="delete-form" method="post">
+        @csrf
+        @method('DELETE')
+
     </form>
 @endsection
