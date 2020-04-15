@@ -37,6 +37,7 @@
             <a href="#" class="m-cms__sidebar__item"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
             <a href="{{ route('cms_layers_index') }}" class="m-cms__sidebar__item"><i class="fas fa-layer-group"></i> <span>Lagen</span></a>
             <a href="{{ route('cms_selection_index') }}" class="m-cms__sidebar__item"><i class="fas fa-check-double"></i> <span>Selectie</span></a>
+            <a href="{{ route('cms_municipality_index') }}" class="m-cms__sidebar__item"><i class="fas fa-city"></i> <span>Gemeentes</span></a>
         </div>
 
         <div class="m-cms__content">

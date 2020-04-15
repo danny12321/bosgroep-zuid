@@ -41,5 +41,11 @@ Route::post('/cms/selection/folder/{selection?}', 'Cms\Selection\FolderControlle
 Route::get('/cms/selection/create/layer/{selection?}', 'Cms\Selection\LayerController@create')->name('cms_selection_layer_create');
 Route::post('/cms/selection/layer/{selection?}', 'Cms\Selection\LayerController@store')->name('cms_selection_layer_store');
 
+Route::get('/cms/municipality', 'MunicipalityController@index')->name('cms_municipality_index')->middleware('auth');    
+Route::get('/cms/municipality/create', 'MunicipalityController@create')->name('cms_municipality_create')->middleware('auth');
+Route::post('/cms/municipality', 'MunicipalityController@store')->name('cms_municipality_store')->middleware('auth');
+Route::delete('/cms/municipality/{municipality}', 'MunicipalityController@destroy')->name('cms_municipality_destroy')->middleware('auth');
+Route::get('/cms/municipality/{municipality}/edit', 'MunicipalityController@edit')->name('cms_municipality_edit')->middleware('auth');
+Route::put('/cms/municipality/{municipality}', 'MunicipalityController@update')->name('cms_municipality_update')->middleware('auth');
 
 Auth::routes();
