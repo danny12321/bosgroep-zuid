@@ -18,9 +18,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::Post('/contact/send', 'ContactController@send')->name('send');
 
-Route::get('/gemeentes/{city}/form','CityController@showForm');
-
-Route::get('/gemeentes/{city}','CityController@show');
+// Route::get('/gemeentes/{city}/form','MunicipalityController@showForm');
+Route::get('/gemeentes/{slug}','MunicipalityController@show');
 
 Route::get('/map/{lat}/{long}','MapController@index')->name('map');
 
