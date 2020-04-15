@@ -6,7 +6,7 @@
 
     @foreach ($layers as $layer)
     <div>
-        {{$layer->name}}
+        <span>{{$layer->name}}</span>
 
         <form action="{{ route('cms_layers_destroy', ['layer' => $layer->id]) }}" method="post">
             @csrf
