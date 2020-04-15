@@ -36,31 +36,19 @@
       ],
       "value": ""
     }, {
-      "id": "552ea390-a35c-44a9-8e34-213c26de00f1",
+      "id": "4188742c-0293-402d-b4c8-972551780c85",
       "comment": "",
-      "command": "click",
+      "command": "type",
       "target": "id=email",
-      "targets": [
-        ["id=email", "id"],
-        ["name=email", "name"],
-        ["css=#email", "css:finder"],
-        ["xpath=//input[@id='email']", "xpath:attributes"],
-        ["xpath=//div/input", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "test@test.com"
     }, {
-      "id": "5d7ef192-662f-422f-969d-d9003c3aa771",
+      "id": "2d58e1ec-7d55-40de-8f59-9bead4f873a6",
       "comment": "",
-      "command": "click",
+      "command": "type",
       "target": "id=password",
-      "targets": [
-        ["id=password", "id"],
-        ["name=password", "name"],
-        ["css=#password", "css:finder"],
-        ["xpath=//input[@id='password']", "xpath:attributes"],
-        ["xpath=//div[2]/div/div/input", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "test"
     }, {
       "id": "e2450ef2-7f15-474c-88a0-d7f5e4adc614",
       "comment": "",
