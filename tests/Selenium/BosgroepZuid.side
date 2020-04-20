@@ -849,6 +849,142 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "38a6e2f8-7163-433a-b357-20787d4f8173",
+    "name": "Add selection layer",
+    "commands": [{
+      "id": "0f57d282-9195-4010-89c1-750bf494ef9c",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bb912edc-ea3e-4c21-844f-4356f1c27cb0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "587aeed6-b4c3-4bfd-a139-b0d70478cf98",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.ml-auto > .nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b6999e6-2f81-4909-bfca-357e338e115f",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [],
+      "value": "test@test.com"
+    }, {
+      "id": "06faf04b-8c40-403d-ac12-4204e1bea6f1",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [],
+      "value": "test"
+    }, {
+      "id": "786147e4-e5fb-4f35-badd-643afc571606",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,' Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ddcf7ec7-744b-4eb4-8c90-1b3399b3b5b8",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3ed8ffaa-360e-40c0-b351-a2fceb420a92",
+      "comment": "",
+      "command": "open",
+      "target": "/cms",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c04dd419-e882-4ab0-b752-94836087b280",
+      "comment": "",
+      "command": "click",
+      "target": "css=.m-cms__sidebar__item:nth-child(3) > span",
+      "targets": [
+        ["css=.m-cms__sidebar__item:nth-child(3) > span", "css:finder"],
+        ["xpath=//a[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Selectie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbcfe099-6e09-4b1b-8587-b41b9d9288f9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Laag toevoegen')])[2]", "xpath:link"],
+        ["xpath=//div[@id='MainMenu']/div/div[5]/a[2]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/cms/selection/create/layer']", "xpath:href"],
+        ["xpath=//div[5]/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "795de746-9022-4188-b8d7-851120dba372",
+      "comment": "",
+      "command": "click",
+      "target": "id=layer",
+      "targets": [
+        ["id=layer", "id"],
+        ["name=layer", "name"],
+        ["css=#layer", "css:finder"],
+        ["xpath=//select[@id='layer']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a133dcc-bb32-4deb-9fe9-91323e5724a6",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.form-control option",
+      "targets": [],
+      "value": "laag"
+    }, {
+      "id": "425a1b3a-19aa-4e10-b0b2-ad4ee31e4a4e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Opslaan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "27aab892-f9fe-427d-a834-9ceaaee3fcd9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.list-group-item:nth-child(5) span",
+      "targets": [],
+      "value": "${laag}"
+    }]
   }],
   "suites": [{
     "id": "b467cdb9-205b-4ce9-a995-aae1e8d5fad2",
