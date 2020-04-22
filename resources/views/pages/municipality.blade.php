@@ -8,19 +8,13 @@
 
 		<a 
 			target="_blank"
-			href="{{route('map', [
-				'lat'=> $municipality->lat,
-				'long' => $municipality->long
-			])}}">
+			href="{{route('map', ['slug' => $municipality->slug])}}">
 			Open in volledig scherm
 		</a>
 
 		<div class="l-city__map">
 			<iframe 
-				src="{{route('map', [
-					'lat'=> $municipality->lat,
-					'long' => $municipality->long
-					])}}" 
+				src="{{route('map', ['slug' => $municipality->slug])}}"
 				frameborder="0">
 			</iframe>
 		</div>
