@@ -9,6 +9,7 @@ class Layer extends Model
     //
     protected $fillable = [
         'title',
-        'name'
+        'name',
+        'municipality_id'
     ];
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
 use App\Layer;
+use App\Municipality;
 use Illuminate\Http\Request;
 
 class LayersController extends Controller
@@ -14,28 +15,23 @@ class LayersController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function create(Municipality $municipality)
     {
-        return view('pages.cms.layers.index', [
-            'layers' => Layer::all()
+        return view('pages.cms.layers.create', [
+            'municipality' => $municipality
         ]);
-    }
-
-    public function create()
-    {
-        return view('pages.cms.layers.create');
     }
 
     public function store()
     {
         Layer::create($this->validateLayer());
-        return redirect()->route('cms_layers_index');
+        return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
     }
 
-    public function destroy(Layer $layer)
+    public function destroy(Municipality $municipality, Layer $layer)
     {
         $layer->delete();
-        return redirect()->route('cms_layers_index');
+        return redirect()->route('cms_municipality_show', ['municipality' => $municipality->id]);
     }
 
     protected function validateLayer()
@@ -43,6 +39,7 @@ class LayersController extends Controller
         return request()->validate([
             'title' => ['required'],
             'name' => ['required'],
+            'municipality_id' => ['required'],
         ]);
     }
 }

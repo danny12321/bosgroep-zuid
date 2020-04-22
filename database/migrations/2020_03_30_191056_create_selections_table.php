@@ -18,11 +18,13 @@ class CreateSelectionsTable extends Migration
             $table->string('name', 100)->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->unsignedBigInteger('layer_id')->nullable();
+            $table->unsignedBigInteger('municipality_id')->nullable();
 
             $table->timestamps();
 
             $table->foreign('parent_id')->references('id')->on('selections')->onDelete('cascade');
             $table->foreign('layer_id')->references('id')->on('layers')->onDelete('cascade');
+            $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade');
         });
     }
 

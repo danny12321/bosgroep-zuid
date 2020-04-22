@@ -10,7 +10,8 @@ class Selection extends Model
     protected $fillable = [
         'name',
         'parent_id',
-        'layer_id'
+        'layer_id',
+        'municipality_id',
     ];
 
     public function layer()

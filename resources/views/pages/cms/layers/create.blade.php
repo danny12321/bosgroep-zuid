@@ -28,6 +28,8 @@
             @enderror
         </div>
 
+        <input name="municipality_id" type="hidden" value="{{$municipality->id}}">
+
         <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>
 @endsection
