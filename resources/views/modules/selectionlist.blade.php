@@ -6,7 +6,7 @@
         </div>
     @else
         <div href="#SubMenu{{$selection->id}}" class="list-group-item list-group-item-primary collapsed" data-toggle="collapse" data-parent="#SubMenu{{$selection->id}}">
-            {{ $selection->name }}
+            <span>{{ $selection->name }}<span>
             <i class="fa fa-caret-down"></i>
         </div>
 
