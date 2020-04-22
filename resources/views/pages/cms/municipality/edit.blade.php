@@ -32,7 +32,7 @@
 
         <div class="form-group">
             <label for="lat">Breedtegraad (Lat)</label>
-            <input class="form-control @error('lat') is-invalid @enderror" value="{{ $municipality->lat }}" type="number" name="lat" id="lat">
+            <input class="form-control @error('lat') is-invalid @enderror" value="{{ $municipality->lat }}" type="number" step="any" name="lat" id="lat">
 
             @error('lat') 
                 <div class="invalid-feedback">
@@ -43,7 +43,7 @@
 
         <div class="form-group">
             <label for="long">Lengtegraad (Long)</label>
-            <input class="form-control @error('long') is-invalid @enderror" value="{{ $municipality->long }}" type="number" name="long" id="long">
+            <input class="form-control @error('long') is-invalid @enderror" value="{{ $municipality->long }}" type="number" step="any" name="long" id="long">
 
             @error('long') 
                 <div class="invalid-feedback">
