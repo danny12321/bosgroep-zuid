@@ -19,9 +19,9 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 Route::Post('/contact/send', 'ContactController@send')->name('send');
 
 // Route::get('/gemeentes/{city}/form','MunicipalityController@showForm');
-Route::get('/gemeentes/{slug}','MunicipalityController@show');
+Route::get('/gemeentes/{slug}', 'MunicipalityController@show');
 
-Route::get('/map/{lat}/{long}','MapController@index')->name('map');
+Route::get('/map/{slug}', 'MapController@index')->name('map');
 
 Route::get('/cms', function () {
     return view('pages.cms.home');

@@ -16,13 +16,12 @@
         </div>
     </div>
 
-
     <script src="{{ asset('js/map.js') }}" defer></script>
 	
 	{{-- PHP vars to JS --}}
 	<div class="m-php">
-		<div class="m-php__lat">{{$lat}}</div>
-		<div class="m-php__long">{{$long}}</div>
+		<div class="m-php__lat">{{$municipality->lat}}</div>
+		<div class="m-php__long">{{$municipality->long}}</div>
 	</div>
 </body>
 </html>
