@@ -31,7 +31,7 @@
 
         <div class="form-group">
             <label for="lat">Breedtegraad (Lat)</label>
-            <input class="form-control @error('lat') is-invalid @enderror" type="number" name="lat" id="lat">
+            <input class="form-control @error('lat') is-invalid @enderror" type="number" step="any" name="lat" id="lat">
 
             @error('lat') 
                 <div class="invalid-feedback">
@@ -42,7 +42,7 @@
 
         <div class="form-group">
             <label for="long">Lengtegraad (Long)</label>
-            <input class="form-control @error('long') is-invalid @enderror" type="number" name="long" id="long">
+            <input class="form-control @error('long') is-invalid @enderror" type="number" step="any" name="long" id="long">
 
             @error('long') 
                 <div class="invalid-feedback">
