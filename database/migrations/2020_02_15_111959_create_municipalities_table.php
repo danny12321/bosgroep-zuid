@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLayersTable extends Migration
+class CreateMunicipalityTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateLayersTable extends Migration
      */
     public function up()
     {
-        Schema::create('layers', function (Blueprint $table) {
+        Schema::create('municipalities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
-            $table->string('title', 100);
-            $table->unsignedBigInteger('municipality_id');
-            $table->timestamps();
-
-            $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade');
+            $table->string('slug', 100)->unique();
+            $table->decimal('lat', 10, 7);
+            $table->decimal('long', 10, 7);
         });
     }
 
@@ -31,6 +29,6 @@ class CreateLayersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('layers');
+        Schema::dropIfExists('municipality');
     }
 }
