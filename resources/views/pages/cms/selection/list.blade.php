@@ -3,7 +3,7 @@
         <div class="list-group-item">
             {{ $selection->layer->name }}
 
-            <form action="{{route('cms_selection_destroy', ['selection' => $selection->id])}}" method="post">
+            <form action="{{route('cms_selection_destroy', ['selection' => $selection->id, 'municipality' => $municipality->id])}}" method="post">
                 @csrf
                 @method('DELETE')
                 <button class="btn btn-link" type="submit">Verwijderen</button>
@@ -15,9 +15,9 @@
             <i class="fa fa-caret-down"></i>
 
                 
-                <a href="{{route('cms_selection_folder_create', ['selection' => $selection->id]) }}" class="btn btn-link">Folder toevoegen</a>
-                <a href="{{route('cms_selection_layer_create', ['selection' => $selection->id]) }}" class="btn btn-link">Laag toevoegen</a>
-                <form action="{{route('cms_selection_destroy', ['selection' => $selection->id])}}" method="post">
+                <a href="{{route('cms_selection_folder_create', ['selection' => $selection->id, 'municipality' => $municipality->id]) }}" class="btn btn-link">Folder toevoegen</a>
+                <a href="{{route('cms_selection_layer_create', ['selection' => $selection->id, 'municipality' => $municipality->id]) }}" class="btn btn-link">Laag toevoegen</a>
+                <form action="{{route('cms_selection_destroy', ['selection' => $selection->id, 'municipality' => $municipality->id])}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-link" type="submit">Verwijderen</button>
