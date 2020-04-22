@@ -15,11 +15,13 @@ class LayersTableSeeder extends Seeder
         Layer::create([
             'title' => 'Alle_insecten_soortenrijkdom',
             'name' => 'biodiversiteithorst:Alle_insecten_soortenrijkdom',
+            'municipality_id' => 1
         ]);
         
         Layer::create([
             'title' => 'Alle_insecten_std',
             'name' => 'biodiversiteithorst:Alle_insecten_std',
+            'municipality_id' => 1
         ]);
     }
 }
