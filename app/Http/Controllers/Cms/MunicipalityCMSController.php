@@ -35,13 +35,12 @@ class MunicipalityCMSController extends Controller
     {
         $this->validateLayer();
 
-        $municipality = new Municipality();
-        $municipality->name = request("name");
-        $municipality->slug = request("slug");
-        $municipality->lat = request("lat");
-        $municipality->long = request("long");
-        
-        $municipality->save();
+        Municipality::create([
+            'name' => request("name"),
+            'slug' => request("slug"),
+            'lat'=> request("lat"),
+            'long'=> request("long")
+        ]);
 
         return redirect()->route('cms_municipality_index');
     }
