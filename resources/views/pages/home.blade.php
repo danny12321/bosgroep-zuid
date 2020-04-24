@@ -4,7 +4,13 @@
     <div class="l-home__header">
         <div class="l-home__header__filter">
             <h1>Bekijk de biodiversiteit in jouw gemeente</h1>
-            <input type="text" class="l-home__header__filter__search" placeholder="Zoek naar gemeente...">
+
+            <div class="l-home__header__filter__search">
+                <input type="search" class="l-home__header__filter__search__input" placeholder="Zoek naar gemeente...">
+                <div class="l-home__header__filter__search__items">
+                    
+                </div>
+            </div>
         </div>
     </div>
 
@@ -32,15 +38,24 @@
         
     </div>
     {{-- <div class="l-home">
-
+        
         @guest
-            <h1>Home</h1>
-            
+        <h1>Home</h1>
+        
         @else
-            <h1>Welkom {{ Auth::user()->name }}</h1>
+        <h1>Welkom {{ Auth::user()->name }}</h1>
         @endguest
-
+        
     </div> --}}
+    
+    {{-- PHP vars to JS --}}
+	<div class="m-php">
+        <div class="m-php__municipalities">
+            {{ json_encode($municipalities) }}
+        </div>
+    </div>
+    
+    <script src="{{ asset('js/home.js') }}" defer></script>
 @endsection
 
 
