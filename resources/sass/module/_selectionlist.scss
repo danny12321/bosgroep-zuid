@@ -7,6 +7,10 @@
     margin-left: 20px;
 }
 
+.list-group-item {
+    background: rgba(255,255,255,.8);
+}
+
 .list-group-item i {
     transform: rotate(180deg);
     transition: transform 300ms;
