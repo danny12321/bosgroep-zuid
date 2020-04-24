@@ -53,7 +53,9 @@
         <div class="m-php__municipalities">
             {{ json_encode($municipalities) }}
         </div>
-	</div>
+    </div>
+    
+    <script src="{{ asset('js/home.js') }}" defer></script>
 @endsection
 
 
