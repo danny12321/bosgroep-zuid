@@ -1,7 +1,7 @@
 @extends('layouts.cms')
 
 @section('content')
-    <h1>Gidssoort toevoegen</h1>
+    <h1>Gidsoort toevoegen</h1>
 
     <form method="POST" action="{{ route('cms_guidespecies_store') }}">
         @csrf

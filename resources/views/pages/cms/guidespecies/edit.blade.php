@@ -1,14 +1,14 @@
 @extends('layouts.cms')
 
 @section('content')
-    <h1>Gidssoort wijzigen</h1>
+    <h1>Gidsoort wijzigen</h1>
 
     <form method="post" action="{{ route('cms_guidespecies_update', ['municipality' => $municipality->id, 'guideSpecie' => $guideSpecie->id]) }}">
         @csrf
         @method('PUT')
 
         <div class="form-group">
-            <label for="name">Naam Gidssoort</label>
+            <label for="name">Naam Gidsoort</label>
             <input class="form-control @error('name') is-invalid @enderror" value="{{ $guideSpecie->name }}" type="text" name="name" id="name">
 
             @error('name') 

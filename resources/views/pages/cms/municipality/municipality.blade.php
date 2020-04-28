@@ -3,7 +3,7 @@
 @section('content')
     <h1>Gemeente {{$municipality->name}}</h1>
 
-    <h2>Gidssoorten</h2>
+    <h2>Gidsoorten</h2>
     <a href="{{ route('cms_guidespecies_create', ['municipality' => $municipality->id]) }}">Gidssoort toevoegen</a>
 
     @foreach ($guidespecies as $guidespecie)
