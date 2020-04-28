@@ -28,6 +28,24 @@ class GuideSpeciesController extends Controller
         return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
     }
 
+    public function edit(Municipality $municipality, GuideSpecie $guideSpecie)
+    {
+        return view('pages.cms.guidespecies.edit', [
+            'municipality' => $municipality,
+            'guideSpecie' => $guideSpecie
+        ]);
+    }
+
+    public function update(Municipality $municipality, GuideSpecie $guideSpecie)
+    {
+        $this->validateSpecie();
+        $guideSpecie->name = request("name");
+
+        $guideSpecie->save();
+
+        return redirect()->route('cms_municipality_show', ['municipality' => $municipality->id]);
+    }
+
     public function destroy(Municipality $municipality, GuideSpecie $guideSpecie)
     {
         $guideSpecie->delete();

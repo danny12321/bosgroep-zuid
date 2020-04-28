@@ -9,6 +9,8 @@
     @foreach ($guidespecies as $guidespecie)
     <div>
         {{$guidespecie->name}}
+        <br>
+        <a href="{{ route('cms_guidespecies_edit', ['municipality' => $municipality->id, 'guideSpecie' => $guidespecie->id]) }}">Wijzig</a>
 
         <form action="{{ route('cms_guidespecies_destroy', ['municipality' => $municipality->id, 'guideSpecie' => $guidespecie->id]) }}" method="post">
             @csrf
