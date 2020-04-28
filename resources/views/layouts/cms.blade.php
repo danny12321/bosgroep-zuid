@@ -6,7 +6,7 @@
 <body>
     <div class="m-cms">
         <div class="m-cms__navbar">
-            <img src="/assets/img/logo-bosgroep.png" alt="logo" class="m-cms__navbar__logo">
+            <h4 class="m-cms__navbar__logo">Biodiversiteit Stress Test CMS</h4>
 
             <div class="m-cms__navbar__right">
                 <div class="m-cms__navbar__right__user">
@@ -17,6 +17,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('home') }}">Homepagina</a>
+                                
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
