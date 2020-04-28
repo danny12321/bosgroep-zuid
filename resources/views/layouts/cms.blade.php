@@ -34,7 +34,6 @@
         </div>
 
         <div class="m-cms__sidebar">
-            <a href="#" class="m-cms__sidebar__item"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
             <a href="{{ route('cms_municipality_index') }}" class="m-cms__sidebar__item"><i class="fas fa-city"></i> <span>Gemeentes</span></a>
         </div>
 
