@@ -25,7 +25,7 @@ Route::get('/map/{slug}', 'MapController@index')->name('map');
 
 Route::get('/cms', function () {
     return view('pages.cms.home');
-})->middleware('auth');
+})->name('cms')->middleware('auth');
 
 
 
