@@ -52,5 +52,8 @@ Route::delete('/cms/municipality/{municipality}/layers/{layer}', 'Cms\LayersCont
 
 Route::get('/cms/municipality/{municipality}/questions/create', 'Cms\QuestionsController@create')->name('cms_questions_create');
 Route::post('/cms/municipality/{municipality}/questions', 'Cms\QuestionsController@store')->name('cms_questions_store');
+Route::get('/cms/municipality/{municipality}/questions/{question}/edit', 'Cms\QuestionsController@edit')->name('cms_questions_edit');
+Route::put('/cms/municipality/{municipality}/questions/{question}', 'Cms\QuestionsController@update')->name('cms_questions_update');
+Route::delete('/cms/municipality/{municipality}/questions/{question}', 'Cms\QuestionsController@destroy')->name('cms_questions_destroy');
 
 Auth::routes();
