@@ -1,7 +1,11 @@
 @extends('layouts.cms')
 
 @section('content')
-    <h1>Gemeente {{$municipality->name}}</h1>
+    <h1>
+    <a href="{{route('show_municipality', ['slug'=> $municipality->slug])}}">
+            Gemeente {{$municipality->name}}
+        </a>
+    </h1>
 
     <h2>Lagen</h2>
     <a href="{{ route('cms_layers_create', ['municipality' => $municipality->id]) }}">Laag toevoegen</a>
@@ -35,6 +39,29 @@
                     </div>
                 </div>
             </div>  
-        </div>  
+        </div>
     </div>
+
+    <h2>Vragenlijst</h2>
+    @foreach ($questions as $question)
+    <div>
+        <input type="text" class="form-control" disabled value="{{$question->question}}">
+
+        <ul>
+            @foreach ($question->answers as $answer)
+                <li>
+                    {{$answer->answer}}
+                    
+                    <ul>
+                        @foreach ($answer->layers as $layer)
+                            <li>{{$layer->title}}</li>
+                        @endforeach
+                    </ul>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+    @endforeach
+
+    <a class="btn btn-primary" href="{{route('cms_questions_create', ['municipality' => $municipality->id])}}">Voeg vraag toe</a>
 @endsection

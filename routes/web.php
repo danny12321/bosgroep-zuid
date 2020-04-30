@@ -19,7 +19,7 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 Route::Post('/contact/send', 'ContactController@send')->name('send');
 
 // Route::get('/gemeentes/{city}/form','MunicipalityController@showForm');
-Route::get('/gemeentes/{slug}', 'MunicipalityController@show');
+Route::get('/gemeentes/{slug}', 'MunicipalityController@show')->name('show_municipality');
 
 Route::get('/map/{slug}', 'MapController@index')->name('map');
 
@@ -49,5 +49,8 @@ Route::put('/cms/municipality/{municipality}', 'Cms\MunicipalityCMSController@up
 Route::get('/cms/municipality/{municipality}/layers/create', 'Cms\LayersController@create')->name('cms_layers_create');
 Route::post('/cms/municipalities/layers', 'Cms\LayersController@store')->name('cms_layers_store');
 Route::delete('/cms/municipality/{municipality}/layers/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
+
+Route::get('/cms/municipality/{municipality}/questions/create', 'Cms\QuestionsController@create')->name('cms_questions_create');
+Route::post('/cms/municipality/{municipality}/questions', 'Cms\QuestionsController@store')->name('cms_questions_store');
 
 Auth::routes();
