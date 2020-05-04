@@ -20,6 +20,8 @@ Route::Post('/contact/send', 'ContactController@send')->name('send');
 
 // Route::get('/gemeentes/{city}/form','MunicipalityController@showForm');
 Route::get('/gemeentes/{slug}', 'MunicipalityController@show')->name('show_municipality');
+Route::get('/gemeentes/{slug}/questionnaire', 'MunicipalityController@questionnaire')->name('show_municipality_questionnaire');
+
 
 Route::get('/map/{slug}', 'MapController@index')->name('map');
 

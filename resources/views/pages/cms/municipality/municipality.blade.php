@@ -48,7 +48,7 @@
         <input type="text" class="form-control" disabled value="{{$question->question}}">
         <a class="btn" href="{{ route('cms_questions_edit', ['municipality' => $municipality->id, 'question' => $question->id]) }}">Wijzigen</a>
 
-        <form action="{{ route('cms_questions_destroy', ['municipality' => $municipality->id, 'question' => $question->id]) }}" method="post">
+        <form action="{{ route('show_municipality', ['municipality' => $municipality->id, 'question' => $question->id]) }}" method="post">
             @csrf
             @method('DELETE')
 
