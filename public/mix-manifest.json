@@ -1,8 +1,6 @@
 {
-    "/js/answerQuestion.js": "/js/answerQuestion.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/home.js": "/js/home.js",
-    "/js/map.js": "/js/map.js",
-    "/js/questions.js": "/js/questions.js"
+    "/js/map.js": "/js/map.js"
 }
