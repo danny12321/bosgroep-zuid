@@ -11,8 +11,10 @@ class MunicipalityController extends Controller
     public function show($slug)
     { 
         $municipality = Municipality::where('slug', $slug)->firstOrFail();
+        $filters = explode(',', request('filters'));
             return view('pages.municipality', [
-                'municipality' => $municipality
+                'municipality' => $municipality,
+                'requestedFilters' => $filters
             ]);
     }
 
