@@ -7,12 +7,12 @@
         @csrf
 
         <div class="form-group">
-            <label for="title">Titel</label>
-            <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" id="title">
+            <label for="name">Naam</label>
+            <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name">
 
-            @error('title') 
+            @error('name') 
                 <div class="invalid-feedback">
-                    {{ $errors->first("title") }}
+                    {{ $errors->first("name") }}
                 </div>
             @enderror
         </div>

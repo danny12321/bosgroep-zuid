@@ -36,7 +36,7 @@ class MeasuresController extends Controller
     protected function validateMeasure()
     {
         return request()->validate([
-            'title' => ['required'],
+            'name' => ['required'],
             'description' => ['required'],
             'municipality_id' => ['required'],
         ]);
