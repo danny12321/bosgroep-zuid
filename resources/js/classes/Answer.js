@@ -1,7 +1,7 @@
 export default class Answer {
     constructor(element, layerModel) {
         this.element = element || this.createElement();
-        this.selectedLayers = [];
+        this.selectedLayers = this.getSelectedLayers();
         this.layersList = this.element.querySelector('.m-question--edit__answers__layers');
 
         this.layerModel = layerModel;
@@ -29,9 +29,19 @@ export default class Answer {
         }
     }
 
+    getSelectedLayers() {
+        const layers = [...[...this.element.querySelectorAll('.m-question--edit__answers__layers li')].map(layer => {
+            return {
+                id: layer.getAttribute('data-layer-id'),
+            }
+        })]
+
+        return layers
+    }
+
     setLayers(layers) {
         this.selectedLayers = layers;
-
+        console.log(layers)
         while (this.layersList.lastElementChild) {
             this.layersList.removeChild(this.layersList.lastElementChild);
         }
