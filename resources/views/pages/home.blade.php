@@ -33,7 +33,6 @@
             <div class="l-home__participating--municipalities__municipality">
                 <h3 class="l-home__participating--municipalities__municipality__name">{{ $municipality->name }}</h3>
                 <a class="l-home__participating--municipalities__municipality__button" href="{{route('show_municipality', ['slug' => $municipality->slug])}}">Bekijk</a>
-                <a class="l-home__participating--municipalities__municipality__button" href="{{route('show_municipality_questionnaire', ['slug' => $municipality->slug])}}">Vragenlijst</a>
             </div>
         @endforeach
         

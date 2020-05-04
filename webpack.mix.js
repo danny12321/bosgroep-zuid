@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/map.js', 'public/js') 
     .js('resources/js/home.js', 'public/js') 
     .js('resources/js/questions.js', 'public/js') 
+    .js('resources/js/answerQuestion.js', 'public/js') 
     .sass('resources/sass/app.scss', 'public/css');
