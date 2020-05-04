@@ -43,18 +43,19 @@
     </div>
 
     <h2>Vragenlijst</h2>
-    @foreach ($questions as $question)
+    @foreach ($questions as  $indexKey => $question)
     <div>
-        <input type="text" class="form-control" disabled value="{{$question->question}}">
-        <a class="btn" href="{{ route('cms_questions_edit', ['municipality' => $municipality->id, 'question' => $question->id]) }}">Wijzigen</a>
-
-        <form action="{{ route('cms_questions_destroy', ['municipality' => $municipality->id, 'question' => $question->id]) }}" method="post">
+            
+        <h3>
+            {{$indexKey + 1}}. {{$question->question}} 
+            <a class="btn" href="{{ route('cms_questions_edit', ['municipality' => $municipality->id, 'question' => $question->id]) }}"><i class="fas fa-edit"></i></a> 
+            <button class="btn btn-danger" form="delete-question-{{$question->id}}" type="submit"><i class="fas fa-trash-alt"></i></button>
+    </h3>
+        
+        <form id="delete-question-{{$question->id}}" action="{{ route('cms_questions_destroy', ['municipality' => $municipality->id, 'question' => $question->id]) }}" method="post">
             @csrf
             @method('DELETE')
-
-            <button class="btn btn-danger" type="submit">Verwijderen</button>
         </form>
-
         <ul>
             @foreach ($question->answers as $answer)
                 <li>
