@@ -36,7 +36,7 @@
 
                         <ul class="m-question--edit__answers__layers">
                             @foreach ($answer->layers as $layer)
-                                <li>{{ $layer->title }}</li>
+                                <li data-layer-id="<?= $layer->id ?>">{{ $layer->title }}</li>
                             @endforeach
                         </ul>
                     </div>
