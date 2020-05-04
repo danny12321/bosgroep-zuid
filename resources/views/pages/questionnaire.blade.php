@@ -2,24 +2,28 @@
 
 @section('content')
 	<div class="container">
-		<h1>{{ $municipality->name }}</h1>
-        
-        <h2>Vragenlijst</h2>
-        <form method="GET" action="{{ route('show_municipality_questionnaire', ['slug' => $municipality->slug])}}">
-            @csrf
-        <p>Hier onder vindt u een aantal vragen die u helpen met een intressante kaart voor u te genereren</p>
-        @foreach($municipality->questions as $question)
-        <label class="label" for="{{$question->id}}">{{$question->question}}</label>
-        <br>
-            @foreach($question->answers as $answer)
-            <label>
-                <input class="radio" required type="radio" name="{{$question->id}}" id="{{$question->id}}" value="{{$answer->layer}}">
-                {{$answer->answer}}
-            </label>    
-            <br>
+		<h1>Vragenlijst {{ $municipality->name }}</h1>
+        <form method="GET" id="question-form" action="{{ route('show_municipality', ['slug' => $municipality->slug])}}">
+            <p>Hier onder vindt u een aantal vragen die u helpen met een intressante kaart voor u te genereren</p>
+
+            @foreach($municipality->questions as $question)
+            <h2>{{$question->question}}</h2>
+
+                @foreach($question->answers as $answer)
+                <div>
+                    <input class="radio" type="radio" id="{{$question->id}} {{$answer->id}}" name="{{$question->id}}" value="{{$answer->layers}}">
+                    <label for="{{$question->id}} {{$answer->id}}">
+                        {{$answer->answer}}
+                    </label>
+                </div>
+                @endforeach
             @endforeach
-        @endforeach
-        <button class="btn btn-success is-link" type="submit">Submit</button>
+
+            <div>
+                <button class="btn btn-success is-link" type="submit">Lagen genereren</button>
+            </div>
         </form>
     </div>
+
+    <script src="{{ asset('js/answerQuestion.js') }}" defer></script>
 @endsection
