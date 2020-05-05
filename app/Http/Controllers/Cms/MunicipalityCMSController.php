@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Municipality;
 use App\Layer;
 use App\Selection;
+use App\Measure;
 use Illuminate\Http\Request;
 
 class MunicipalityCMSController extends Controller
@@ -16,6 +17,7 @@ class MunicipalityCMSController extends Controller
         return view('pages.cms.municipality.municipality', [
             'municipality' => $municipality,
             'layers' => Layer::where('municipality_id', '=', $municipality->id)->get(),
+            'measures' => Measure::where('municipality_id', '=', $municipality->id)->get(),
             'guidespecies' => GuideSpecie::where('municipality_id', '=', $municipality->id)->get(),
             'selections' => Selection::where('municipality_id', '=', $municipality->id)->whereNull('parent_id')->orderBy('layer_id')->get()
         ]);

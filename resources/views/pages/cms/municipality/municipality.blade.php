@@ -55,4 +55,22 @@
             </div>  
         </div>  
     </div>
+
+    <h2>Maatregelen</h2>
+    <a href="{{ route('cms_measure_create', ['municipality' => $municipality->id]) }}">Maatregel toevoegen</a>
+    
+    @foreach ($measures as $measure)
+    <div>
+        {{$measure->name}}
+
+        <form action="{{ route('cms_measure_destroy', ['municipality' => $municipality->id, 'measure' => $measure->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
+    @endforeach
+
+
 @endsection

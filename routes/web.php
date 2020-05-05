@@ -50,6 +50,11 @@ Route::get('/cms/municipality/{municipality}/layers/create', 'Cms\LayersControll
 Route::post('/cms/municipalities/layers', 'Cms\LayersController@store')->name('cms_layers_store');
 Route::delete('/cms/municipality/{municipality}/layers/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
+
+Route::get('/cms/municipality/{municipality}/measure/create', 'Cms\MeasuresController@create')->name('cms_measure_create');
+Route::post('/cms/municipalities/measure', 'Cms\MeasuresController@store')->name('cms_measure_store');
+Route::delete('/cms/municipality/{municipality}/measure/{measure}', 'Cms\MeasuresController@destroy')->name('cms_measure_destroy');
+
 Route::get('/cms/municipality/{municipality}/guidespecies/create', 'Cms\GuideSpeciesController@create')->name('cms_guidespecies_create');
 Route::post('/cms/municipalities/guidespecies', 'Cms\GuideSpeciesController@store')->name('cms_guidespecies_store');
 Route::delete('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@destroy')->name('cms_guidespecies_destroy');
