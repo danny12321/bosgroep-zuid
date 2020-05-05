@@ -21,7 +21,7 @@
 
 		<div class="m-map--container">
         	<div class="m-map--container__measures">
-			<h2>Maatregelen</h2>
+				<h2>Maatregelen</h2>
 			@foreach ($measures as $measure)
     			<div>
         			<p>{{$measure->name}} - {{$measure->description}}</p>
