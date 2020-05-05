@@ -3,6 +3,24 @@
 @section('content')
     <h1>Gemeente {{$municipality->name}}</h1>
 
+    <h2>Gidsoorten</h2>
+    <a href="{{ route('cms_guidespecies_create', ['municipality' => $municipality->id]) }}">Gidssoort toevoegen</a>
+
+    @foreach ($guidespecies as $guidespecie)
+    <div>
+        {{$guidespecie->name}}
+        <br>
+        <a href="{{ route('cms_guidespecies_edit', ['municipality' => $municipality->id, 'guideSpecie' => $guidespecie->id]) }}">Wijzig</a>
+
+        <form action="{{ route('cms_guidespecies_destroy', ['municipality' => $municipality->id, 'guideSpecie' => $guidespecie->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
+    @endforeach
+
     <h2>Lagen</h2>
     <a href="{{ route('cms_layers_create', ['municipality' => $municipality->id]) }}">Laag toevoegen</a>
 

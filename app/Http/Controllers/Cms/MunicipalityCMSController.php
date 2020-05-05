@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cms;
 
+use App\GuideSpecie;
 use App\Http\Controllers\Controller;
 use App\Municipality;
 use App\Layer;
@@ -17,6 +18,7 @@ class MunicipalityCMSController extends Controller
             'municipality' => $municipality,
             'layers' => Layer::where('municipality_id', '=', $municipality->id)->get(),
             'measures' => Measure::where('municipality_id', '=', $municipality->id)->get(),
+            'guidespecies' => GuideSpecie::where('municipality_id', '=', $municipality->id)->get(),
             'selections' => Selection::where('municipality_id', '=', $municipality->id)->whereNull('parent_id')->orderBy('layer_id')->get()
         ]);
     }
