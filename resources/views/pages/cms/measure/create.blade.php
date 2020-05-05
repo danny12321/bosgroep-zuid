@@ -3,7 +3,7 @@
 @section('content')
     <h1>Maatregel toevoegen</h1>
 
-    <form method="POST" action="{{ route('cms_measures_store') }}">
+    <form method="POST" action="{{ route('cms_measure_store') }}">
         @csrf
 
         <div class="form-group">

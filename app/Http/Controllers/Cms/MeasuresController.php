@@ -16,7 +16,7 @@ class MeasuresController extends Controller
 
     public function create(Municipality $municipality)
     {
-        return view('pages.cms.measures.create', [
+        return view('pages.cms.measure.create', [
             'municipality' => $municipality
         ]);
     }
