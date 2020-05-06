@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Municipality;
 use App\Question;
+use App\Measure;
 use Illuminate\Http\Request;
 
 class MunicipalityController extends Controller
@@ -14,7 +15,8 @@ class MunicipalityController extends Controller
         $filters = explode(',', request('filters'));
             return view('pages.municipality', [
                 'municipality' => $municipality,
-                'requestedFilters' => $filters
+                'requestedFilters' => $filters,
+                'measures' => Measure::where('municipality_id', '=', Municipality::where('slug', $slug)->firstOrFail()->id)->get()
             ]);
     }
 

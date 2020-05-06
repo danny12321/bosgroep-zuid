@@ -7,6 +7,24 @@
         </a>
     </h1>
 
+    <h2>Gidsoorten</h2>
+    <a href="{{ route('cms_guidespecies_create', ['municipality' => $municipality->id]) }}">Gidssoort toevoegen</a>
+
+    @foreach ($guidespecies as $guidespecie)
+    <div>
+        {{$guidespecie->name}}
+        <br>
+        <a href="{{ route('cms_guidespecies_edit', ['municipality' => $municipality->id, 'guideSpecie' => $guidespecie->id]) }}">Wijzig</a>
+
+        <form action="{{ route('cms_guidespecies_destroy', ['municipality' => $municipality->id, 'guideSpecie' => $guidespecie->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
+    @endforeach
+
     <h2>Lagen</h2>
     <a href="{{ route('cms_layers_create', ['municipality' => $municipality->id]) }}">Laag toevoegen</a>
 
@@ -42,6 +60,7 @@
         </div>
     </div>
 
+
     <h2>Vragenlijst</h2>
     @foreach ($questions as  $indexKey => $question)
     <div>
@@ -73,4 +92,20 @@
     @endforeach
 
     <a class="btn btn-primary" href="{{route('cms_questions_create', ['municipality' => $municipality->id])}}">Voeg vraag toe</a>
+
+    <h2>Maatregelen</h2>
+    <a href="{{ route('cms_measure_create', ['municipality' => $municipality->id]) }}">Maatregel toevoegen</a>
+    
+    @foreach ($measures as $measure)
+    <div>
+        {{$measure->name}}
+
+        <form action="{{ route('cms_measure_destroy', ['municipality' => $municipality->id, 'measure' => $measure->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
+    @endforeach
 @endsection

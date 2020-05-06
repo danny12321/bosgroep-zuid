@@ -52,10 +52,22 @@ Route::get('/cms/municipality/{municipality}/layers/create', 'Cms\LayersControll
 Route::post('/cms/municipalities/layers', 'Cms\LayersController@store')->name('cms_layers_store');
 Route::delete('/cms/municipality/{municipality}/layers/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
+
 Route::get('/cms/municipality/{municipality}/questions/create', 'Cms\QuestionsController@create')->name('cms_questions_create');
 Route::post('/cms/municipality/{municipality}/questions', 'Cms\QuestionsController@store')->name('cms_questions_store');
 Route::get('/cms/municipality/{municipality}/questions/{question}/edit', 'Cms\QuestionsController@edit')->name('cms_questions_edit');
 Route::put('/cms/municipality/{municipality}/questions/{question}', 'Cms\QuestionsController@update')->name('cms_questions_update');
 Route::delete('/cms/municipality/{municipality}/questions/{question}', 'Cms\QuestionsController@destroy')->name('cms_questions_destroy');
+
+
+Route::get('/cms/municipality/{municipality}/measure/create', 'Cms\MeasuresController@create')->name('cms_measure_create');
+Route::post('/cms/municipalities/measure', 'Cms\MeasuresController@store')->name('cms_measure_store');
+Route::delete('/cms/municipality/{municipality}/measure/{measure}', 'Cms\MeasuresController@destroy')->name('cms_measure_destroy');
+
+Route::get('/cms/municipality/{municipality}/guidespecies/create', 'Cms\GuideSpeciesController@create')->name('cms_guidespecies_create');
+Route::post('/cms/municipalities/guidespecies', 'Cms\GuideSpeciesController@store')->name('cms_guidespecies_store');
+Route::delete('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@destroy')->name('cms_guidespecies_destroy');
+Route::put('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@update')->name('cms_guidespecies_update');
+Route::get('/cms/municipality/{municipality}/guidespecies/{guideSpecie}/edit', 'Cms\GuideSpeciesController@edit')->name('cms_guidespecies_edit');
 
 Auth::routes();
