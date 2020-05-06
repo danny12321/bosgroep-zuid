@@ -12,6 +12,17 @@ export default class Map {
 
         this.fillLayersFromHtml();
         this.setEventListeners();
+        this.setInitalLayers();
+    }
+
+    setInitalLayers() {
+        this.inputs.forEach(i => {
+            //let checkboxes = document.getElementsByName(i.name);
+            if(i.checked){
+                this.map.addLayer(this.findLayer(i.value).layer)
+            }
+        });
+            
     }
 
     setEventListeners() {

@@ -8,7 +8,7 @@
 
         <div class="form-group">
             <label for="title">Titel</label>
-            <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" id="title">
+            <input class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" type="text" name="title" id="title">
 
             @error('title') 
                 <div class="invalid-feedback">
@@ -19,7 +19,7 @@
 
         <div class="form-group">
             <label for="name">Naam</label>
-            <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name">
+            <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" type="text" name="name" id="name">
 
             @error('name') 
                 <div class="invalid-feedback">
