@@ -23,6 +23,6 @@ form.onsubmit = () => {
     })
 
     filters.sort()
-    window.location.href = `${form.action}?filters=${filters}`;
+    window.location.href = `${form.action}?filters=${filters.join('-')}`;
     return false;
 }

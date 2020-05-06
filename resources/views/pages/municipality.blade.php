@@ -16,13 +16,13 @@
 
 		<a 
 			target="_blank"
-			href="{{route('map', ['slug' => $municipality->slug, 'filters' => join(',', $filters)])}}">
+			href="{{route('map', ['slug' => $municipality->slug, 'filters' => join('-', $filters)])}}">
 			Open in volledig scherm
 		</a>
 
 		<div class="l-city__map">
 			<iframe 
-				src="{{route('map', ['slug' => $municipality->slug, 'filters' => join(',', $filters)])}}"
+				src="{{route('map', ['slug' => $municipality->slug, 'filters' => join('-', $filters)])}}"
 				frameborder="0">
 			</iframe>
 		</div>
