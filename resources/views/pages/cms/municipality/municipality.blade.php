@@ -1,7 +1,11 @@
 @extends('layouts.cms')
 
 @section('content')
-    <h1>Gemeente {{$municipality->name}}</h1>
+    <h1>
+    <a href="{{route('show_municipality', ['slug'=> $municipality->slug])}}">
+            Gemeente {{$municipality->name}}
+        </a>
+    </h1>
 
     <h2>Gidsoorten</h2>
     <a href="{{ route('cms_guidespecies_create', ['municipality' => $municipality->id]) }}">Gidssoort toevoegen</a>
@@ -32,7 +36,7 @@
             @csrf
             @method('DELETE')
 
-            <button class="btn btn-danger" type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit">Verwijderen</button>
         </form>
     </div>
     @endforeach
@@ -53,8 +57,41 @@
                     </div>
                 </div>
             </div>  
-        </div>  
+        </div>
     </div>
+
+
+    <h2>Vragenlijst</h2>
+    @foreach ($questions as  $indexKey => $question)
+    <div>
+            
+        <h3>
+            {{$indexKey + 1}}. {{$question->question}} 
+            <a class="btn" href="{{ route('cms_questions_edit', ['municipality' => $municipality->id, 'question' => $question->id]) }}"><i class="fas fa-edit"></i></a> 
+            <button class="btn btn-danger" form="delete-question-{{$question->id}}" type="submit"><i class="fas fa-trash-alt"></i></button>
+    </h3>
+        
+        <form id="delete-question-{{$question->id}}" action="{{ route('cms_questions_destroy', ['municipality' => $municipality->id, 'question' => $question->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+        </form>
+        <ul>
+            @foreach ($question->answers as $answer)
+                <li>
+                    {{$answer->answer}}
+                    
+                    <ul>
+                        @foreach ($answer->layers as $layer)
+                            <li>{{$layer->title}}</li>
+                        @endforeach
+                    </ul>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+    @endforeach
+
+    <a class="btn btn-primary" href="{{route('cms_questions_create', ['municipality' => $municipality->id])}}">Voeg vraag toe</a>
 
     <h2>Maatregelen</h2>
     <a href="{{ route('cms_measure_create', ['municipality' => $municipality->id]) }}">Maatregel toevoegen</a>
@@ -71,6 +108,4 @@
         </form>
     </div>
     @endforeach
-
-
 @endsection

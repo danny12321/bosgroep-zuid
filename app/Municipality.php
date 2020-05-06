@@ -14,4 +14,14 @@ class Municipality extends Model
         'lat',
         'long'
     ];
+
+    public function layers()
+    {
+        return $this->hasMany(Layer::class, 'municipality_id', 'id')->orderBy('title');
+    }
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class, 'municipality_id', 'id');
+    }
 }
