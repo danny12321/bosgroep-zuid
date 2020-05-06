@@ -15,7 +15,7 @@ class MunicipalityController extends Controller
         $filters = explode(',', request('filters'));
             return view('pages.municipality', [
                 'municipality' => $municipality,
-                'requestedFilters' => $filters,
+                'filters' => $filters,
                 'measures' => Measure::where('municipality_id', '=', Municipality::where('slug', $slug)->firstOrFail()->id)->get()
             ]);
     }

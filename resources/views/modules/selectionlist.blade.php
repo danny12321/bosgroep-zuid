@@ -1,7 +1,7 @@
 @foreach ($selections as $selection)
     @if ($selection->layer)
         <div class="list-group-item">
-                <input type="checkbox" id="{{$selection->layer->name}}" name="{{$selection->layer->name}}" value="{{$selection->layer->name}}"{{ in_array($selection->layer->id, $requestedFilters) ? 'checked' : ''}}>
+                <input type="checkbox" id="{{$selection->layer->name}}" name="{{$selection->layer->name}}" value="{{$selection->layer->name}}"{{ in_array($selection->layer->id, $filters) ? 'checked' : ''}}>
                 <label for="{{$selection->layer->name}}">{{$selection->layer->title}}</label>
         </div>
     @else
@@ -11,7 +11,7 @@
         </div>
 
         <div class="collapse list-group-submenu" id="SubMenu{{$selection->id}}">
-            @include('modules.selectionlist', ['selections' => $selection->children, 'requestedFilters' => $requestedFilters])
+            @include('modules.selectionlist', ['selections' => $selection->children, 'filters' => $filters])
         </div>
     @endif
 @endforeach
