@@ -7,7 +7,7 @@ const form = document.querySelector('#question_form')
 const layerModel = new SelectLayerModel();
 const addAnswerButton = document.querySelector('#addAnswer');
 
-document.querySelectorAll('.m-question--edit__answers').forEach(answer => {
+document.querySelectorAll('.m-question--edit__answers .row').forEach(answer => {
     answers.push(
         new Answer(answer, layerModel)
     );
@@ -18,7 +18,8 @@ addAnswerButton.addEventListener('click', e => {
     answers.push(new Answer(null, layerModel));
 });
 
-form.addEventListener('submit', (e) => {
+form.onsubmit = (e) => {
     const data = [...answers.map(answer => answer.getData())];
     answersInput.value = JSON.stringify(data);
-})
+    return true;
+}

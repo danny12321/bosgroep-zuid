@@ -11,6 +11,7 @@ export default class Answer {
 
         this.openLayers.addEventListener('click', this.handleOpenForm.bind(this));
         this.input.addEventListener('change', this.handleChangeAnswer.bind(this));
+        console.log(this.selectedLayers)
     }
 
     handleChangeAnswer(e) {
@@ -41,7 +42,7 @@ export default class Answer {
 
     setLayers(layers) {
         this.selectedLayers = layers;
-        console.log(layers)
+
         while (this.layersList.lastElementChild) {
             this.layersList.removeChild(this.layersList.lastElementChild);
         }
