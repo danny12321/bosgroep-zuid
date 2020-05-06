@@ -11,7 +11,8 @@
 |
 */
 
-
+// Language always dutch
+App::setLocale('nl');
 
 Route::get('/', 'HomeController@index')->name('home');
 
@@ -49,8 +50,10 @@ Route::get('/cms/municipality/{municipality}/edit', 'Cms\MunicipalityCMSControll
 Route::put('/cms/municipality/{municipality}', 'Cms\MunicipalityCMSController@update')->name('cms_municipality_update')->middleware('auth');
 
 Route::get('/cms/municipality/{municipality}/layers/create', 'Cms\LayersController@create')->name('cms_layers_create');
+Route::get('/cms/municipality/{municipality}/layer/{layer}/edit', 'Cms\LayersController@edit')->name('cms_layers_edit');
+Route::put('/cms/layer/{layer}', 'Cms\LayersController@update')->name('cms_layers_update');
 Route::post('/cms/municipalities/layers', 'Cms\LayersController@store')->name('cms_layers_store');
-Route::delete('/cms/municipality/{municipality}/layers/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
+Route::delete('/cms/municipality/{municipality}/layer/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
 
 Route::get('/cms/municipality/{municipality}/questions/create', 'Cms\QuestionsController@create')->name('cms_questions_create');
