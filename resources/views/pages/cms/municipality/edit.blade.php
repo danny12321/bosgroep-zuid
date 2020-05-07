@@ -59,9 +59,9 @@
             @enderror
         </div>
 
-        <input class="form-control d-none @error('lat') is-invalid @enderror" value="{{ old('lat') }}" type="number" step="any" name="lat" id="lat">
-        <input class="form-control d-none @error('long') is-invalid @enderror" value="{{ old('long') }}" type="number" step="any" name="long" id="long">
-        <input class="form-control d-none @error('zoom') is-invalid @enderror" value="{{ old('zoom') }}" type="number" step="any" name="zoom" id="zoom">
+        <input class="form-control d-none @error('lat') is-invalid @enderror" value="{{ old('lat', $municipality->lat) }}" type="number" step="any" name="lat" id="lat">
+        <input class="form-control d-none @error('long') is-invalid @enderror" value="{{ old('long', $municipality->long) }}" type="number" step="any" name="long" id="long">
+        <input class="form-control d-none @error('zoom') is-invalid @enderror" value="{{ old('zoom', $municipality->zoom) }}" type="number" step="any" name="zoom" id="zoom">
 
         <div class="m-cms__content__action--buttons">
             <button type="submit" class="btn btn-primary">Opslaan</button>
