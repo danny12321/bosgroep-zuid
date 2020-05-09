@@ -11,7 +11,7 @@
         </thead>
         <tbody>
             @foreach ($municipalities as $municipality)
-                <tr class="clickable" onclick="document.location = '{{ route('cms_municipality_show', ['municipality' => $municipality->id]) }}';">
+                <tr class="clickable hover last-hover" onclick="document.location = '{{ route('cms_municipality_show', ['municipality' => $municipality->id]) }}';">
                     <td>{{$municipality->name}}</td>
                     <td class="m-table__edit">
                         <a href="{{ route('cms_municipality_edit', ['municipality' => $municipality->id]) }}">Wijzig</a>

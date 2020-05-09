@@ -23,5 +23,12 @@
         <button type="submit" class="btn btn-primary">Opslaan</button>
         
     </form>
+
+    <form action="{{ route('cms_guidespecies_destroy', ['municipality' => $municipality->id, 'guideSpecie' => $guideSpecie->id]) }}" method="post">
+        @csrf
+        @method('DELETE')
+
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
     
 @endsection
