@@ -1,7 +1,5 @@
 .m-municipality {
     color: #5e5e5e;
-    h2 {
-    }
 
     &__grid {
         display: grid;
@@ -13,20 +11,16 @@
         }
     
         &__grid--item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.1);
+            
 
             &__header {
                 display: flex;
+                align-items: center;
 
                 h2 {
                     flex: 1;
-                }
-
-                a {
-                    height: 38px;
+                    margin: 0;
+                    font-size: 21px;
                 }
             }
         }

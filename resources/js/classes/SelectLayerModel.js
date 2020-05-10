@@ -2,10 +2,10 @@ export default class SelectLayerModel {
     constructor() {
         this.activeAnswerClass = null;
 
-        this.model = document.querySelector('.m-question--edit__layer--select');
+        this.model = document.querySelector('.m-question__edit__layer--select');
         this.model.addEventListener('click', this.close.bind(this));
 
-        this.layers = [...this.model.querySelectorAll('.m-question--edit__layer--select__form__selection input')];
+        this.layers = [...this.model.querySelectorAll('.m-question__edit__layer--select__form__selection input')];
 
         this.model.querySelector('#saveSelection').addEventListener('click', this.handleSubmit.bind(this));
     }

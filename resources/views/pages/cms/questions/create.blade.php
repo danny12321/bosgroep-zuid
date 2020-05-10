@@ -1,7 +1,7 @@
 @extends('layouts.cms')
 
 @section('content')
-<div class="m-question--edit">
+<div class="m-question__edit">
 
     <h1>Vraag toevoegen</h1>
 
@@ -20,7 +20,7 @@
         </div>
 
         <h2>Antwoorden</h2>
-        <div class="m-question--edit__answers">
+        <div class="m-question__edit__answers">
             <div class="row">
                 <div class="col-md-10 form-group">
                     <input type="text" class="form-control" placeholder="Antwoord">
@@ -31,7 +31,7 @@
 
                 <div class="col-md-12">
 
-                    <ul class="m-question--edit__answers__layers">
+                    <ul class="m-question__edit__answers__layers">
                     </ul>
                 </div>
             </div>
@@ -46,11 +46,11 @@
     </form>
 
 
-    <div class="m-question--edit__layer--select">
-        <div class="m-question--edit__layer--select__form">
+    <div class="m-question__edit__layer--select">
+        <div class="m-question__edit__layer--select__form">
             <h2>Lagen</h2>
 
-            <div class="m-question--edit__layer--select__form__selection">
+            <div class="m-question__edit__layer--select__form__selection">
                 @foreach ($municipality->layers as $layer)
                 <div class="form-group">
                     <input type="checkbox" id="{{$layer->id}}" value="{{$layer->title}}">
