@@ -28,7 +28,7 @@ class MunicipalityCMSController extends Controller
     public function index()
     {
         return view('pages.cms.municipality.index', [
-            'municipalities' => Municipality::all()
+            'municipalities' => Municipality::orderBy('name', 'ASC')->get()
         ]);
     }
     

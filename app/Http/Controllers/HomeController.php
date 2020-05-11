@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('pages.home', [
-            "municipalities" => Municipality::All()
+            "municipalities" => Municipality::orderBy('name', 'ASC')->get()
         ]);
     }
 }
