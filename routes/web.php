@@ -25,7 +25,7 @@ Route::get('/map/{slug}', 'MapController@index')->name('map');
 
 Route::get('/cms', function () {
     return view('pages.cms.home');
-})->middleware('auth');
+})->name('cms')->middleware('auth');
 
 
 
@@ -50,10 +50,18 @@ Route::get('/cms/municipality/{municipality}/layers/create', 'Cms\LayersControll
 Route::post('/cms/municipalities/layers', 'Cms\LayersController@store')->name('cms_layers_store');
 Route::delete('/cms/municipality/{municipality}/layers/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
+
 Route::get('/cms/municipality/{municipality}/measure/create', 'Cms\MeasuresController@create')->name('cms_measure_create');
 Route::post('/cms/municipalities/measure', 'Cms\MeasuresController@store')->name('cms_measure_store');
 Route::delete('/cms/municipality/{municipality}/measure/{measure}', 'Cms\MeasuresController@destroy')->name('cms_measure_destroy');
 Route::get('/cms/municipality/{measure}/measure/edit', 'Cms\MeasuresController@edit')->name('cms_measure_edit')->middleware('auth');
 Route::put('/cms/municipality/{measure}/measure', 'Cms\MeasuresController@update')->name('cms_measure_update')->middleware('auth');
+
+Route::get('/cms/municipality/{municipality}/guidespecies/create', 'Cms\GuideSpeciesController@create')->name('cms_guidespecies_create');
+Route::post('/cms/municipalities/guidespecies', 'Cms\GuideSpeciesController@store')->name('cms_guidespecies_store');
+Route::delete('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@destroy')->name('cms_guidespecies_destroy');
+Route::put('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@update')->name('cms_guidespecies_update');
+Route::get('/cms/municipality/{municipality}/guidespecies/{guideSpecie}/edit', 'Cms\GuideSpeciesController@edit')->name('cms_guidespecies_edit');
+
 
 Auth::routes();
