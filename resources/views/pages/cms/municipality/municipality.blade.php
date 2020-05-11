@@ -44,7 +44,9 @@
     @foreach ($measures as $measure)
     <div>
         {{$measure->name}}
-
+        
+        <a href="{{ route('cms_measure_edit', ['measure' => $measure->id]) }}">Wijzig</a>
+        
         <form action="{{ route('cms_measure_destroy', ['municipality' => $municipality->id, 'measure' => $measure->id]) }}" method="post">
             @csrf
             @method('DELETE')

@@ -41,4 +41,23 @@ class MeasuresController extends Controller
             'municipality_id' => ['required'],
         ]);
     }
+
+    public function edit( Measure $measure)
+    {
+        return view('pages.cms.measure.edit', [
+            'measure' => $measure
+        ]);
+    }
+
+    public function update(Measure $measure)
+    {
+        $this->validateMeasure();
+
+        $measure->name = request("name");
+        $measure->description = request("description");
+        
+        $measure->save();
+
+        return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
+    }
 }
