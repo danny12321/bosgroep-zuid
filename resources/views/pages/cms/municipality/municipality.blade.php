@@ -2,9 +2,11 @@
 
 @section('content')
     <div class="m-municipality">
-        <h1>
-            <a href="{{route('show_municipality', ['slug'=> $municipality->slug])}}">Gemeente {{$municipality->name}}</a>
-        </h1>
+        <div class="m-municipality__head m-card">
+            <h1>
+                <a href="{{route('show_municipality', ['slug'=> $municipality->slug])}}">Gemeente {{$municipality->name}}</a>
+            </h1>
+        </div>
 
         <div class="m-municipality__grid">
 
