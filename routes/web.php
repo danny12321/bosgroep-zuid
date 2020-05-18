@@ -53,7 +53,7 @@ Route::delete('/cms/municipality/{municipality}/layers/{layer}', 'Cms\LayersCont
 
 Route::get('/cms/municipality/{municipality}/measure/create', 'Cms\MeasuresController@create')->name('cms_measure_create');
 Route::post('/cms/municipalities/measure', 'Cms\MeasuresController@store')->name('cms_measure_store');
-Route::delete('/cms/municipality/{municipality}/measure/{measure}', 'Cms\MeasuresController@destroy')->name('cms_measure_destroy');
+Route::delete('/cms/municipality/measure/{measure}', 'Cms\MeasuresController@destroy')->name('cms_measure_destroy');
 Route::get('/cms/municipality/{measure}/measure/edit', 'Cms\MeasuresController@edit')->name('cms_measure_edit')->middleware('auth');
 Route::put('/cms/municipality/{measure}/measure', 'Cms\MeasuresController@update')->name('cms_measure_update')->middleware('auth');
 

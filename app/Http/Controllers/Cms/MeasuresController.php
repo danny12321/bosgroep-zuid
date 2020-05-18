@@ -27,18 +27,17 @@ class MeasuresController extends Controller
         return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
     }
 
-    public function destroy(Municipality $municipality, Measure $measure)
+    public function destroy(Measure $measure)
     {
         $measure->delete();
-        return redirect()->route('cms_municipality_show', ['municipality' => $municipality->id]);
+        return redirect()->route('cms_municipality_show', ['municipality' => $measure->municipality_id]);
     }
 
     protected function validateMeasure()
     {
         return request()->validate([
             'name' => ['required'],
-            'description' => ['required'],
-            'municipality_id' => ['required'],
+            'description' => ['required']
         ]);
     }
 
@@ -51,6 +50,7 @@ class MeasuresController extends Controller
 
     public function update(Measure $measure)
     {
+        
         $this->validateMeasure();
 
         $measure->name = request("name");
@@ -58,6 +58,6 @@ class MeasuresController extends Controller
         
         $measure->save();
 
-        return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
+         return redirect()->route('cms_municipality_show', ['municipality' => $measure->municipality_id]);
     }
 }

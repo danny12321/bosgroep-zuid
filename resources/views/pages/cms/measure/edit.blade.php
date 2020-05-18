@@ -29,8 +29,6 @@
             @enderror
         </div>
 
-        <input name="municipality_id" type="hidden" value="{{$measure->municipality_id}}">
-
         <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>
 @endsection
