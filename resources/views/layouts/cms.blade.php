@@ -37,6 +37,8 @@
 
         <div class="m-cms__sidebar">
             <a href="{{ route('cms_municipality_index') }}" class="m-cms__sidebar__item"><i class="fas fa-city"></i> <span>Gemeentes</span></a>
+            <a href="{{ route('cms_homepage_show') }}" class="m-cms__sidebar__item"><i class="fas fa-city"></i> <span>Homepagina</span></a>
+            <a href="{{ route('cms_municipality_index') }}" class="m-cms__sidebar__item"><i class="fas fa-city"></i> <span>Contactpagina</span></a>
         </div>
 
         <div class="m-cms__content">

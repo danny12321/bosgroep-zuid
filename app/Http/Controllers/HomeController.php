@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\HomePage;
 use Illuminate\Http\Request;
 use App\Municipality;
 
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('pages.home', [
+            "HomeText" => HomePage::first()->homeText, 
             "municipalities" => Municipality::All()
         ]);
     }

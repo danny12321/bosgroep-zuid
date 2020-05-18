@@ -31,6 +31,12 @@ Route::get('/cms', function () {
 })->name('cms')->middleware('auth');
 
 
+Route::get('/cms/homepage', 'Cms\HomePageCMSController@show')->name('cms_homepage_show');
+Route::get('/cms/homepage/hometext', 'Cms\HomePageCMSController@HomeText')->name('cms_homepage_HomeText');
+Route::put('/cms/homepage/hometext/edit', 'Cms\HomePageCMSController@HomeTextStore')->name('cms_homepage_editText');
+
+Route::get('/cms/homepage/homeimage', 'Cms\HomePageCMSController@HomeImage')->name('cms_homepage_HomeImage');
+
 
 Route::delete('/cms/municipality/{municipality}/selection/{selection}', 'Cms\Selection\SelectionController@destroy')->name('cms_selection_destroy');
 
