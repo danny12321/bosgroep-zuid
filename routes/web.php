@@ -34,9 +34,13 @@ Route::get('/cms', function () {
 Route::get('/cms/homepage', 'Cms\HomePageCMSController@show')->name('cms_homepage_show');
 Route::get('/cms/homepage/hometext', 'Cms\HomePageCMSController@HomeText')->name('cms_homepage_HomeText');
 Route::put('/cms/homepage/hometext/edit', 'Cms\HomePageCMSController@HomeTextStore')->name('cms_homepage_editText');
-
 Route::get('/cms/homepage/homeimage', 'Cms\HomePageCMSController@HomeImage')->name('cms_homepage_HomeImage');
 
+Route::get('/cms/contactpage', 'Cms\ContactController@show')->name('cms_contact_show');
+Route::get('/cms/contactpage/feedback', 'Cms\ContactController@feedback')->name('cms_Contactpage_feedback');
+Route::put('/cms/contactpage/feedback/update', 'Cms\ContactController@feedbackUpdate')->name('cms_Contactpage_feedback_Update');
+Route::get('/cms/contactpage/contactinfo', 'Cms\ContactController@contact')->name('cms_Contactpage_contact');
+Route::put('/cms/contactpage/contactinfo/update', 'Cms\ContactController@contactUpdate')->name('cms_Contactpage_contact_Update');
 
 Route::delete('/cms/municipality/{municipality}/selection/{selection}', 'Cms\Selection\SelectionController@destroy')->name('cms_selection_destroy');
 

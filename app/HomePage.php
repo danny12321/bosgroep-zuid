@@ -10,8 +10,6 @@ class HomePage extends Model
     protected $fillable = [
         'homeText',
         'homeImage',
-        'url_geoserver',
-        'email_adres',
-        'email_body'
+        'url_geoserver'
     ];
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomePagesTable extends Migration
+class CreateContactinformationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateHomePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('home_pages', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('homeText');
-            $table->binary("homeImage");
-            $table->string('url_geoserver');
+            $table->text('address');
+            $table->string('showEmail');
+            $table->string('feedbackEmail');
+            $table->string('phonenumber');
+            $table->string('faxnumber');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateHomePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_pages');
+        Schema::dropIfExists('_contactinformation');
     }
 }
