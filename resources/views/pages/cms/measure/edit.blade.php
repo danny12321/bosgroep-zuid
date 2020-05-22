@@ -3,7 +3,7 @@
 @section('content')
     <h1>Maatregel wijzigen</h1>
 
-    <form method="post" action="{{ route('cms_measure_update', ['measure' => $measure->id]) }}">
+    <form method="post" action="{{ route('cms_measure_update', ['measure' => $measure->id]) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -25,6 +25,17 @@
             @error('description') 
                 <div class="invalid-feedback">
                     {{ $errors->first("description") }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="pdf">Pdf</label>
+            <input class="form-control @error('pdf') is-invalid @enderror" type="file" name="pdf" id="pdf">
+
+            @error('pdf') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("pdf") }}
                 </div>
             @enderror
         </div>

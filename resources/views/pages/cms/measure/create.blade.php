@@ -3,7 +3,7 @@
 @section('content')
     <h1>Maatregel toevoegen</h1>
 
-    <form method="POST" action="{{ route('cms_measure_store') }}">
+    <form method="POST" action="{{ route('cms_measure_store') }}" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -24,6 +24,17 @@
             @error('description') 
                 <div class="invalid-feedback">
                     {{ $errors->first("description") }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="pdf">Pdf</label>
+            <input class="form-control @error('pdf') is-invalid @enderror" type="file" name="pdf" id="pdf">
+
+            @error('pdf') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("pdf") }}
                 </div>
             @enderror
         </div>

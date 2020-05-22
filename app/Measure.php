@@ -10,6 +10,7 @@ class Measure extends Model
     protected $fillable = [
         'name',
         'description',
-        'municipality_id'
+        'municipality_id',
+        'pdf_path',
     ];
 }
