@@ -34,6 +34,10 @@
 					@foreach ($measures as $measure)
 						<div>
 							<p>{{$measure->name}} - {{$measure->description}}</p>
+							@if ($measure->pdf_path)
+								<i class="fas fa-file-pdf"></i>
+								<a href={{ asset('storage/maatregelen/'.$measure->pdf_path) }}>Pdf</a>
+							@endif
 						</div>
 					@endforeach	
 				</div>
