@@ -15,7 +15,7 @@ class UpdateMeasuresTable extends Migration
         });
         
         //een kaartlaag is nu gekoppeld aan een gidssoort of opgave
-        Schema::update('layers', function (Blueprint $table) {
+        Schema::table('layers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
             $table->string('title', 100);
@@ -30,7 +30,7 @@ class UpdateMeasuresTable extends Migration
         });   
 
         //de antwoorden van een vraag zijn nu gekoppeld aan een gidssoort of opgave
-        Schema::update('question_answers', function (Blueprint $table) {
+        Schema::table('question_answers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('answer', 100);
             $table->unsignedBigInteger('question_id');
@@ -47,7 +47,7 @@ class UpdateMeasuresTable extends Migration
         Schema::dropIfExists('layer_question_answer');
  
         //maatregelen zijn nu gekoppeld aan een gidssoort of opgave
-        Schema::update('measures', function (Blueprint $table) {
+        Schema::table('measures', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
             $table->string('description', 300);
