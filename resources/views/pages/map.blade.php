@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="m-map--container">
-        <img src="http://gmd.has.nl:8080/geoserver/biodiversiteithorst/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=biodiversiteithorst:StijlStressfactoren&legend_options=dx:5;&TRANSPARENT=true" alt="Legenda" class="m-map--container__legend">
+        <img src="{{ $municipality->legend }}" alt="Legenda" class="m-map--container__legend">
         <div id="map" class="m-map--container__map"></div>
         <div class="m-map--container__selections">
             @include('modules.selectionlist', ['selections' => $selections, 'filters' => $filters])

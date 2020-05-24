@@ -44,6 +44,7 @@ class MunicipalityCMSController extends Controller
         Municipality::create([
             'name' => request("name"),
             'slug' => request("slug"),
+            'legend' => request("legend"),
             'lat'=> request("lat"),
             'long'=> request("long")
         ]);
@@ -70,6 +71,7 @@ class MunicipalityCMSController extends Controller
 
         $municipality->name = request("name");
         $municipality->slug = request("slug");
+        $municipality->legend = request("legend");
         $municipality->lat = request("lat");
         $municipality->long = request("long");
         
@@ -83,6 +85,7 @@ class MunicipalityCMSController extends Controller
         return request()->validate([
             'name' => ['required'],
             'slug' => ['required'],
+            'legend' => ['required', 'url'],
             'lat' => ['numeric'],
             'long' => ['numeric']
         ]);
