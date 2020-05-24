@@ -12,7 +12,7 @@
     <div class="m-map--container">
         <div id="map" class="m-map--container__map"></div>
         <div class="m-map--container__selections">
-            @include('modules.selectionlist', ['selections' => $selections])
+            @include('modules.selectionlist', ['selections' => $selections, 'filters' => $filters])
         </div>
     </div>
 

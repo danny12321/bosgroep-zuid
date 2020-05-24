@@ -34,6 +34,26 @@ class LayersController extends Controller
         return redirect()->route('cms_municipality_show', ['municipality' => $municipality->id]);
     }
 
+    public function edit(Municipality $municipality, Layer $layer)
+    {
+        return view('pages.cms.layers.edit', [
+            'layer' => $layer,
+            'municipality' => $municipality
+        ]);
+    }
+
+    public function update(Layer $layer)
+    {
+        $this->validateLayer();
+        
+        $layer->name = request("name");
+        $layer->title = request("title");
+        
+        $layer->save();
+        
+        return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
+    }
+
     protected function validateLayer()
     {
         return request()->validate([
