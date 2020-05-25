@@ -5,7 +5,6 @@
 
     <form method="POST" action="{{ route('cms_measure_store') }}">
         @csrf
-
         <div class="form-group">
             <label for="name">Naam</label>
             <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" value="{{ old('name')}}">

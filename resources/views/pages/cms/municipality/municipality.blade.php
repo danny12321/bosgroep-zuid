@@ -105,9 +105,9 @@
     <div>
         {{$measure->name}}
         
-        <a href="{{ route('cms_measure_edit', ['measure' => $measure->id]) }}">Wijzig</a>
+        <a href="{{ route('cms_measure_edit', ['measure' => $measure->id , 'municipality' => $municipality->id]) }}">Wijzig</a>
         
-        <form action="{{ route('cms_measure_destroy', ['municipality' => $municipality->id, 'measure' => $measure->id]) }}" method="post">
+        <form action="{{ route('cms_measure_destroy', ['measure' => $measure->id]) }}" method="post">
             @csrf
             @method('DELETE')
 

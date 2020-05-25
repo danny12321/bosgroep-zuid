@@ -51,10 +51,11 @@ class MeasuresController extends Controller
         ]);
     }
 
-    public function edit( Measure $measure)
+    public function edit(Measure $measure)
     {
         return view('pages.cms.measure.edit', [
-            'measure' => $measure
+            'measure' => $measure,
+            'municipality' => Municipality::where('id', '=', $measure->municipality_id)->get()->first()
         ]);
     }
 
@@ -65,6 +66,8 @@ class MeasuresController extends Controller
 
         $measure->name = request("name");
         $measure->description = request("description");
+        $measure->guidespecie_id = request("guidespecie_id");
+        $measure->problem_id = request("problem_id");
         
         $measure->save();
 
