@@ -29,4 +29,9 @@ class Municipality extends Model
     {
         return $this->hasMany(GuideSpecie::class, 'municipality_id', 'id');
     }
+
+    public function problems()
+    {
+        return $this->hasMany(Problem::class, 'municipality_id', 'id');
+    }
 }

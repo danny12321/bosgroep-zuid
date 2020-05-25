@@ -23,7 +23,16 @@ class MeasuresController extends Controller
 
     public function store()
     {
-        Measure::create($this->validateMeasure());
+        $this->validateMeasure();
+
+        Measure::create([
+            'name' => request('name'),
+            'description' => request('description'),
+            'municipality_id' => request('municipality_id'),
+            'guidespecie_id' => request('guidespecie_id'),
+            'problem_id' => request('problem_id')
+        ]);
+
         return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
     }
 
@@ -38,7 +47,7 @@ class MeasuresController extends Controller
         return request()->validate([
             'name' => ['required'],
             'description' => ['required'],
-            'municipality_id' => ['required'],
+            'municipality_id' => ['required']
         ]);
     }
 

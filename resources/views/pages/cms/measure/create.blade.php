@@ -29,25 +29,42 @@
         </div>
 
         <div class="form-group">
-            <label for="guidespecie_id">Gidssoort</label>
+            <label>Gidssoort</label>
             
             @foreach ($municipality->guide_species as $guidespecie)
                 <div class="form-group">
-                    <input type="checkbox" id="{{$guidespecie->id}}" value="{{$guidespecie->name}}">
-                    <label for="{{$guidespecie->id}}">{{$guidespecie->name}}</label>
+                    <input type="radio" name="guidespecie_id" id="guide-specie-{{$guidespecie->id}}" value="{{$guidespecie->id}}">
+                    <label for="guide-specie-{{$guidespecie->id}}">{{$guidespecie->name}}</label>
                 </div>
             @endforeach
-        </div>
 
-         <div class="form-group">
-            <label for="problem_id">Opgave</label>
-            <input class="form-control @error('problem_id') is-invalid @enderror" type="dropdown" name="problem_id" id="problem_id">
+            <div class="form-group">
+                <input type="radio" name="guidespecie_id" id="guide-specie-null" value="">
+                <label for="guide-specie-null">Geen</label>
+            </div>
 
-            @error('problem_id') 
+            @error('guidespecie_id') 
                 <div class="invalid-feedback">
-                    {{ $errors->first("problem_id") }}
+                    {{ $errors->first("guidespecie_id") }}
                 </div>
             @enderror
+        </div>
+
+
+        <div class="form-group">
+            <label>Opgave</label>
+            
+            @foreach ($municipality->problems as $problem)
+                <div class="form-group">
+                    <input type="radio" name="problem_id" id="problem-{{$problem->id}}" value="{{$problem->id}}">
+                    <label for="problem-{{$problem->id}}">{{$problem->name}}</label>
+                </div>
+            @endforeach
+
+            <div class="form-group">
+                <input type="radio" name="problem_id" id="problem-null" value="">
+                <label for="problem-null">Geen</label>
+            </div>
         </div>
 
         <input name="municipality_id" type="hidden" value="{{$municipality->id}}">
