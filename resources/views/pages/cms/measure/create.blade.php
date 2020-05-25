@@ -28,6 +28,28 @@
             @enderror
         </div>
 
+        <div class="form-group">
+            <label for="guidespecie_id">Gidssoort</label>
+            
+            @foreach ($municipality->guide_species as $guidespecie)
+                <div class="form-group">
+                    <input type="checkbox" id="{{$guidespecie->id}}" value="{{$guidespecie->name}}">
+                    <label for="{{$guidespecie->id}}">{{$guidespecie->name}}</label>
+                </div>
+                @endforeach
+        </div>
+
+         <div class="form-group">
+            <label for="problem_id">Opgave</label>
+            <input class="form-control @error('problem_id') is-invalid @enderror" type="dropdown" name="problem_id" id="problem_id">
+
+            @error('problem_id') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("problem_id") }}
+                </div>
+            @enderror
+        </div>
+
         <input name="municipality_id" type="hidden" value="{{$municipality->id}}">
 
         <button type="submit" class="btn btn-primary">Opslaan</button>

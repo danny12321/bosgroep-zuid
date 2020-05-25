@@ -25,6 +25,24 @@
     </div>
     @endforeach
 
+    <h2>Opgaven</h2>
+    <a href="{{ route('cms_problem_create', ['municipality' => $municipality->id]) }}">Opgave toevoegen</a>
+    
+    @foreach ($problems as $problem)
+    <div>
+        {{$problem->name}}
+        
+        <a href="{{ route('cms_problem_edit', ['problem' => $problem->id]) }}">Wijzig</a>
+        
+        <form action="{{ route('cms_problem_destroy', ['municipality' => $municipality->id, 'problem' => $problem->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
+    @endforeach
+
     <h2>Lagen</h2>
     <a href="{{ route('cms_layers_create', ['municipality' => $municipality->id]) }}">Laag toevoegen</a>
 

@@ -75,4 +75,10 @@ Route::delete('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cm
 Route::put('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@update')->name('cms_guidespecies_update');
 Route::get('/cms/municipality/{municipality}/guidespecies/{guideSpecie}/edit', 'Cms\GuideSpeciesController@edit')->name('cms_guidespecies_edit');
 
+Route::get('/cms/municipality/{municipality}/problem/create', 'Cms\ProblemController@create')->name('cms_problem_create');
+Route::post('/cms/municipalities/problem', 'Cms\ProblemController@store')->name('cms_problem_store');
+Route::delete('/cms/municipality/problem/{problem}', 'Cms\ProblemController@destroy')->name('cms_problem_destroy');
+Route::get('/cms/municipality/{problem}/problem/edit', 'Cms\ProblemController@edit')->name('cms_problem_edit')->middleware('auth');
+Route::put('/cms/municipality/{problem}/problem', 'Cms\ProblemController@update')->name('cms_problem_update')->middleware('auth');
+
 Auth::routes();

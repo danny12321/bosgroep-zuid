@@ -17,7 +17,8 @@ class MeasuresController extends Controller
     public function create(Municipality $municipality)
     {
         return view('pages.cms.measure.create', [
-            'municipality' => $municipality
+            'municipality' => $municipality,
+            'guidespecie' => $guidespecie
         ]);
     }
 
@@ -37,7 +38,8 @@ class MeasuresController extends Controller
     {
         return request()->validate([
             'name' => ['required'],
-            'description' => ['required']
+            'description' => ['required'],
+            'municipality_id' => ['required'],
         ]);
     }
 
