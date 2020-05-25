@@ -36,7 +36,7 @@
                     <input type="checkbox" id="{{$guidespecie->id}}" value="{{$guidespecie->name}}">
                     <label for="{{$guidespecie->id}}">{{$guidespecie->name}}</label>
                 </div>
-                @endforeach
+            @endforeach
         </div>
 
          <div class="form-group">

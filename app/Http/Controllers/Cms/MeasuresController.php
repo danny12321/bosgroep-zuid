@@ -18,7 +18,6 @@ class MeasuresController extends Controller
     {
         return view('pages.cms.measure.create', [
             'municipality' => $municipality,
-            'guidespecie' => $guidespecie
         ]);
     }
 
