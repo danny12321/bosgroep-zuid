@@ -22,14 +22,18 @@ class ContactController extends Controller
     public function feedback()
     {
         $contact = Contact::first();
+        $body = file_get_contents(dirname(__DIR__).'\..\..\..\resources\views\dynamic_email_template.blade.php');
         return view('pages.cms.contact.feedback', [
-            'email' => $contact->feedbackEmail
+            'email' => $contact->feedbackEmail,
+            'body' => $body
         ]);
     }
 
     public function feedbackUpdate()
     {
         request()->validate(['Emailadres' => ['required']]);
+        request()->validate(['Body' => ['required']]);
+        file_put_contents(dirname(__DIR__).'\..\..\..\resources\views\dynamic_email_template.blade.php', request('Body'));
         $contact = Contact::first();
         $contact->feedbackEmail = request('Emailadres');
         $contact->save();
@@ -66,6 +70,7 @@ class ContactController extends Controller
         $contact->save();
         return redirect()->route('cms_contact_show');
     }
-
+    
     
 }
+    

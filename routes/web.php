@@ -42,6 +42,7 @@ Route::put('/cms/contactpage/feedback/update', 'Cms\ContactController@feedbackUp
 Route::get('/cms/contactpage/contactinfo', 'Cms\ContactController@contact')->name('cms_Contactpage_contact');
 Route::put('/cms/contactpage/contactinfo/update', 'Cms\ContactController@contactUpdate')->name('cms_Contactpage_contact_Update');
 
+
 Route::delete('/cms/municipality/{municipality}/selection/{selection}', 'Cms\Selection\SelectionController@destroy')->name('cms_selection_destroy');
 
 Route::get('/cms/municipality/{municipality}/selection/create/folder/{selection?}', 'Cms\Selection\FolderController@create')->name('cms_selection_folder_create');
