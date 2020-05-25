@@ -33,7 +33,9 @@ Route::get('/cms', function () {
 
 Route::get('/cms/homepage', 'Cms\HomePageCMSController@show')->name('cms_homepage_show');
 Route::get('/cms/homepage/hometext', 'Cms\HomePageCMSController@HomeText')->name('cms_homepage_HomeText');
+Route::get('/cms/homepage/geoserver', 'Cms\HomePageCMSController@GeoServer')->name('cms_homepage_GeoServer');
 Route::put('/cms/homepage/hometext/edit', 'Cms\HomePageCMSController@HomeTextStore')->name('cms_homepage_editText');
+Route::put('/cms/homepage/geoserver/edit', 'Cms\HomePageCMSController@GeoServerStore')->name('cms_homepage_editServer');
 Route::get('/cms/homepage/homeimage', 'Cms\HomePageCMSController@HomeImage')->name('cms_homepage_HomeImage');
 
 Route::get('/cms/contactpage', 'Cms\ContactController@show')->name('cms_contact_show');

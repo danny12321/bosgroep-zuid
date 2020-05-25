@@ -45,4 +45,21 @@ class HomePageCMSController extends Controller
         return redirect()->route('cms_homepage_show');
     }
 
+    public function GeoServer()
+    {
+        $homepage = HomePage::first();
+        return view('pages.cms.home.GeoServer', [
+            'GeoSever' => $homepage->url_geoserver
+        ]);
+    }
+
+    public function GeoServerStore()
+    {
+        request()->validate(['GeoSever' => ['required']]);
+        $homepage = HomePage::first();
+        $homepage->url_geoserver = request('GeoSever');
+        $homepage->save();
+        return redirect()->route('cms_homepage_show');
+    }
+
 }

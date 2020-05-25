@@ -23,6 +23,12 @@
                         <a href="{{ route('cms_homepage_HomeImage')}}">Wijzig</a>
                     </td>
             </tr>
+            <tr class="clickable" onclick="document.location = '{{ route('cms_homepage_GeoServer') }}';">
+                    <td>GeoServer</td>
+                    <td class="m-table__edit">
+                        <a href="{{ route('cms_homepage_GeoServer') }}">Wijzig</a>
+                    </td>
+            </tr>
     </tbody>
     </table>
 @endsection

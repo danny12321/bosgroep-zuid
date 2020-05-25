@@ -16,7 +16,7 @@ class CreateHomePagesTable extends Migration
         Schema::create('home_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('homeText');
-            $table->binary("homeImage");
+            $table->string("homeImage");
             $table->string('url_geoserver');
             $table->timestamps();
         });
