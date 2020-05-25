@@ -8,7 +8,7 @@
 
         <div class="form-group">
             <label for="name">Naam</label>
-            <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name">
+            <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" value="{{ old('name')}}">
 
             @error('name') 
                 <div class="invalid-feedback">
@@ -19,7 +19,7 @@
 
         <div class="form-group">
             <label for="description">Beschrijving</label>
-            <input class="form-control @error('description') is-invalid @enderror" type="text" name="description" id="description">
+            <input class="form-control @error('description') is-invalid @enderror" type="text" name="description" id="description" value="{{ old('description')}}">
 
             @error('description') 
                 <div class="invalid-feedback">
@@ -30,10 +30,10 @@
 
         <div class="form-group">
             <label>Gidssoort</label>
-            
+
             @foreach ($municipality->guide_species as $guidespecie)
                 <div class="form-group">
-                    <input type="radio" name="guidespecie_id" id="guide-specie-{{$guidespecie->id}}" value="{{$guidespecie->id}}">
+                    <input type="radio" name="guidespecie_id" id="guide-specie-{{$guidespecie->id}}" value="{{$guidespecie->id}}" @if($guidespecie->id == old('guidespecie_id')) checked @endif>
                     <label for="guide-specie-{{$guidespecie->id}}">{{$guidespecie->name}}</label>
                 </div>
             @endforeach
@@ -56,7 +56,7 @@
             
             @foreach ($municipality->problems as $problem)
                 <div class="form-group">
-                    <input type="radio" name="problem_id" id="problem-{{$problem->id}}" value="{{$problem->id}}">
+                    <input type="radio" name="problem_id" id="problem-{{$problem->id}}" value="{{$problem->id}}" @if($problem->id == old('problem_id')) checked @endif>
                     <label for="problem-{{$problem->id}}">{{$problem->name}}</label>
                 </div>
             @endforeach
