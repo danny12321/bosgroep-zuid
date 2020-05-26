@@ -17,7 +17,7 @@
                 </div>
 
 MAATREGELEN
-        <form action="{{ route('cms_guidespecies_destroy', ['municipality' => $municipality->id, 'guideSpecie' => $guidespecie->id]) }}" method="post">
+        {{-- <form action="{{ route('cms_guidespecies_destroy', ['municipality' => $municipality->id, 'guideSpecie' => $guidespecie->id]) }}" method="post">
             @csrf
             @method('DELETE')
 
@@ -75,7 +75,7 @@ MAATREGELEN
             {{$indexKey + 1}}. {{$question->question}} 
             <a class="btn" href="{{ route('cms_questions_edit', ['municipality' => $municipality->id, 'question' => $question->id]) }}"><i class="fas fa-edit"></i></a> 
             <button class="btn btn-danger" form="delete-question-{{$question->id}}" type="submit"><i class="fas fa-trash-alt"></i></button>
-    </h3>
+    </h3> --}}
 END MAATREGELEN
 STYLING
                 <table class="m-table m-municipality__table">
@@ -163,7 +163,7 @@ END STYLING
             </div>
     
 MAATREGELEN
-    @foreach ($measures as $measure)
+    {{-- @foreach ($measures as $measure)
     <div>
         {{$measure->name}}
         
@@ -171,7 +171,7 @@ MAATREGELEN
         
         <form action="{{ route('cms_measure_destroy', ['measure' => $measure->id]) }}" method="post">
             @csrf
-            @method('DELETE')
+            @method('DELETE') --}}
 STYLING
             <div class="m-municipality__grid__grid--item m-card">
                 <div class="m-municipality__grid__grid--item__header">
@@ -203,6 +203,5 @@ STYLING
             </div>
         </div>
 END STYLING
-
-    </div>
+</div>
 @endsection
