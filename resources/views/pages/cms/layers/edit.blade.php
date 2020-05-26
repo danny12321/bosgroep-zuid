@@ -35,14 +35,13 @@
             
             <div class="m-cms__content__action--buttons">
                 <button type="submit" class="btn btn-primary">Opslaan</button>
-                <button class="btn btn-danger" type="submit" form="delete-form">Delete</button>
+                <button class="btn btn-danger" type="submit" form="delete-form">Verwijder</button>
             </div>
         </form>
         
         <form action="{{ route('cms_layers_destroy', ['municipality' => $municipality->id, 'layer' => $layer->id]) }}" id="delete-form" method="post">
             @csrf
             @method('DELETE')
-            
         </form>
     </div>
 @endsection

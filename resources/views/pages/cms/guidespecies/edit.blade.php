@@ -21,15 +21,17 @@
 
             <input name="municipality_id" type="hidden" value="{{$municipality->id}}">
             
-            <button type="submit" class="btn btn-primary">Opslaan</button>
+            <div class="m-cms__content__action--buttons">
+                <button type="submit" class="btn btn-primary">Opslaan</button>
+                <button class="btn btn-danger" type="submit" form="delete-form">Verwijder</button>
+            </div>
+
             
         </form>
 
-        <form action="{{ route('cms_guidespecies_destroy', ['municipality' => $municipality->id, 'guideSpecie' => $guideSpecie->id]) }}" method="post">
+        <form action="{{ route('cms_guidespecies_destroy', ['municipality' => $municipality->id, 'guideSpecie' => $guideSpecie->id]) }}" id="delete-form" method="post">
             @csrf
             @method('DELETE')
-
-            <button class="btn btn-danger" type="submit">Delete</button>
         </form>
     </div>
 @endsection

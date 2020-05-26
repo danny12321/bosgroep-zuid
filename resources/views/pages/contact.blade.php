@@ -16,7 +16,7 @@
                 <div class="m-contact__contact--details">
                     <h2>Onze contactgegevens:</h2>
                     <p>Bezoekadres: Huisvenseweg 14, 5591 VD HEEZE</p>
-                    <p><a href="tel:(040)20 66 360">t (040) 20 66 360</a></p>
+                    <p>t <a href="tel:(040)20 66 360">(040) 20 66 360</a></p>
                     <p><a>f (040) 20 66 361 </a></p>
                     <p>E-mail: <a href="mailto:zuidnederland@bosgroepen.nl">zuidnederland@bosgroepen.nl</a></p>
                 </div>
