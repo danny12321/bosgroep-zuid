@@ -26,9 +26,7 @@ Route::get('/gemeentes/{slug}/questionnaire', 'MunicipalityController@questionna
 
 Route::get('/map/{slug}', 'MapController@index')->name('map');
 
-Route::get('/cms', function () {
-    return view('pages.cms.home');
-})->name('cms')->middleware('auth');
+Route::get('/cms', 'Cms\MunicipalityCMSController@index')->name('cms')->middleware('auth');
 
 
 
