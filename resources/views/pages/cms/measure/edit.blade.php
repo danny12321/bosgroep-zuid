@@ -1,14 +1,14 @@
 @extends('layouts.cms')
 
 @section('content')
+    <h1>Maatregel wijzigen</h1>
 
-    <h1>Maatregel toevoegen</h1>
-
-    <form method="POST" action="{{ route('cms_measure_store') }}">
+    <form method="post" action="{{ route('cms_measure_update', ['measure' => $measure->id]) }}">
         @csrf
+        @method('PUT')
         <div class="form-group">
             <label for="name">Naam</label>
-            <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" value="{{ old('name')}}">
+            <input class="form-control @error('name') is-invalid @enderror" value="{{ $measure->name }}" type="text" name="name" id="name">
 
             @error('name') 
                 <div class="invalid-feedback">
@@ -19,7 +19,7 @@
 
         <div class="form-group">
             <label for="description">Beschrijving</label>
-            <input class="form-control @error('description') is-invalid @enderror" type="text" name="description" id="description" value="{{ old('description')}}">
+            <input class="form-control @error('description') is-invalid @enderror" value="{{ $measure->description }}"  type="text" name="description" id="description">
 
             @error('description') 
                 <div class="invalid-feedback">
@@ -33,13 +33,13 @@
 
             @foreach ($municipality->guide_species as $guidespecie)
                 <div class="form-group">
-                    <input type="radio" name="guidespecie_id" id="guide-specie-{{$guidespecie->id}}" value="{{$guidespecie->id}}" @if($guidespecie->id == old('guidespecie_id')) checked @endif>
+                    <input type="radio" name="guidespecie_id" id="guide-specie-{{$guidespecie->id}}" value="{{$guidespecie->id}}" @if($guidespecie->id == $measure->guidespecie_id)) checked @endif>
                     <label for="guide-specie-{{$guidespecie->id}}">{{$guidespecie->name}}</label>
                 </div>
             @endforeach
 
             <div class="form-group">
-                <input type="radio" name="guidespecie_id" id="guide-specie-null" value="" @if(old("guidespecie_id") === null) checked @endif>
+                <input type="radio" name="guidespecie_id" id="guide-specie-null" value="" @if($guidespecie->id == $measure->guidespecie_id)) checked @endif>
                 <label for="guide-specie-null">Geen</label>
             </div>
 
@@ -56,20 +56,19 @@
             
             @foreach ($municipality->problems as $problem)
                 <div class="form-group">
-                    <input type="radio" name="problem_id" id="problem-{{$problem->id}}" value="{{$problem->id}}" @if($problem->id == old('problem_id')) checked @endif>
+                    <input type="radio" name="problem_id" id="problem-{{$problem->id}}" value="{{$problem->id}}" @if($problem->id == $measure->problem_id)) checked @endif>
                     <label for="problem-{{$problem->id}}">{{$problem->name}}</label>
                 </div>
             @endforeach
 
             <div class="form-group">
-                <input type="radio" name="problem_id" id="problem-null" value="" @if(old("problem_id") === null) checked @endif>
+                <input type="radio" name="problem_id" id="problem-null" value="" @if($problem->id == $measure->problem_id)) checked @endif>
                 <label for="problem-null">Geen</label>
             </div>
         </div>
 
-        <input name="municipality_id" type="hidden" value="{{$municipality->id}}">
 
+        <input name="municipality_id" type="hidden" value="{{$measure->municipality_id}}">
         <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>
-
 @endsection
