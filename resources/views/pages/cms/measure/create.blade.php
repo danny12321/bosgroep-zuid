@@ -1,6 +1,7 @@
 @extends('layouts.cms')
 
 @section('content')
+
     <h1>Maatregel toevoegen</h1>
 
     <form method="POST" action="{{ route('cms_measure_store') }}">
@@ -70,4 +71,5 @@
 
         <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>
+
 @endsection

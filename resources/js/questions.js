@@ -7,7 +7,7 @@ const form = document.querySelector('#question_form')
 const layerModel = new SelectLayerModel();
 const addAnswerButton = document.querySelector('#addAnswer');
 
-document.querySelectorAll('.m-question--edit__answers .row').forEach(answer => {
+document.querySelectorAll('.m-question__edit__answers .row').forEach(answer => {
     answers.push(
         new Answer(answer, layerModel)
     );
