@@ -28,6 +28,44 @@
                 </div>
             @enderror
         </div>
+        <div class="form-group">
+            <label>Gidssoort</label>
+
+            @foreach ($municipality->guide_species as $guidespecie)
+                <div class="form-group">
+                    <input type="radio" name="guidespecie_id" id="guide-specie-{{$guidespecie->id}}" value="{{$guidespecie->id}}" @if($guidespecie->id == $layer->guidespecie_id) checked @endif>
+                    <label for="guide-specie-{{$guidespecie->id}}">{{$guidespecie->name}}</label>
+                </div>
+            @endforeach
+
+            <div class="form-group">
+                <input type="radio" name="guidespecie_id" id="guide-specie-null" value="" @if($layer->guidespecie_id == null) checked @endif>
+                <label for="guide-specie-null">Geen</label>
+            </div>
+
+            @error('guidespecie_id') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("guidespecie_id") }}
+                </div>
+            @enderror
+        </div>
+
+
+        <div class="form-group">
+            <label>Opgave</label>
+            
+            @foreach ($municipality->problems as $problem)
+                <div class="form-group">
+                    <input type="radio" name="problem_id" id="problem-{{$problem->id}}" value="{{$problem->id}}" @if($problem->id == $layer->problem_id) checked @endif>
+                    <label for="problem-{{$problem->id}}">{{$problem->name}}</label>
+                </div>
+            @endforeach
+
+            <div class="form-group">
+                <input type="radio" name="problem_id" id="problem-null" value="" @if($layer->problem_id == null) checked @endif>
+                <label for="problem-null">Geen</label>
+            </div>
+        </div>
 
         <input name="municipality_id" type="hidden" value="{{$municipality->id}}">
 

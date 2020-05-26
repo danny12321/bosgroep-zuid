@@ -24,7 +24,15 @@ class LayersController extends Controller
 
     public function store()
     {
-        Layer::create($this->validateLayer());
+        $this->validateLayer();
+        
+        Layer::create([
+            'name' => request('name'),
+            'title' => request('title'),
+            'municipality_id' => request('municipality_id'),
+            'guidespecie_id' => request('guidespecie_id'),
+            'problem_id' => request('problem_id')
+        ]);
         return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
     }
 
@@ -48,6 +56,8 @@ class LayersController extends Controller
         
         $layer->name = request("name");
         $layer->title = request("title");
+        $layer->guidespecie_id = request("guidespecie_id");
+        $layer->problem_id = request("problem_id");
         
         $layer->save();
         

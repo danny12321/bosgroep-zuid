@@ -38,7 +38,7 @@
             @endforeach
 
             <div class="form-group">
-                <input type="radio" name="guidespecie_id" id="guide-specie-null" value="">
+                <input type="radio" name="guidespecie_id" id="guide-specie-null" value="" @if(old("guidespecie_id") === null) checked @endif>
                 <label for="guide-specie-null">Geen</label>
             </div>
 
@@ -61,7 +61,7 @@
             @endforeach
 
             <div class="form-group">
-                <input type="radio" name="problem_id" id="problem-null" value="">
+                <input type="radio" name="problem_id" id="problem-null" value="" @if(old("problem_id") === null) checked @endif>
                 <label for="problem-null">Geen</label>
             </div>
         </div>
