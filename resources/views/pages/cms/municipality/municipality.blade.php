@@ -57,7 +57,7 @@
                         @endif
                         @foreach ($problems as $problem)
                             <tr class="hover last-hover">
-                                <td>{{ $problem->name }}}</td>
+                                <td>{{ $problem->name }}</td>
                                 <td class="m-table__edit">
                                     <a href="{{ route('cms_problem_edit', ['problem' => $problem->id]) }}"><i class="fas fa-edit"></i></a>
                                 </td>
