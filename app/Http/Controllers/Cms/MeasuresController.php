@@ -17,20 +17,29 @@ class MeasuresController extends Controller
     public function create(Municipality $municipality)
     {
         return view('pages.cms.measure.create', [
-            'municipality' => $municipality
+            'municipality' => $municipality,
         ]);
     }
 
     public function store()
     {
-        Measure::create($this->validateMeasure());
+        $this->validateMeasure();
+
+        Measure::create([
+            'name' => request('name'),
+            'description' => request('description'),
+            'municipality_id' => request('municipality_id'),
+            'guidespecie_id' => request('guidespecie_id'),
+            'problem_id' => request('problem_id')
+        ]);
+
         return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
     }
 
-    public function destroy(Municipality $municipality, Measure $measure)
+    public function destroy(Measure $measure)
     {
         $measure->delete();
-        return redirect()->route('cms_municipality_show', ['municipality' => $municipality->id]);
+        return redirect()->route('cms_municipality_show', ['municipality' => $measure->municipality_id]);
     }
 
     protected function validateMeasure()
@@ -38,7 +47,30 @@ class MeasuresController extends Controller
         return request()->validate([
             'name' => ['required'],
             'description' => ['required'],
-            'municipality_id' => ['required'],
+            'municipality_id' => ['required']
         ]);
+    }
+
+    public function edit(Measure $measure)
+    {
+        return view('pages.cms.measure.edit', [
+            'measure' => $measure,
+            'municipality' => Municipality::where('id', '=', $measure->municipality_id)->get()->first()
+        ]);
+    }
+
+    public function update(Measure $measure)
+    {
+        
+        $this->validateMeasure();
+
+        $measure->name = request("name");
+        $measure->description = request("description");
+        $measure->guidespecie_id = request("guidespecie_id");
+        $measure->problem_id = request("problem_id");
+        
+        $measure->save();
+
+         return redirect()->route('cms_municipality_show', ['municipality' => $measure->municipality_id]);
     }
 }

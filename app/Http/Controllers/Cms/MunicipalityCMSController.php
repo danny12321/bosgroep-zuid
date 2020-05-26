@@ -9,6 +9,7 @@ use App\Layer;
 use App\Question;
 use App\Selection;
 use App\Measure;
+use App\Problem;
 use Illuminate\Http\Request;
 
 class MunicipalityCMSController extends Controller
@@ -21,7 +22,8 @@ class MunicipalityCMSController extends Controller
             'selections' => Selection::where('municipality_id', '=', $municipality->id)->whereNull('parent_id')->orderBy('layer_id')->get(),
             'questions' => $municipality->questions,
             'measures' => Measure::where('municipality_id', '=', $municipality->id)->get(),
-            'guidespecies' => GuideSpecie::where('municipality_id', '=', $municipality->id)->get()
+            'guidespecies' => GuideSpecie::where('municipality_id', '=', $municipality->id)->get(),
+            'problems' => Problem::where('municipality_id', '=', $municipality->id)->get()
         ]);
     }
 
