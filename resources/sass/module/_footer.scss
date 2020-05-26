@@ -8,9 +8,40 @@
     }
 
     &__content {
+
         width: 100%;
-        height: 100px;
+        // height: 100px;
+        padding-top: 60px;
+        padding-bottom: 60px;
         background: #8BDB8E;
+        color: white;
+        
+        &__grid {
+            @extend .container;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            
+            img {
+                width: 50%;
+                background: white;
+                padding: 20px;
+                border-radius: 5px;
+            }
+
+            ul {
+                
+                a {
+                    color: white;
+                }
+            }
+
+            @media only screen and (max-width: $mobile)  {
+                grid-template-columns: 1fr;
+
+                grid-gap: 20px;
+            }
+        }
     }
 
     position:absolute;

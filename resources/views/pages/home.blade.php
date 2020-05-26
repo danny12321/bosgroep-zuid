@@ -37,16 +37,6 @@
         @endforeach
         
     </div>
-    {{-- <div class="l-home">
-        
-        @guest
-        <h1>Home</h1>
-        
-        @else
-        <h1>Welkom {{ Auth::user()->name }}</h1>
-        @endguest
-        
-    </div> --}}
     
     {{-- PHP vars to JS --}}
 	<div class="m-php">
