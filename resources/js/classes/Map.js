@@ -7,6 +7,7 @@ export default class Map {
         this.targetElement = targetElement
         this.layers = [];
         this.map = this.createMap();
+        this.url_geoserver = document.querySelector('.m-php__url-geoserver').innerHTML;
 
         this.inputs = document.querySelectorAll(".m-map--container__selections input");
 
@@ -65,7 +66,7 @@ export default class Map {
     }
 
     addLayer(layerName, opacity) {
-        let layerContainer = new LayerContainer(layerName, opacity);
+        let layerContainer = new LayerContainer(layerName, opacity, this.url_geoserver);
         this.layers.push(layerContainer);
     }
 

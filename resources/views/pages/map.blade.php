@@ -21,7 +21,8 @@
 	{{-- PHP vars to JS --}}
 	<div class="m-php">
 		<div class="m-php__lat">{{$municipality->lat}}</div>
-		<div class="m-php__long">{{$municipality->long}}</div>
+        <div class="m-php__long">{{$municipality->long}}</div>
+        <div class="m-php__url-geoserver">{{$url_geoserver}}</div>
 	</div>
 </body>
 </html>

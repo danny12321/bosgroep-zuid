@@ -69,6 +69,10 @@
             <button class="btn btn-danger" type="submit" form="delete-form">Verwijder</button>
         </div>
     </form>
+
+    <div class="m-php">
+        <div class="m-php__url-geoserver">{{$url_geoserver}}</div>
+    </div>
     
     <form action="{{ route('cms_municipality_destroy', ['municipality' => $municipality->id]) }}" id="delete-form" method="post">
         @csrf
