@@ -181,8 +181,8 @@
       "value": ""
     }, {
       "id": "b38177f8-42e2-4d18-a196-6ca6227da2c2",
+      "comment": "",
       "command": "setWindowSize",
-      "target": "1294x1050",
       "target": "/",
       "targets": [],
       "value": ""
@@ -1065,6 +1065,555 @@
       "target": "css=body > div.app > div.content-container > div.container > div.m-map--container > div > div > div > a",
       "targets": [],
       "value": ""
+    }]
+  }, {
+    "id": "154e3e52-945f-4a46-b8e7-cf2c6041a92e",
+    "name": "Edit email",
+    "commands": [{
+      "id": "4b321b71-e6c7-4c82-a71c-f3ae6d805abe",
+      "comment": "",
+      "command": "open",
+      "target": "/cms",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fafdd138-d018-4c23-985e-718e48b3a8c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.m-cms__sidebar__item:nth-child(3) > span",
+      "targets": [
+        ["css=.m-cms__sidebar__item:nth-child(3) > span", "css:finder"],
+        ["xpath=//a[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contactpagina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1859e675-41df-4854-bdf0-1edde5d6c647",
+      "comment": "",
+      "command": "click",
+      "target": "css=.clickable:nth-child(2) > td:nth-child(1)",
+      "targets": [
+        ["css=.clickable:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[2]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Contactinformatie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3923d28d-1b96-44c7-8b40-da54073d9092",
+      "comment": "",
+      "command": "click",
+      "target": "id=Emailadres",
+      "targets": [
+        ["id=Emailadres", "id"],
+        ["name=Emailadres", "name"],
+        ["css=#Emailadres", "css:finder"],
+        ["xpath=//input[@id='Emailadres']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b98c7f5-9301-4305-ab8f-753fa0cf60f0",
+      "comment": "",
+      "command": "type",
+      "target": "id=Emailadres",
+      "targets": [
+        ["id=Emailadres", "id"],
+        ["name=Emailadres", "name"],
+        ["css=#Emailadres", "css:finder"],
+        ["xpath=//input[@id='Emailadres']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "ShowEmail@email.com"
+    }, {
+      "id": "331a237d-3b3f-44a0-8a4f-e9469a8c9a2a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Opslaan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "84186dbc-1834-40c0-bc25-d3a82922a349",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbarDropdown",
+      "targets": [
+        ["id=navbarDropdown", "id"],
+        ["linkText=Test", "linkText"],
+        ["css=#navbarDropdown", "css:finder"],
+        ["xpath=//a[contains(text(),'Test')]", "xpath:link"],
+        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb06e443-4e0d-471e-a0c4-7be32887e28e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Homepagina",
+      "targets": [
+        ["linkText=Homepagina", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Homepagina')]", "xpath:link"],
+        ["xpath=//a[@href='http://127.0.0.1:8000']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Homepagina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c77661db-6395-4452-89e4-2584a9f4633c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contact",
+      "targets": [
+        ["linkText=Contact", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Contact')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/contact']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Contact')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e28aaef6-7d88-46d7-a974-1cf8f2a293e4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1288x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5eab5c0b-53e4-4911-b839-37b6690e844c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(5)",
+      "targets": [
+        ["css=p:nth-child(5)", "css:finder"],
+        ["xpath=//p[4]", "xpath:position"],
+        ["xpath=//p[contains(.,'E-mail: ShowEmail@email.com')]", "xpath:innerText"]
+      ],
+      "value": "E-mail: ShowEmail@email.com"
+    }]
+  }, {
+    "id": "c1f8b7a3-191f-4683-88b1-36744c3a881a",
+    "name": "Edit address",
+    "commands": [{
+      "id": "423af724-a6bf-4699-858b-95fe54def610",
+      "comment": "",
+      "command": "open",
+      "target": "/cms",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "17e55d14-10cd-42bd-a046-ee87e4877887",
+      "comment": "",
+      "command": "click",
+      "target": "css=.m-cms__sidebar__item:nth-child(3) > span",
+      "targets": [
+        ["css=.m-cms__sidebar__item:nth-child(3) > span", "css:finder"],
+        ["xpath=//a[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contactpagina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7910c8f1-9d98-448b-8353-902f29cc0ca4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.clickable:nth-child(2) > td:nth-child(1)",
+      "targets": [
+        ["css=.clickable:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[2]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Contactinformatie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d50b0e1-f7a3-425b-a846-e8301f44c575",
+      "comment": "",
+      "command": "click",
+      "target": "id=Adres",
+      "targets": [
+        ["id=Adres", "id"],
+        ["name=Adres", "name"],
+        ["css=#Adres", "css:finder"],
+        ["xpath=//input[@id='Adres']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5620e5ad-f5b2-435e-81cd-e1b573700254",
+      "comment": "",
+      "command": "click",
+      "target": "id=Adres",
+      "targets": [
+        ["id=Adres", "id"],
+        ["name=Adres", "name"],
+        ["css=#Adres", "css:finder"],
+        ["xpath=//input[@id='Adres']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9fdc125-1e1c-4420-a9ad-432bd9bb1209",
+      "comment": "",
+      "command": "type",
+      "target": "id=Adres",
+      "targets": [
+        ["id=Adres", "id"],
+        ["name=Adres", "name"],
+        ["css=#Adres", "css:finder"],
+        ["xpath=//input[@id='Adres']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Bosstraat 16, 2153AJ"
+    }, {
+      "id": "93f486b1-70f5-4de7-89fe-18f73a227e4e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Opslaan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bee9956-acde-431e-83da-278a1c1b4cfd",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbarDropdown",
+      "targets": [
+        ["id=navbarDropdown", "id"],
+        ["linkText=Test", "linkText"],
+        ["css=#navbarDropdown", "css:finder"],
+        ["xpath=//a[contains(text(),'Test')]", "xpath:link"],
+        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7c837c3-0f64-4f06-8f9b-df4f337ff609",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Homepagina",
+      "targets": [
+        ["linkText=Homepagina", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Homepagina')]", "xpath:link"],
+        ["xpath=//a[@href='http://127.0.0.1:8000']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Homepagina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "078ba673-5f8d-481a-8f03-fe26d12a20da",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contact",
+      "targets": [
+        ["linkText=Contact", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Contact')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/contact']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Contact')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46947def-63b4-4e71-866e-3ac6cb8b9a56",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1288x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f33fdf4-0e36-4422-834e-edcf8879cd8d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.m-contact__contact--details > p:nth-child(2)",
+      "targets": [
+        ["css=.m-contact__contact--details > p:nth-child(2)", "css:finder"],
+        ["xpath=//div[2]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Bezoekadres: Bosstraat 16, 2153AJ')]", "xpath:innerText"]
+      ],
+      "value": "Bezoekadres: Bosstraat 16, 2153AJ"
+    }]
+  }, {
+    "id": "67261e61-ad2d-4488-93df-57119c646e7b",
+    "name": "Edit phonenumber",
+    "commands": [{
+      "id": "ede8875a-6c87-46a4-b3e8-17d226b2660e",
+      "comment": "",
+      "command": "open",
+      "target": "/cms",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56e36166-b5e5-4db0-8ce3-9c8f603b082f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.m-cms__sidebar__item:nth-child(3) > span",
+      "targets": [
+        ["css=.m-cms__sidebar__item:nth-child(3) > span", "css:finder"],
+        ["xpath=//a[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contactpagina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8f5d656-3774-49ff-b60d-f05b591e9fa4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.clickable:nth-child(2) > td:nth-child(1)",
+      "targets": [
+        ["css=.clickable:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[2]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Contactinformatie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "070fe8d4-a08a-45c5-bb19-ed187ef007ff",
+      "comment": "",
+      "command": "click",
+      "target": "id=Telefoon",
+      "targets": [
+        ["id=Telefoon", "id"],
+        ["name=Telefoon", "name"],
+        ["css=#Telefoon", "css:finder"],
+        ["xpath=//input[@id='Telefoon']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58bc5b90-23e4-4a57-ac74-31d9c70eb8b7",
+      "comment": "",
+      "command": "type",
+      "target": "id=Telefoon",
+      "targets": [
+        ["id=Telefoon", "id"],
+        ["name=Telefoon", "name"],
+        ["css=#Telefoon", "css:finder"],
+        ["xpath=//input[@id='Telefoon']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "06-20211203"
+    }, {
+      "id": "edaca8ff-71e1-4b8b-a876-24d037c70fa7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Opslaan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aaa5b3ac-2bc8-45e1-860f-f07fee8a2943",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbarDropdown",
+      "targets": [
+        ["id=navbarDropdown", "id"],
+        ["linkText=Test", "linkText"],
+        ["css=#navbarDropdown", "css:finder"],
+        ["xpath=//a[contains(text(),'Test')]", "xpath:link"],
+        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "920b52be-da84-4ed6-b27e-9e7f0c28e61a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Homepagina",
+      "targets": [
+        ["linkText=Homepagina", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Homepagina')]", "xpath:link"],
+        ["xpath=//a[@href='http://127.0.0.1:8000']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Homepagina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c970bdae-f08a-477a-ad80-46844872e9f2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contact",
+      "targets": [
+        ["linkText=Contact", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Contact')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/contact']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Contact')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d613194-b046-4757-a387-6d01b228d1ce",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1288x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "99cffefd-9fbc-40a9-b19c-f08f8e61f974",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(3)",
+      "targets": [
+        ["css=p:nth-child(3)", "css:finder"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'t wqefqweewqfqw')]", "xpath:innerText"]
+      ],
+      "value": "t 06-20211203"
+    }]
+  }, {
+    "id": "8a338bf4-db95-4597-9bce-5b039df87d33",
+    "name": "Edit faxnumber",
+    "commands": [{
+      "id": "60541a6f-8af5-4a41-a3d6-8e6d1feb038b",
+      "comment": "",
+      "command": "open",
+      "target": "/cms",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2eb84575-bc45-48f9-ab52-4a6b6faa7b5c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.m-cms__sidebar__item:nth-child(3) > span",
+      "targets": [
+        ["css=.m-cms__sidebar__item:nth-child(3) > span", "css:finder"],
+        ["xpath=//a[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contactpagina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "43024b1f-49ec-4f35-bedf-1bc93e044081",
+      "comment": "",
+      "command": "click",
+      "target": "css=.clickable:nth-child(2) > td:nth-child(1)",
+      "targets": [
+        ["css=.clickable:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[2]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Contactinformatie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c513ca2d-f6bc-4f89-8b15-f86c9ad2d315",
+      "comment": "",
+      "command": "click",
+      "target": "id=Fax",
+      "targets": [
+        ["id=Telefoon", "id"],
+        ["name=Telefoon", "name"],
+        ["css=#Telefoon", "css:finder"],
+        ["xpath=//input[@id='Telefoon']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22642d67-3ec9-489d-b643-85ad9b3f5ef7",
+      "comment": "",
+      "command": "type",
+      "target": "id=Fax",
+      "targets": [
+        ["id=Telefoon", "id"],
+        ["name=Telefoon", "name"],
+        ["css=#Telefoon", "css:finder"],
+        ["xpath=//input[@id='Telefoon']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "06-20211203"
+    }, {
+      "id": "3d1caae1-6d9a-482a-8727-6428631c1a0c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Opslaan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd4b399f-b965-4f23-b935-6cf7881d2749",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbarDropdown",
+      "targets": [
+        ["id=navbarDropdown", "id"],
+        ["linkText=Test", "linkText"],
+        ["css=#navbarDropdown", "css:finder"],
+        ["xpath=//a[contains(text(),'Test')]", "xpath:link"],
+        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42467902-caeb-4214-bc99-192abf44e3a3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Homepagina",
+      "targets": [
+        ["linkText=Homepagina", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Homepagina')]", "xpath:link"],
+        ["xpath=//a[@href='http://127.0.0.1:8000']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Homepagina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ac77c56-1a08-4942-9d4f-b9819db1230e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contact",
+      "targets": [
+        ["linkText=Contact", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Contact')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/contact']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Contact')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5956bc5-ec75-422f-9bdb-28b0816854af",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1288x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b92996ff-787a-4302-98b9-c3cbfadc25c5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(4)",
+      "targets": [
+        ["css=p:nth-child(4)", "css:finder"],
+        ["xpath=//p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'f 06-20211203')]", "xpath:innerText"]
+      ],
+      "value": "f 06-20211203"
     }]
   }],
   "suites": [{
