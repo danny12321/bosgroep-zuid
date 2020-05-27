@@ -17,6 +17,7 @@ class MunicipalityTableSeeder extends Seeder
             'slug' => "horst",
             'lat' => 51.4503945,
             'long' => 6.0514924,
+            'zoom' => 10
         ]);
 
         DB::table('municipalities')->insert([
@@ -25,6 +26,7 @@ class MunicipalityTableSeeder extends Seeder
             'slug' => "weert",
             'lat' => 51.2439415,
             'long' => 5.7142222,
+            'zoom' => 10
         ]);
 
         DB::table('municipalities')->insert([
@@ -33,6 +35,7 @@ class MunicipalityTableSeeder extends Seeder
             'slug' => "denhaag",
             'lat' => 52.0704978,
             'long' => 4.3006999,
+            'zoom' => 10
         ]);
         
         DB::table('municipalities')->insert([
@@ -41,6 +44,7 @@ class MunicipalityTableSeeder extends Seeder
             'slug' => "tilburg",
             'lat' => 51.560596,
             'long' => 5.0919143,
+            'zoom' => 10
         ]);
     }
 }

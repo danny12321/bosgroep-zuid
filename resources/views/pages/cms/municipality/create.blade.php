@@ -1,9 +1,13 @@
 @extends('layouts.cms')
 
+@section('head')
+    @include('inc.openlayers')
+@endsection
+
 @section('content')
     <h1>Gemeente toevoegen</h1>
 
-    <form method="POST" action="{{ route('cms_municipality_store') }}">
+    <form id="municipality-form" method="POST" action="{{ route('cms_municipality_store') }}">
         @csrf
 
         <div class="form-group">
@@ -28,7 +32,7 @@
                 </div>
             @enderror
         </div>
-
+        
         <div class="form-group">
             <label for="legend">Legenda url</label>
             <input class="form-control @error('legend') is-invalid @enderror" value="{{ old('legend', 'http://gmd.has.nl:8080/geoserver/biodiversiteithorst/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=biodiversiteithorst:StijlStressfactoren&legend_options=dx:5;&TRANSPARENT=true') }}" type="url" name="legend" id="legend">
@@ -42,27 +46,36 @@
         </div>
 
         <div class="form-group">
-            <label for="lat">Breedtegraad (Lat)</label>
-            <input class="form-control @error('lat') is-invalid @enderror" value="{{ old('lat') }}" type="number" step="any" name="lat" id="lat">
+            <label>Standaard kaart weergaven</label>
+            <div id="map"
+                style="height: 500px"
+            ></div>
 
             @error('lat') 
                 <div class="invalid-feedback">
                     {{ $errors->first("lat") }}
                 </div>
             @enderror
-        </div>
-
-        <div class="form-group">
-            <label for="long">Lengtegraad (Long)</label>
-            <input class="form-control @error('long') is-invalid @enderror" value="{{ old('long') }}" type="number" step="any" name="long" id="long">
 
             @error('long') 
                 <div class="invalid-feedback">
                     {{ $errors->first("long") }}
                 </div>
             @enderror
+
+            @error('zoom') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("zoom") }}
+                </div>
+            @enderror
         </div>
+
+        <input class="form-control d-none @error('lat') is-invalid @enderror" value="{{ old('lat') }}" type="number" step="any" name="lat" id="lat">
+        <input class="form-control d-none @error('long') is-invalid @enderror" value="{{ old('long') }}" type="number" step="any" name="long" id="long">
+        <input class="form-control d-none @error('zoom') is-invalid @enderror" value="{{ old('zoom') }}" type="number" step="any" name="zoom" id="zoom">
 
         <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>
-@endsection 
+
+    <script src="{{ asset('js/municipalityMap.js') }}" defer></script>
+@endsection

@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 class MunicipalityCMSController extends Controller
 {
     public function show(Municipality $municipality)
-    {   
+    {
         return view('pages.cms.municipality.municipality', [
             'municipality' => $municipality,
             'layers' => $municipality->layers,
@@ -31,7 +31,7 @@ class MunicipalityCMSController extends Controller
             'municipalities' => Municipality::all()
         ]);
     }
-    
+
     public function create()
     {
         return view('pages.cms.municipality.create');
@@ -40,13 +40,13 @@ class MunicipalityCMSController extends Controller
     public function store()
     {
         $this->validateLayer();
-
         Municipality::create([
             'name' => request("name"),
             'slug' => request("slug"),
             'legend' => request("legend"),
             'lat'=> request("lat"),
-            'long'=> request("long")
+            'long'=> request("long"),
+            'zoom' => request("zoom")
         ]);
 
         return redirect()->route('cms_municipality_index');
@@ -74,7 +74,8 @@ class MunicipalityCMSController extends Controller
         $municipality->legend = request("legend");
         $municipality->lat = request("lat");
         $municipality->long = request("long");
-        
+        $municipality->zoom = request("zoom");
+
         $municipality->save();
 
         return redirect()->route('cms_municipality_index');
@@ -87,7 +88,8 @@ class MunicipalityCMSController extends Controller
             'slug' => ['required'],
             'legend' => ['required', 'url'],
             'lat' => ['numeric'],
-            'long' => ['numeric']
+            'long' => ['numeric'],
+            'zoom' => ['numeric']
         ]);
     }
 }

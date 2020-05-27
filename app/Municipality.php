@@ -13,7 +13,8 @@ class Municipality extends Model
         'slug',
         'legend',
         'lat',
-        'long'
+        'long',
+        'zoom'
     ];
 
     public function layers()

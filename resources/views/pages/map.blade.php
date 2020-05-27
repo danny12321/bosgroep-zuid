@@ -2,10 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('inc.head')
-
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
+    @include('inc.openlayers')
 </head>
 <body>
     <div class="m-map--container">
@@ -22,6 +19,7 @@
 	<div class="m-php">
 		<div class="m-php__lat">{{$municipality->lat}}</div>
 		<div class="m-php__long">{{$municipality->long}}</div>
+		<div class="m-php__zoom">{{$municipality->zoom}}</div>
 	</div>
 </body>
 </html>

@@ -4,5 +4,6 @@
     "/css/app.css": "/css/app.css",
     "/js/home.js": "/js/home.js",
     "/js/map.js": "/js/map.js",
+    "/js/municipalityMap.js": "/js/municipalityMap.js",
     "/js/questions.js": "/js/questions.js"
 }

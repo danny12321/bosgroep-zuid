@@ -7,6 +7,7 @@
 /public/js/home.js
 /public/js/answerQuestion.js
 /public/js/questions.js
+/public/js/municipalityMap.js
 /storage/*.key
 /vendor
 .env
