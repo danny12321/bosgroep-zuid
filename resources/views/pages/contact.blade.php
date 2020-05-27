@@ -15,10 +15,10 @@
                 <p>Wij willen graag uw feedback horen, deze kunt u hieronder invullen. Voor andere vragen kunt u ons bereiken op de onderstaande contactgegevens. </p>
                 <div class="m-contact__contact--details">
                     <h2>Onze contactgegevens</h2>
-                    <p>Bezoekadres: Huisvenseweg 14, 5591 VD HEEZE</p>
-                    <p>t <a href="tel:(040)20 66 360">(040) 20 66 360</a></p>
-                    <p><a>f (040) 20 66 361 </a></p>
-                    <p>E-mail: <a href="mailto:zuidnederland@bosgroepen.nl">zuidnederland@bosgroepen.nl</a></p>
+                    <p>Bezoekadres: {{$contact['adres']}}</p>
+                    <p>t <a href="tel:{{$contact['telefoon']}}">{{$contact['telefoon']}}</a></p>
+                    <p><a>f {{$contact['fax']}} </a></p>
+                    <p>E-mail: <a href="mailto:{{$contact['emailadres']}}">{{$contact['emailadres']}}</a></p>
                 </div>
             </div>
             <div>
