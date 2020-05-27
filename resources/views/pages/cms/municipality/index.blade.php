@@ -4,7 +4,7 @@
     <div class="m-card">
 
         <div class="m-municipality__grid__grid--item__header">
-            <h2>Gemeentes</h2>
+            <h1>Gemeentes</h1>
             <a href="{{ route('cms_municipality_create') }}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
         </div>
     

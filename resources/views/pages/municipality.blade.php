@@ -7,13 +7,15 @@
 
 @section('content')
 	<div class="container">
-		@if (is_null($municipality->logo))
+		
+		<div class="m-municipality__title">
+			@if (!is_null($municipality->logo))
+				<img class="m-municipality__img" src="{{ asset($municipality->logo) }}" height="40px" width="auto">	
+			@endif
+	
 			<h1>{{ $municipality->name }}</h1>
-		@else
-			<h1>
-			<img src="{{asset($municipality->logo)}}"  height="40px" width="auto">	
-			{{ $municipality->name }}</h1>
-		@endif
+		</div>
+
 		
 		@if (count($municipality->questions) > 0)
 			<div>
