@@ -7,7 +7,7 @@ export default class Map {
         this.measures = measures;
         this.targetElement = targetElement
         this.layers = [];
-        this.url_geoserver = document.querySelector('.m-php__url-geoserver').innerHTML;
+        this.url_geoserver = document.querySelector('.m-php__url-geoserver') ? document.querySelector('.m-php__url-geoserver').innerHTML : '';
         this.map = this.createMap(zoom);
         this.allLayers = allLayers;
 
