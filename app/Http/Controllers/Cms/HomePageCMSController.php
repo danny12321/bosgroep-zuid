@@ -50,7 +50,7 @@ class HomePageCMSController extends Controller
             }
             $homepage->homeImage = "public/storage/assets/img/header" . '.' . $extencion;
             $fileNameToStore = "header" . '.' . $extencion;
-            $request->file('homeImage')->storeAs('public/storage/assets/img', $fileNameToStore);
+            $request->file('homeImage')->storeAs('public/assets/img', $fileNameToStore);
             $homepage->save();
         }
         
