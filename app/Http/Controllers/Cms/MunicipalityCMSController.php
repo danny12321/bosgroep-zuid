@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Cms;
 
 use App\GuideSpecie;
+use App\HomePage;
 use App\Http\Controllers\Controller;
 use App\Municipality;
 use App\Layer;
@@ -37,7 +38,9 @@ class MunicipalityCMSController extends Controller
 
     public function create()
     {
-        return view('pages.cms.municipality.create');
+        return view('pages.cms.municipality.create', [
+            'url_geoserver' => HomePage::First()->url_geoserver
+        ]);
     }
 
     public function store(Request $request)
@@ -73,6 +76,7 @@ class MunicipalityCMSController extends Controller
     public function edit(Municipality $municipality)
     {
         return view('pages.cms.municipality.edit', [
+            'url_geoserver' => HomePage::First()->url_geoserver,
             'municipality' => $municipality
         ]);
     }
