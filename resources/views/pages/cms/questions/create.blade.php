@@ -22,11 +22,12 @@
             <h2>Antwoorden</h2>
             <div class="m-question__edit__answers">
                 <div class="row">
-                    <div class="col-md-10 form-group">
+                    <div class="col-md-10">
                         <input type="text" class="form-control" placeholder="Antwoord">
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-info">Selecteer lagen</button>
+                    <div class="col-md-2 flex">
+                        <button id="openLayers" class="btn btn-info">Selecteer lagen</button>
+                        <button id="removeAnswer"class="btn btn-danger">Verwijder</button>
                     </div>
 
                     <div class="col-md-12">

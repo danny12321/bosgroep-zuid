@@ -1,13 +1,13 @@
 import LayerContainer from './Layer';
 
 export default class Map {
-    constructor(targetElement, lat, long, measures, allLayers) {
+    constructor(targetElement, lat, long, zoom, measures, allLayers) {
         this.lat = lat;
         this.long = long;
         this.measures = measures;
         this.targetElement = targetElement
         this.layers = [];
-        this.map = this.createMap();
+        this.map = this.createMap(zoom);
         this.allLayers = allLayers;
 
         this.inputs = document.querySelectorAll(".m-map--container__selections input");
@@ -21,11 +21,10 @@ export default class Map {
     setInitalLayers() {
         this.inputs.forEach(i => {
             //let checkboxes = document.getElementsByName(i.name);
-            if(i.checked){
+            if (i.checked) {
                 this.map.addLayer(this.findLayer(i.value).layer)
             }
         });
-            
     }
 
     setEventListeners() {
@@ -44,7 +43,7 @@ export default class Map {
                     let checkboxes = document.getElementsByName(i.name);
 
                     for (let j = 0; j < checkboxes.length; ++j) {
-                       checkboxes[j].checked = false;
+                        checkboxes[j].checked = false;
                     }
                     this.addMeasures();
                     this.map.removeLayer(this.findLayer(i.value).layer)
@@ -84,7 +83,9 @@ export default class Map {
                 else if(this.measures[i].problem_id == checklist[j].problem_id && this.measures[i].problem_id != null){
                     measurelist.push(this.measures[i]);
                 }
+
             }
+
         }
 
         measurelist.map(measure => {
@@ -117,7 +118,7 @@ export default class Map {
         this.layers.push(layerContainer);
     }
 
-    createMap() {
+    createMap(zoom) {
         return new ol.Map({
             target: this.targetElement,
             layers: [
@@ -127,7 +128,7 @@ export default class Map {
             ],
             view: new ol.View({
                 center: ol.proj.fromLonLat([this.long, this.lat]),
-                zoom: 10
+                zoom
             })
         });
     }
