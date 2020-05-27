@@ -1,6 +1,6 @@
 import LayerContainer from './Layer';
 
-export default class Map 
+export default class Map {
     constructor(targetElement, lat, long, zoom, measures, allLayers) {
         this.lat = lat;
         this.long = long;
