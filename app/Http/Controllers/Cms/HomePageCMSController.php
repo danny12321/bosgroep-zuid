@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Cms;
 
 use App\HomePage;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
@@ -31,10 +32,28 @@ class HomePageCMSController extends Controller
     public function HomeImage()
     {
         $homepage = HomePage::first();
-        dump($homepage);
-        die();
+        return view('pages.cms.home.homeimage', [
+            'Img_url' => $homepage->homeImage
+        ]);
     }
 
+    public function ImageStore(Request $request){
+        if($request->hasFile('homeImage'))
+        {
+            $homepage = HomePage::first();
+            $homeimage = $homepage->homeImage;
+            $extencion = $request->file('homeImage')->getClientOriginalExtension();
+            if (Storage::exists("public/assets/img/header" . "." . $extencion)) {
+                Storage::delete("public/assets/img/header" . "." . $extencion);
+            }
+            $homepage->homeImage = "public/assets/img/header" . '.' . $extencion;
+            $fileNameToStore = "header" . '.' . $extencion;
+            $request->file('homeImage')->storeAs('public/assets/img', $fileNameToStore);
+            $homepage->save();
+        }
+        
+        return redirect()->route('cms_homepage_show');
+    }
 
     public function HomeTextStore()
     {

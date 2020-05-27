@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="l-home__header">
+    <div class="l-home__header__{{$extension}}">
         <div class="l-home__header__filter">
             <h1>Bekijk de biodiversiteit in jouw gemeente</h1>
 

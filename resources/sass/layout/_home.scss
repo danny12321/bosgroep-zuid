@@ -1,11 +1,29 @@
 .l-home {
     &__header {
-        height: 500px;
-        width: 100%;
-        position: relative;
-        background-image: url("/assets/img/header.jpg");
-        background-size: cover;
-        background-position: center;
+        &__jpg{
+            height: 500px;
+            width: 100%;
+            position: relative;
+            background-image: url("../../../storage/app/public/assets/img/header.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        &__jpeg{
+            height: 500px;
+            width: 100%;
+            position: relative;
+            background-image: url("../../../storage/app/public/assets/img/header.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        &__png{
+            height: 500px;
+            width: 100%;
+            position: relative;
+            background-image: url("../../../storage/app/public/assets/img/header.png");
+            background-size: cover;
+            background-position: center;
+        }
     
         &__filter {
             position: absolute;
