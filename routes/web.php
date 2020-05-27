@@ -56,6 +56,7 @@ Route::post('/cms/municipalities/layers', 'Cms\LayersController@store')->name('c
 Route::delete('/cms/municipality/{municipality}/layer/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
 
+Route::get('/cms/municipality/{municipality}/question/{question}', 'Cms\QuestionsController@show')->name('cms_questions_show')->middleware('auth');   
 Route::get('/cms/municipality/{municipality}/questions/create', 'Cms\QuestionsController@create')->name('cms_questions_create');
 Route::post('/cms/municipality/{municipality}/questions', 'Cms\QuestionsController@store')->name('cms_questions_store');
 Route::get('/cms/municipality/{municipality}/questions/{question}/edit', 'Cms\QuestionsController@edit')->name('cms_questions_edit');
