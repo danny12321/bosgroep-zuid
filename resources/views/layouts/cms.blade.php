@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('inc.head')
+    @yield('head')
 </head>
 <body>
     <div class="m-cms">
@@ -37,6 +38,8 @@
 
         <div class="m-cms__sidebar">
             <a href="{{ route('cms_municipality_index') }}" class="m-cms__sidebar__item"><i class="fas fa-city"></i> <span>Gemeentes</span></a>
+            <a href="{{ route('cms_homepage_show') }}" class="m-cms__sidebar__item"><i class="fas fa-home"></i> <span>Homepagina</span></a>
+            <a href="{{ route('cms_contact_show') }}" class="m-cms__sidebar__item"><i class="far fa-address-card"></i> <span>Contactpagina</span></a>
         </div>
 
         <div class="m-cms__content">

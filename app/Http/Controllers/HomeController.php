@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\HomePage;
 use Illuminate\Http\Request;
 use App\Municipality;
 
@@ -24,8 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $homepage = HomePage::first();
+
         return view('pages.home', [
-            "municipalities" => Municipality::All()
+            "HomeText" => $homepage->homeText, 
+            "HomeImage" => $homepage->homeImage,
+            "municipalities" => Municipality::orderBy('name', 'ASC')->get()
         ]);
     }
 }

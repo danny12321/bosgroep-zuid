@@ -16,9 +16,11 @@ class CreateMunicipalitiesTable extends Migration
         Schema::create('municipalities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
+            $table->string('legend', 2048);
             $table->string('slug', 100)->unique();
             $table->decimal('lat', 10, 7);
             $table->decimal('long', 10, 7);
+            $table->string('logo')->nullable();
         });
     }
 

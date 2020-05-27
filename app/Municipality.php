@@ -11,8 +11,11 @@ class Municipality extends Model
     protected $fillable = [
         'name',
         'slug',
+        'legend',
         'lat',
-        'long'
+        'long',
+        'logo',
+        'zoom'
     ];
 
     public function layers()
@@ -23,5 +26,20 @@ class Municipality extends Model
     public function questions()
     {
         return $this->hasMany(Question::class, 'municipality_id', 'id');
+    }
+
+    public function guide_species()
+    {
+        return $this->hasMany(GuideSpecie::class, 'municipality_id', 'id');
+    }
+
+    public function problems()
+    {
+        return $this->hasMany(Problem::class, 'municipality_id', 'id');
+    }
+
+    public function layers_without_guidespecie()
+    {
+        return $this->hasMany(Layer::class, 'municipality_id', 'id')->where('guidespecie_id', '=', null)->orderBy('title');
     }
 }

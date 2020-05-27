@@ -3,6 +3,7 @@
     $cms-sidebar-width: 230px;
     
     &__navbar {
+        background: white;
         height: $cms-nav-height;
         box-shadow: 0px 5px 5px 0px #d7d7d78c;
         display: flex;
@@ -29,6 +30,7 @@
     }
 
     &__sidebar {
+        background: white;
         position: fixed;
         top: $cms-nav-height;
         left: 0;

@@ -26,10 +26,22 @@ Route::get('/gemeentes/{slug}/questionnaire', 'MunicipalityController@questionna
 
 Route::get('/map/{slug}', 'MapController@index')->name('map');
 
-Route::get('/cms', function () {
-    return view('pages.cms.home');
-})->name('cms')->middleware('auth');
+Route::get('/cms', 'Cms\MunicipalityCMSController@index')->name('cms')->middleware('auth');
 
+
+Route::get('/cms/homepage', 'Cms\HomePageCMSController@show')->name('cms_homepage_show');
+Route::get('/cms/homepage/hometext', 'Cms\HomePageCMSController@HomeText')->name('cms_homepage_HomeText');
+Route::get('/cms/homepage/geoserver', 'Cms\HomePageCMSController@GeoServer')->name('cms_homepage_GeoServer');
+Route::put('/cms/homepage/hometext/edit', 'Cms\HomePageCMSController@HomeTextStore')->name('cms_homepage_editText');
+Route::put('/cms/homepage/geoserver/edit', 'Cms\HomePageCMSController@GeoServerStore')->name('cms_homepage_editServer');
+Route::post('/cms/homepage/geoserver/edit', 'Cms\HomePageCMSController@ImageStore')->name('cms_homepage_editImage');
+Route::get('/cms/homepage/homeimage', 'Cms\HomePageCMSController@HomeImage')->name('cms_homepage_HomeImage');
+
+Route::get('/cms/contactpage', 'Cms\ContactController@show')->name('cms_contact_show');
+Route::get('/cms/contactpage/feedback', 'Cms\ContactController@feedback')->name('cms_Contactpage_feedback');
+Route::put('/cms/contactpage/feedback/update', 'Cms\ContactController@feedbackUpdate')->name('cms_Contactpage_feedback_Update');
+Route::get('/cms/contactpage/contactinfo', 'Cms\ContactController@contact')->name('cms_Contactpage_contact');
+Route::put('/cms/contactpage/contactinfo/update', 'Cms\ContactController@contactUpdate')->name('cms_Contactpage_contact_Update');
 
 
 Route::delete('/cms/municipality/{municipality}/selection/{selection}', 'Cms\Selection\SelectionController@destroy')->name('cms_selection_destroy');
@@ -56,6 +68,7 @@ Route::post('/cms/municipalities/layers', 'Cms\LayersController@store')->name('c
 Route::delete('/cms/municipality/{municipality}/layer/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
 
+Route::get('/cms/municipality/{municipality}/question/{question}', 'Cms\QuestionsController@show')->name('cms_questions_show')->middleware('auth');   
 Route::get('/cms/municipality/{municipality}/questions/create', 'Cms\QuestionsController@create')->name('cms_questions_create');
 Route::post('/cms/municipality/{municipality}/questions', 'Cms\QuestionsController@store')->name('cms_questions_store');
 Route::get('/cms/municipality/{municipality}/questions/{question}/edit', 'Cms\QuestionsController@edit')->name('cms_questions_edit');
@@ -65,12 +78,20 @@ Route::delete('/cms/municipality/{municipality}/questions/{question}', 'Cms\Ques
 
 Route::get('/cms/municipality/{municipality}/measure/create', 'Cms\MeasuresController@create')->name('cms_measure_create');
 Route::post('/cms/municipalities/measure', 'Cms\MeasuresController@store')->name('cms_measure_store');
-Route::delete('/cms/municipality/{municipality}/measure/{measure}', 'Cms\MeasuresController@destroy')->name('cms_measure_destroy');
+Route::delete('/cms/municipality/measure/{measure}', 'Cms\MeasuresController@destroy')->name('cms_measure_destroy');
+Route::get('/cms/municipality/{measure}/measure/edit', 'Cms\MeasuresController@edit')->name('cms_measure_edit')->middleware('auth');
+Route::put('/cms/municipality/{measure}/measure', 'Cms\MeasuresController@update')->name('cms_measure_update')->middleware('auth');
 
 Route::get('/cms/municipality/{municipality}/guidespecies/create', 'Cms\GuideSpeciesController@create')->name('cms_guidespecies_create');
 Route::post('/cms/municipalities/guidespecies', 'Cms\GuideSpeciesController@store')->name('cms_guidespecies_store');
 Route::delete('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@destroy')->name('cms_guidespecies_destroy');
 Route::put('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@update')->name('cms_guidespecies_update');
 Route::get('/cms/municipality/{municipality}/guidespecies/{guideSpecie}/edit', 'Cms\GuideSpeciesController@edit')->name('cms_guidespecies_edit');
+
+Route::get('/cms/municipality/{municipality}/problem/create', 'Cms\ProblemController@create')->name('cms_problem_create');
+Route::post('/cms/municipalities/problem', 'Cms\ProblemController@store')->name('cms_problem_store');
+Route::delete('/cms/municipality/problem/{problem}', 'Cms\ProblemController@destroy')->name('cms_problem_destroy');
+Route::get('/cms/municipality/{problem}/problem/edit', 'Cms\ProblemController@edit')->name('cms_problem_edit')->middleware('auth');
+Route::put('/cms/municipality/{problem}/problem', 'Cms\ProblemController@update')->name('cms_problem_update')->middleware('auth');
 
 Auth::routes();

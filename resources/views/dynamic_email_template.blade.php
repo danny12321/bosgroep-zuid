@@ -1,6 +1,11 @@
-<p>Hallo</p>
-<p>Ik heb wat feed back op de website: </p>
-<p> {{ $data['feedback'] }}.</p>
-<p>Ik hou het fijn vinden als u deze feedback door leest</p>
-<p>Met vriendlijke Groet</p>
-<p>{{$data['naam']}}</p>
+Hallo
+<br>
+Ik heb wat feed back op de website: 
+<br>
+{{ $data['feedback'] }}.
+<br>
+Ik hou het fijn vinden als u deze feedback door leest
+<br>
+Met vriendlijke Groet,
+<br>
+{{$data['naam']}}
