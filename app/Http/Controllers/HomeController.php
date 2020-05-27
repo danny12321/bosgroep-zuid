@@ -25,13 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $substring = explode(".", HomePage::first()->homeImage);
-        $extension = $substring[1];
+        $homepage = HomePage::first();
 
         return view('pages.home', [
-            "HomeText" => HomePage::first()->homeText, 
-            "HomeImage" => HomePage::first()->homeImage,
-            "extension" => $extension,
+            "HomeText" => $homepage->homeText, 
+            "HomeImage" => $homepage->homeImage,
             "municipalities" => Municipality::All()
         ]);
     }
