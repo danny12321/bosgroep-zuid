@@ -32,8 +32,10 @@ class HomePageCMSController extends Controller
     public function HomeImage()
     {
         $homepage = HomePage::first();
+        $substring = explode(".", HomePage::first()->homeImage);
+        $extension = $substring[1];
         return view('pages.cms.home.homeimage', [
-            'Img_url' => $homepage->homeImage
+            'extension' => $extension
         ]);
     }
 
@@ -43,12 +45,12 @@ class HomePageCMSController extends Controller
             $homepage = HomePage::first();
             $homeimage = $homepage->homeImage;
             $extencion = $request->file('homeImage')->getClientOriginalExtension();
-            if (Storage::exists("public/assets/img/header" . "." . $extencion)) {
-                Storage::delete("public/assets/img/header" . "." . $extencion);
+            if (Storage::exists("public/storage/assets/img/header." . "." . $extencion)) {
+                Storage::delete("public/storage/assets/img/header" . "." . $extencion);
             }
-            $homepage->homeImage = "public/assets/img/header" . '.' . $extencion;
+            $homepage->homeImage = "public/storage/assets/img/header" . '.' . $extencion;
             $fileNameToStore = "header" . '.' . $extencion;
-            $request->file('homeImage')->storeAs('public/assets/img', $fileNameToStore);
+            $request->file('homeImage')->storeAs('public/storage/assets/img', $fileNameToStore);
             $homepage->save();
         }
         
