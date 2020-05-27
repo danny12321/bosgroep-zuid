@@ -1,6 +1,17 @@
 .m-municipality {
     color: #5e5e5e;
 
+
+    &__title {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        &__img {
+            height: 80px;
+        }
+    }
+
     &__head {
         margin-bottom: 20px;
     }
