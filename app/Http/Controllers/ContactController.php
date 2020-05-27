@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\FeedbackMail;
-
+use App\HomePage;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -11,7 +11,11 @@ class ContactController extends Controller
    
     public function index()
     {
-        return view('pages.contact');
+        $homepage = HomePage::first();
+
+        return view('pages.contact', [
+            "HomeImage" => $homepage->homeImage,
+        ]);
     }
 
     public function send(){
