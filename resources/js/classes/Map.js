@@ -52,45 +52,53 @@ export default class Map {
         })
     }
 
-    addMeasures() {
-        let measureBox = document.getElementsByClassName("m-map--container__measures").item(0);
+    addMeasures(){
+        let measuresHTMLElements = document.querySelectorAll(".m-map--container__measures__measure");
+        let measureHeader = document.querySelector(".m-map--container__measures__head");
 
-        if (measureBox) {
+        // Display none all
+        measureHeader.style.display = 'none'
+        measuresHTMLElements.forEach(el => {
+            el.style.display = 'none'
+        })
 
-            measureBox.innerHTML = "";
-            let checklist = [];
-            console.log(checklist)
-            for (let i = 0; i < this.inputs.length; i++) {
-                if (this.inputs[i].checked == true) {
-                    for (let j = 0; j < this.allLayers.length; j++) {
-                        if (this.inputs[i].name == this.allLayers[j].name) {
-                            checklist.push(this.allLayers[j]);
-                        }
+        let checklist = [];
+        let measurelist = [];
+
+        for(let i = 0; i < this.inputs.length; i++){
+            if(this.inputs[i].checked == true) {
+                for(let j = 0; j< this.allLayers.length; j++) {
+                    if(this.inputs[i].name == this.allLayers[j].name) {   
+                        checklist.push(this.allLayers[j]);
                     }
                 }
-            }
-            let measurelist = [];
-            for (let i = 0; i < this.measures.length; i++) {
-                for (let j = 0; j < checklist.length; j++) {
-                    if (this.measures[i].guidespecie_id == checklist[j].guidespecie_id && this.measures[i].guidespecie_id != null) {
-                        measurelist.push(this.measures[i]);
-                    }
-                    else if (this.measures[i].problem_id == checklist[j].problem_id && this.measures[i].problem_id != null) {
-                        measurelist.push(this.measures[i]);
-                    }
-                }
-
-            }
-            let sortedMesures = new Set(measurelist);
-            const nextMeasure = sortedMesures.values()
-            for (let i = 0; i < sortedMesures.size; i++) {
-                let measure = document.createElement("label");
-                const measureLabel = nextMeasure.next();
-                measure.innerText = " " + measureLabel.value.name + " - " + measureLabel.value.description + " ";
-                console.log(measureBox)
-                measureBox.appendChild(measure);
             }
         }
+
+        for(let i = 0; i < this.measures.length; i++){
+            for(let j = 0; j< checklist.length; j++){
+                if(this.measures[i].guidespecie_id == checklist[j].guidespecie_id && this.measures[i].guidespecie_id != null){
+                    measurelist.push(this.measures[i]);
+                }
+                else if(this.measures[i].problem_id == checklist[j].problem_id && this.measures[i].problem_id != null){
+                    measurelist.push(this.measures[i]);
+                }
+
+            }
+
+        }
+
+        measurelist.map(measure => {
+            return measure.id
+        }).forEach(id => {
+            measuresHTMLElements.forEach(el => {
+                measureHeader.style.display = 'block'
+                if(id == el.getAttribute('data-measure')) {
+                    console.log(el)
+                    el.style.display = 'block'
+                }
+            });
+        })
     }
 
     fillLayersFromHtml() {

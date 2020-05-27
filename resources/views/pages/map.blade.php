@@ -17,13 +17,12 @@
 	
 	{{-- PHP vars to JS --}}
 	<div class="m-php">
-		<div class="m-php__lat">{{$municipality->lat}}</div>
+	  <div class="m-php__lat">{{$municipality->lat}}</div>
 		<div class="m-php__long">{{$municipality->long}}</div>
-        <div class="m-php__measures">{{$measures}}</div>
-        <div class="m-php__layers">{{$layers}}</div>
-		    <div class="m-php__zoom">{{$municipality->zoom}}</div>
-	  </div>
-    <div class="m-map--container__measures">
-    </div>
+    <div class="m-php__measures">{{$measures}}</div>
+    <div class="m-php__layers">{{$layers}}</div>
+    <div class="m-php__zoom">{{$municipality->zoom}}</div>
+  </div>
+
 </body>
 </html>
