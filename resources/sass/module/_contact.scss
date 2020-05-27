@@ -1,0 +1,15 @@
+.m-contact {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 2fr 1fr;
+
+    @media only screen and (max-width: $tablet)  {
+        grid-template-columns: 1fr;
+    }
+
+    &__contact--details {
+        margin-top: 50px;
+    }
+}

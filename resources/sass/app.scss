@@ -19,10 +19,14 @@ body {
 
 .app {
     min-height:100%;
-    padding-bottom:200px;
+    padding-bottom:330px;
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @media only screen and (max-width: $mobile)  {
+        padding-bottom: 450px;
+    }
 }
 
 .content-container {
