@@ -63,11 +63,6 @@
             @enderror
         </div>
 
-
-        <div class="m-php">
-            <div class="m-php__url-geoserver">{{$url_geoserver}}</div>
-        </div>
-
         <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>
 @endsection 

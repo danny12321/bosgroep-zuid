@@ -71,7 +71,7 @@
     </form>
 
     <div class="m-php">
-        <div class="m-php__url-geoserver">{{$url_geoserver}}</div>
+        <div class="m-php__url-geoserver">{{$municipality->url_geoserver}}</div>
     </div>
     
     <form action="{{ route('cms_municipality_destroy', ['municipality' => $municipality->id]) }}" id="delete-form" method="post">
