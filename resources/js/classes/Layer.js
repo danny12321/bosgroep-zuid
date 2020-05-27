@@ -1,7 +1,8 @@
 export default class LayerContainer {
-    constructor(layerName, opacity) {
+    constructor(layerName, opacity, url_geoserver) {
         this.layerName = layerName;
         this.opacity = opacity;
+        this.url_geoserver = url_geoserver;
         this.layer = this.createLayer();
         this.layer.setOpacity(this.opacity)
     }
@@ -9,7 +10,7 @@ export default class LayerContainer {
     createLayer() {
         return new ol.layer.Image({
             source: new ol.source.ImageWMS({
-                url: 'http://gmd.has.nl:8080/geoserver/biodiversiteithorst/wms',
+                url: `${this.url_geoserver}`,
                 params: {
                     'LAYERS': this.layerName 
                 },
