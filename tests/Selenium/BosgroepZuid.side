@@ -84,6 +84,153 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "49c5056f-1beb-44ae-92c1-3a4dac90165a",
+    "name": "Legend visable",
+    "commands": [{
+      "id": "3eb02e16-c7f4-463d-8387-057dd694b3d9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b6c28125-d3b3-4caf-8568-c6aa7515d19d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e82b99b-80b4-40f3-9fd1-385272fbabb4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.l-home__participating--municipalities__municipality:nth-child(3) > .l-home__participating--municipalities__municipality__button",
+      "targets": [
+        ["css=.l-home__participating--municipalities__municipality:nth-child(3) > .l-home__participating--municipalities__municipality__button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Bekijk')])[2]", "xpath:link"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/gemeentes/horst']", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e4787a5-8570-4358-9451-33f5b97d4c65",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.m-map--container__legend",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c3f443cb-f87b-45ae-be06-35293b3e4fe6",
+    "name": "Legend edit",
+    "commands": [{
+      "id": "a954015d-18a0-4a78-9ac7-14edb4824855",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "66b79252-b640-41df-994d-8ef05d8dabad",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45cd005e-b62c-4fa1-a425-761a924441d1",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbarDropdown",
+      "targets": [
+        ["id=navbarDropdown", "id"],
+        ["linkText=Test", "linkText"],
+        ["css=#navbarDropdown", "css:finder"],
+        ["xpath=//a[contains(text(),'Test')]", "xpath:link"],
+        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e93bd3d3-a534-4f5a-902e-1c97d35f1e17",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=CMS",
+      "targets": [
+        ["linkText=CMS", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'CMS')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li[2]/div/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/cms']", "xpath:href"],
+        ["xpath=//li[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'CMS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "95b818cf-1197-48f2-80d8-a323a5c59294",
+      "comment": "",
+      "command": "click",
+      "target": "css=.clickable:nth-child(2) .fas",
+      "targets": [
+        ["css=.clickable:nth-child(2) .fas", "css:finder"],
+        ["xpath=//tr[2]/td[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa662c70-c866-4c29-9311-ad87c84ae269",
+      "comment": "",
+      "command": "type",
+      "target": "id=legend",
+      "targets": [],
+      "value": "https://picsum.photos/200/300?random"
+    }, {
+      "id": "e76ac032-4b6a-455f-a8d5-0e87e5f92c45",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='municipality-form']/div[6]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Opslaan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "44fed7fe-9708-4641-8d73-733292ac6695",
+      "comment": "",
+      "command": "click",
+      "target": "css=.clickable:nth-child(2) .fas",
+      "targets": [
+        ["css=.clickable:nth-child(2) .fas", "css:finder"],
+        ["xpath=//tr[2]/td[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "935dc6c1-c917-4673-a444-61b342f30b83",
+      "comment": "",
+      "command": "click",
+      "target": "id=map",
+      "targets": [
+        ["id=map", "id"],
+        ["css=#map", "css:finder"],
+        ["xpath=//div[@id='map']", "xpath:attributes"],
+        ["xpath=//form[@id='municipality-form']/div[4]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2fd11d2-1c9e-4cd0-ba85-421b501485cf",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=legend",
+      "targets": [],
+      "value": "https://picsum.photos/200/300?random"
+    }]
   }],
   "suites": [{
     "id": "b467cdb9-205b-4ce9-a995-aae1e8d5fad2",
