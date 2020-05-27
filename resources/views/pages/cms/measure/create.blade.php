@@ -4,7 +4,7 @@
     <div class="m-card">
         <h1>Maatregel toevoegen</h1>
         
-        <form method="POST" action="{{ route('cms_measure_store') }}">
+        <form method="POST" action="{{ route('cms_measure_store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">Naam</label>

@@ -81,7 +81,7 @@ export default class Map {
         }
         
         let uniqueMeasuresList = [...new Set(measurelist)];
-
+        console.log(uniqueMeasuresList);
         uniqueMeasuresList.forEach(measure => {
             let html = `<div class="m-map--container__measures__measure">
                             <h2>${measure.name}</h2>

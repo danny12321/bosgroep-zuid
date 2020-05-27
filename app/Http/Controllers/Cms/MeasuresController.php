@@ -43,6 +43,8 @@ class MeasuresController extends Controller
             'description' => request('description'),
             'municipality_id' => request('municipality_id'),
             'pdf_path' => $fileNameToStore,
+            'guidespecie_id' => request('guidespecie_id'),
+            'problem_id' => request('problem_id'),
         ]);
 
         return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
