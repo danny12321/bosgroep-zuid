@@ -17,7 +17,7 @@
                     <h2>Onze contactgegevens</h2>
                     <p>Bezoekadres: {{$contact['adres']}}</p>
                     <p>t <a href="tel:{{$contact['telefoon']}}">{{$contact['telefoon']}}</a></p>
-                    <p><a>f {{$contact['fax']}} </a></p>
+                    <p>f {{$contact['fax']}}</p>
                     <p>E-mail: <a href="mailto:{{$contact['emailadres']}}">{{$contact['emailadres']}}</a></p>
                 </div>
             </div>
