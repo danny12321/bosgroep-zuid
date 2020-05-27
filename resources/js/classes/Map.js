@@ -54,10 +54,11 @@ export default class Map {
     }
 
     addMeasures(){
-        let measureBox = document.getElementsByClassName("m-map--container__measures").item(0);
-        measureBox.innerHTML = "";
         let checklist = [];
-        console.log(checklist)
+        let measurelist = [];
+        let measureBox = document.querySelector(".m-map--container__measures");
+        measureBox.innerHTML = "";
+
         for(let i = 0; i < this.inputs.length; i++){
             if(this.inputs[i].checked == true){
                 for(let j = 0; j< this.allLayers.length; j++){
@@ -67,7 +68,7 @@ export default class Map {
                 }
             }
         }
-        let measurelist = [];
+
         for(let i =0; i< this.measures.length; i++){
             for(let j = 0; j< checklist.length; j++){
                 if(this.measures[i].guidespecie_id == checklist[j].guidespecie_id && this.measures[i].guidespecie_id != null){
@@ -77,17 +78,18 @@ export default class Map {
                     measurelist.push(this.measures[i]);
                 }
             }
-            
         }
-        let sortedMesures = new Set(measurelist);          
-        const nextMeasure = sortedMesures.values()
-        for(let i = 0; i < sortedMesures.size; i++){
-            let measure = document.createElement("label");
-            const measureLabel = nextMeasure.next();
-            measure.innerText = " " + measureLabel.value.name + " - " + measureLabel.value.description + " "; 
-            console.log(measureBox)         
-            measureBox.appendChild(measure); 
-        }
+        
+        let uniqueMeasuresList = [...new Set(measurelist)];
+
+        uniqueMeasuresList.forEach(measure => {
+            let html = `<div class="m-map--container__measures__measure">
+                            <h2>${measure.name}</h2>
+                            <p>${measure.description}</p>
+                        </div>`;
+
+            measureBox.insertAdjacentHTML('beforeend', html);
+        })
 
     }
 
