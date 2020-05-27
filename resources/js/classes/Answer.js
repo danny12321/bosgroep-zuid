@@ -11,7 +11,6 @@ export default class Answer {
 
         this.openLayers.addEventListener('click', this.handleOpenForm.bind(this));
         this.input.addEventListener('change', this.handleChangeAnswer.bind(this));
-        console.log(this.selectedLayers)
     }
 
     handleChangeAnswer(e) {

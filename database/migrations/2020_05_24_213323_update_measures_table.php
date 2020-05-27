@@ -36,9 +36,6 @@ class UpdateMeasuresTable extends Migration
             $table->foreign('guidespecie_id')->references('id')->on('guide_species')->onDelete('cascade');
             $table->foreign('problem_id')->references('id')->on('problems')->onDelete('cascade');
         });
-
-        //kaartenlagen worden gegenereerd op basis van gidssoort of opgave
-        Schema::dropIfExists('layer_question_answer');
  
         //maatregelen zijn nu gekoppeld aan een gidssoort of opgave
         Schema::table('measures', function (Blueprint $table) {
