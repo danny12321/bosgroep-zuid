@@ -39,7 +39,7 @@
             @endforeach
 
             <div class="form-group">
-                <input type="radio" name="guidespecie_id" id="guide-specie-null" value="" @if($guidespecie->id == $measure->guidespecie_id)) checked @endif>
+                <input type="radio" name="guidespecie_id" id="guide-specie-null" value="" @if($guidespecie->id === null)) checked @endif>
                 <label for="guide-specie-null">Geen</label>
             </div>
 
@@ -56,13 +56,13 @@
             
             @foreach ($municipality->problems as $problem)
                 <div class="form-group">
-                    <input type="radio" name="problem_id" id="problem-{{$problem->id}}" value="{{$problem->id}}" @if($problem->id == $measure->problem_id)) checked @endif>
+                    <input type="radio" name="problem_id" id="problem-{{$problem->id}}" value="{{$problem->id}}" @if($problem->id === $measure->problem_id)) checked @endif>
                     <label for="problem-{{$problem->id}}">{{$problem->name}}</label>
                 </div>
             @endforeach
 
             <div class="form-group">
-                <input type="radio" name="problem_id" id="problem-null" value="" @if($problem->id == $measure->problem_id)) checked @endif>
+                <input type="radio" name="problem_id" id="problem-null" value="" @if($problem->id === null)) checked @endif>
                 <label for="problem-null">Geen</label>
             </div>
         </div>
