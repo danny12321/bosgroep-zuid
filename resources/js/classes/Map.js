@@ -56,6 +56,8 @@ export default class Map {
         let measuresHTMLElements = document.querySelectorAll(".m-map--container__measures__measure");
         let measureHeader = document.querySelector(".m-map--container__measures__head");
 
+        if(!measuresHTMLElements.length) return
+
         // Display none all
         measureHeader.style.display = 'none'
         measuresHTMLElements.forEach(el => {
