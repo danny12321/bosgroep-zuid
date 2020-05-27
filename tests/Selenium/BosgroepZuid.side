@@ -986,16 +986,24 @@
       "value": "${laag}"
     }]
   }, {
+<<<<<<< HEAD
     "id": "c0f430b9-7fa1-4fd7-adc4-6ef9293bf255",
     "name": "Edit Adres",
     "commands": [{
       "id": "e5999fc4-137a-42a1-befc-d8fcdbfe9e9a",
+=======
+    "id": "012e97c8-14e9-4cf4-a876-3492518e971e",
+    "name": "Sorted search list",
+    "commands": [{
+      "id": "d42ac5a6-9e9f-493f-9505-d7eec50cd514",
+>>>>>>> d42cd01747311a2d42c8463333a7b975f18cddda
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
+<<<<<<< HEAD
       "id": "43bc55ce-5826-4034-8d5a-24229aa65c7d",
       "comment": "",
       "command": "setWindowSize",
@@ -1067,6 +1075,77 @@
       "target": "linkText=Logout",
       "targets": [],
       "value": "Logout"
+=======
+      "id": "4a82c5d1-fffb-4723-ab46-0ccd37bf74ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.l-home__header__filter__search__input",
+      "targets": [
+        ["css=.l-home__header__filter__search__input", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f4979d7-a250-4510-8cbf-792b7da90048",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.l-home__header__filter__search__items__item:nth-child(1) > h3",
+      "targets": [
+        ["css=.l-home__header__filter", "css:finder"],
+        ["xpath=//div[3]/div/div/div", "xpath:position"]
+      ],
+      "value": "Den Haag"
+    }]
+  }, {
+    "id": "b44f6d49-7a6d-434d-a825-01913e374691",
+    "name": "Measure pdf",
+    "commands": [{
+      "id": "0ff1dc33-3c49-4724-8c31-8c2c15482f95",
+      "comment": "",
+      "command": "open",
+      "target": "/gemeentes/horst",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42a2565a-1f23-47d2-833d-d84ac02ed23b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.list-group-item-primary:nth-child(1)",
+      "targets": [
+        ["css=.list-group-item-primary:nth-child(1)", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b56621f8-e210-4831-b9a7-df7049d43d11",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd0055bf-6ece-4e6c-aaaa-74abc7b4763e",
+      "comment": "",
+      "command": "click",
+      "target": "id=biodiversiteithorst:Alle_insecten_soortenrijkdom",
+      "targets": [
+        ["id=biodiversiteithorst:Alle_insecten_soortenrijkdom", "id"],
+        ["name=biodiversiteithorst:Alle_insecten_soortenrijkdom", "name"],
+        ["css=#biodiversiteithorst\\3A Alle_insecten_soortenrijkdom", "css:finder"],
+        ["xpath=//input[@id='biodiversiteithorst:Alle_insecten_soortenrijkdom']", "xpath:attributes"],
+        ["xpath=//div[@id='SubMenu1']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a02e5a92-d28d-4ff3-900a-e69e4e3c2071",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=body > div.app > div.content-container > div.container > div.m-map--container > div > div > div > a",
+      "targets": [],
+      "value": ""
+>>>>>>> d42cd01747311a2d42c8463333a7b975f18cddda
     }]
   }],
   "suites": [{

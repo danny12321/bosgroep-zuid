@@ -11,4 +11,9 @@ class GuideSpecie extends Model
         'name',
         'municipality_id'
     ];
+
+    public function layers()
+    {
+        return $this->hasMany(Layer::class, 'guidespecie_id', 'id');
+    }
 }

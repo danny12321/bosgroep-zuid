@@ -30,7 +30,7 @@ class HomeController extends Controller
         return view('pages.home', [
             "HomeText" => $homepage->homeText, 
             "HomeImage" => $homepage->homeImage,
-            "municipalities" => Municipality::All()
+            "municipalities" => Municipality::orderBy('name', 'ASC')->get()
         ]);
     }
 }

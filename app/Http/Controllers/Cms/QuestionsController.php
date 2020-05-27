@@ -12,6 +12,14 @@ class QuestionsController extends Controller
 {
     //
     //
+    public function show(Municipality $municipality, Question $question)
+    {
+        return view('pages.cms.questions.question', [
+            'municipality' => $municipality,
+            'question' => $question
+        ]);
+    }
+
     public function create(Municipality $municipality)
     {
         return view('pages.cms.questions.create', [

@@ -12,22 +12,6 @@ class SelectionsTableSeeder extends Seeder
      */
     public function run()
     {
-        Selection::create([
-            'name' => 'Folder 1',
-            'municipality_id' => 1
-        ]);
-
-        Selection::create([
-            'name' => 'Insecten',
-            'layer_id' => 2,
-            'parent_id' => 1,
-            'municipality_id' => 1
-        ]);
-
-        Selection::create([
-            'name' => 'Insect',
-            'layer_id' => 1,
-            'municipality_id' => 1
-        ]);
+        
     }
 }
