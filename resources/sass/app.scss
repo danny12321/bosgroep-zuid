@@ -23,6 +23,10 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @media only screen and (max-width: $mobile)  {
+        padding-bottom: 450px;
+    }
 }
 
 .content-container {
