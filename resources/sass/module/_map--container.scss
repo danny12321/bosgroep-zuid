@@ -13,4 +13,24 @@
         top: 20px;
         right: 20px;
     }
+
+    &__measures {
+        margin-top: 50px;
+
+        &__measure {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background: $lightgreen;
+
+            &__flexcontainer{
+                display: flex;
+                align-items: center;
+
+                p {
+                    flex: 1;
+                }
+            }
+        }
+    }
 }

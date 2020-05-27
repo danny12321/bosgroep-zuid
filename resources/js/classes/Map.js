@@ -54,22 +54,29 @@ export default class Map {
     }
 
     addMeasures(){
+        let measuresHTMLElements = document.querySelectorAll(".m-map--container__measures__measure");
+        let measureHeader = document.querySelector(".m-map--container__measures__head");
+
+        // Display none all
+        measureHeader.style.display = 'none'
+        measuresHTMLElements.forEach(el => {
+            el.style.display = 'none'
+        })
+
         let checklist = [];
         let measurelist = [];
-        let measureBox = document.querySelector(".m-map--container__measures");
-        measureBox.innerHTML = "";
 
         for(let i = 0; i < this.inputs.length; i++){
-            if(this.inputs[i].checked == true){
-                for(let j = 0; j< this.allLayers.length; j++){
-                    if(this.inputs[i].name == this.allLayers[j].name){   
+            if(this.inputs[i].checked == true) {
+                for(let j = 0; j< this.allLayers.length; j++) {
+                    if(this.inputs[i].name == this.allLayers[j].name) {   
                         checklist.push(this.allLayers[j]);
                     }
                 }
             }
         }
 
-        for(let i =0; i< this.measures.length; i++){
+        for(let i = 0; i < this.measures.length; i++){
             for(let j = 0; j< checklist.length; j++){
                 if(this.measures[i].guidespecie_id == checklist[j].guidespecie_id && this.measures[i].guidespecie_id != null){
                     measurelist.push(this.measures[i]);
@@ -79,18 +86,18 @@ export default class Map {
                 }
             }
         }
-        
-        let uniqueMeasuresList = [...new Set(measurelist)];
-        console.log(uniqueMeasuresList);
-        uniqueMeasuresList.forEach(measure => {
-            let html = `<div class="m-map--container__measures__measure">
-                            <h2>${measure.name}</h2>
-                            <p>${measure.description}</p>
-                        </div>`;
 
-            measureBox.insertAdjacentHTML('beforeend', html);
+        measurelist.map(measure => {
+            return measure.id
+        }).forEach(id => {
+            measuresHTMLElements.forEach(el => {
+                measureHeader.style.display = 'block'
+                if(id == el.getAttribute('data-measure')) {
+                    console.log(el)
+                    el.style.display = 'block'
+                }
+            });
         })
-
     }
 
     fillLayersFromHtml() {

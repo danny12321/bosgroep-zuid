@@ -33,28 +33,24 @@
 		</div>
 
 		<div class="m-map--container">
-			<div class="m-map--container__measures">
-
-			</div>
-		</div>
-
-		<div class="m-map--container">
 			@if (count($measures))
 				<div class="m-map--container__measures">
-					<h2>Maatregelen</h2>
+					<h2 class="m-map--container__measures__head">Maatregelen</h2>
+					
 					@foreach ($measures as $measure)
-						<div>
-							<p>{{$measure->name}} - {{$measure->description}}</p>
-							@if ($measure->pdf_path)
-								<i class="fas fa-file-pdf"></i>
-								<a href={{ asset('storage/maatregelen/'.$measure->pdf_path) }}>Pdf</a>
-							@endif
+						<div class="m-map--container__measures__measure" data-measure="{{ $measure->id }}">
+							<h3>{{$measure->name}}</h3>
+							<div class="m-map--container__measures__measure__flexcontainer">
+								<p>{{$measure->description}}</p>
+								@if ($measure->pdf_path)
+									<a class="btn btn-success" target="_blank" href={{ asset('storage/maatregelen/'.$measure->pdf_path) }}><i class="fas fa-file-pdf"></i> Download Pdf</a>
+								@endif
+							</div>
 						</div>
 					@endforeach
 				</div>
 			@endif
 		</div>
-		
 	</div>
 
 	<div class="m-php">
