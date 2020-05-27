@@ -11,8 +11,10 @@ class Municipality extends Model
     protected $fillable = [
         'name',
         'slug',
+        'legend',
         'lat',
-        'long'
+        'long',
+        'zoom'
     ];
 
     public function layers()
