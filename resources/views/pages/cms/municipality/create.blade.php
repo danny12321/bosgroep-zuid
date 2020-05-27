@@ -5,31 +5,34 @@
 @endsection
 
 @section('content')
-    <h1>Gemeente toevoegen</h1>
+    <div class="m-card">
 
-    <form id="municipality-form" method="POST" action="{{ route('cms_municipality_store') }}">
-        @csrf
+        <h1>Gemeente toevoegen</h1>
+        
+        <form id="municipality-form" method="POST" action="{{ route('cms_municipality_store') }}">
+            @csrf
+            
+            <div class="form-group">
+                <label for="name">Naam gemeente</label>
+                <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" type="text" name="name" id="name">
 
-        <div class="form-group">
-            <label for="name">Naam gemeente</label>
-            <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" type="text" name="name" id="name">
-
-            @error('name') 
+                @error('name')
                 <div class="invalid-feedback">
                     {{ $errors->first("name") }}
                 </div>
-            @enderror
-        </div>
-
-        <div class="form-group">
-            <label for="slug">Url naam (slug)</label>
-            <input class="form-control @error('slug') is-invalid @enderror" value="{{ old('slug') }}" type="text" name="slug" id="slug">
-            <span class="help-block">Dit wordt gebruikt in de url. bijv. /gemeentes/[hier de slug]</span>
-
-            @error('slug') 
+                @enderror
+            </div>
+            
+            <div class="form-group">
+                <label for="slug">Url naam (slug)</label>
+                <input class="form-control @error('slug') is-invalid @enderror" value="{{ old('slug') }}" type="text" name="slug" id="slug">
+                <span class="help-block">Dit wordt gebruikt in de url. bijv. /gemeentes/[hier de slug]</span>
+                
+                @error('slug') 
                 <div class="invalid-feedback">
                     {{ $errors->first("slug") }}
                 </div>
+
             @enderror
         </div>
         

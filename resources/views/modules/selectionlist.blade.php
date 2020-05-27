@@ -1,17 +1,30 @@
-@foreach ($selections as $selection)
-    @if ($selection->layer)
-        <div class="list-group-item">
-                <input type="checkbox" id="{{$selection->layer->name}}" name="{{$selection->layer->name}}" value="{{$selection->layer->name}}"{{ in_array($selection->layer->id, $filters) ? 'checked' : ''}}>
-                <label for="{{$selection->layer->name}}">{{$selection->layer->title}}</label>
-        </div>
-    @else
-        <div href="#SubMenu{{$selection->id}}" class="list-group-item list-group-item-primary collapsed" data-toggle="collapse" data-parent="#SubMenu{{$selection->id}}">
-            <span>{{ $selection->name }}<span>
-            <i class="fa fa-caret-down"></i>
-        </div>
+@foreach ($municipality->guide_species as $guideSpecie)
+    <div href="#SubMenu{{$guideSpecie->id}}" class="list-group-item list-group-item-primary collapsed" data-toggle="collapse" data-parent="#SubMenu{{$guideSpecie->id}}">
+        <span>{{ $guideSpecie->name }}<span>
+        <i class="fa fa-caret-down"></i>
+    </div>
 
-        <div class="collapse list-group-submenu" id="SubMenu{{$selection->id}}">
-            @include('modules.selectionlist', ['selections' => $selection->children, 'filters' => $filters])
-        </div>
-    @endif
+    <div class="collapse list-group-submenu" id="SubMenu{{$guideSpecie->id}}">
+        @foreach ($guideSpecie->layers as $layer)
+            <div class="list-group-item">
+                <input type="checkbox" id="{{$layer->name}}" name="{{$layer->name}}" value="{{$layer->name}}"{{ in_array($layer->id, $filters) ? 'checked' : ''}}>
+                <label for="{{$layer->name}}">{{$layer->title}}</label>
+            </div>
+        @endforeach
+    </div>
 @endforeach
+
+
+<div href="#SubMenu-overig" class="list-group-item list-group-item-primary collapsed" data-toggle="collapse" data-parent="#SubMenu-overig">
+    <span>Overig<span>
+    <i class="fa fa-caret-down"></i>
+</div>
+
+<div class="collapse list-group-submenu" id="SubMenu-overig">
+    @foreach ($municipality->layers_without_guidespecie as $layer)
+        <div class="list-group-item">
+            <input type="checkbox" id="{{$layer->name}}" name="{{$layer->name}}" value="{{$layer->name}}"{{ in_array($layer->id, $filters) ? 'checked' : ''}}>
+            <label for="{{$layer->name}}">{{$layer->title}}</label>
+        </div>
+    @endforeach
+</div>

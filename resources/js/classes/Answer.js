@@ -2,7 +2,7 @@ export default class Answer {
     constructor(element, layerModel) {
         this.element = element || this.createElement();
         this.selectedLayers = this.getSelectedLayers();
-        this.layersList = this.element.querySelector('.m-question--edit__answers__layers');
+        this.layersList = this.element.querySelector('.m-question__edit__answers__layers');
 
         this.layerModel = layerModel;
         this.input = this.element.querySelector('input');
@@ -11,7 +11,6 @@ export default class Answer {
 
         this.openLayers.addEventListener('click', this.handleOpenForm.bind(this));
         this.input.addEventListener('change', this.handleChangeAnswer.bind(this));
-        console.log(this.selectedLayers)
     }
 
     handleChangeAnswer(e) {
@@ -31,7 +30,7 @@ export default class Answer {
     }
 
     getSelectedLayers() {
-        const layers = [...[...this.element.querySelectorAll('.m-question--edit__answers__layers li')].map(layer => {
+        const layers = [...[...this.element.querySelectorAll('.m-question__edit__answers__layers li')].map(layer => {
             return {
                 id: layer.getAttribute('data-layer-id'),
             }
@@ -57,7 +56,7 @@ export default class Answer {
     }
 
     createElement() {
-        const container = document.querySelector('.m-question--edit__answers');
+        const container = document.querySelector('.m-question__edit__answers');
         const row = document.createElement('div');
         row.classList.add('row');
 
@@ -70,7 +69,7 @@ export default class Answer {
                 </div>
                 <div class="col-md-12">
 
-                    <ul class="m-question--edit__answers__layers">
+                    <ul class="m-question__edit__answers__layers">
                     </ul>
                 </div>
             `)

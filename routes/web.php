@@ -56,6 +56,7 @@ Route::post('/cms/municipalities/layers', 'Cms\LayersController@store')->name('c
 Route::delete('/cms/municipality/{municipality}/layer/{layer}', 'Cms\LayersController@destroy')->name('cms_layers_destroy');
 
 
+Route::get('/cms/municipality/{municipality}/question/{question}', 'Cms\QuestionsController@show')->name('cms_questions_show')->middleware('auth');   
 Route::get('/cms/municipality/{municipality}/questions/create', 'Cms\QuestionsController@create')->name('cms_questions_create');
 Route::post('/cms/municipality/{municipality}/questions', 'Cms\QuestionsController@store')->name('cms_questions_store');
 Route::get('/cms/municipality/{municipality}/questions/{question}/edit', 'Cms\QuestionsController@edit')->name('cms_questions_edit');
@@ -74,5 +75,11 @@ Route::post('/cms/municipalities/guidespecies', 'Cms\GuideSpeciesController@stor
 Route::delete('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@destroy')->name('cms_guidespecies_destroy');
 Route::put('/cms/municipality/{municipality}/guidespecies/{guideSpecie}', 'Cms\GuideSpeciesController@update')->name('cms_guidespecies_update');
 Route::get('/cms/municipality/{municipality}/guidespecies/{guideSpecie}/edit', 'Cms\GuideSpeciesController@edit')->name('cms_guidespecies_edit');
+
+Route::get('/cms/municipality/{municipality}/problem/create', 'Cms\ProblemController@create')->name('cms_problem_create');
+Route::post('/cms/municipalities/problem', 'Cms\ProblemController@store')->name('cms_problem_store');
+Route::delete('/cms/municipality/problem/{problem}', 'Cms\ProblemController@destroy')->name('cms_problem_destroy');
+Route::get('/cms/municipality/{problem}/problem/edit', 'Cms\ProblemController@edit')->name('cms_problem_edit')->middleware('auth');
+Route::put('/cms/municipality/{problem}/problem', 'Cms\ProblemController@update')->name('cms_problem_update')->middleware('auth');
 
 Auth::routes();

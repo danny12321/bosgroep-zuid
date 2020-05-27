@@ -5,29 +5,30 @@
 @endsection
 
 @section('content')
-    <h1>Gemeente wijzigen</h1>
-
-    <form id="municipality-form" method="post" action="{{ route('cms_municipality_update', ['municipality' => $municipality->id]) }}">
-        @csrf
-        @method('PUT')
-
-        <div class="form-group">
-            <label for="name">Naam gemeente</label>
-            <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $municipality->name) }}" type="text" name="name" id="name">
-
-            @error('name') 
+    <div class="m-card">
+        <h1>Gemeente wijzigen</h1>
+        
+        <form id="municipality-form" method="post" action="{{ route('cms_municipality_update', ['municipality' => $municipality->id]) }}">
+            @csrf
+            @method('PUT')
+            
+            <div class="form-group">
+                <label for="name">Naam gemeente</label>
+                <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $municipality->name) }}" type="text" name="name" id="name">
+                
+                @error('name')
                 <div class="invalid-feedback">
                     {{ $errors->first("name") }}
                 </div>
-            @enderror
-        </div>
-
-        <div class="form-group">
-            <label for="slug">Url naam (slug)</label>
-            <input class="form-control @error('slug') is-invalid @enderror" value="{{ old('slug', $municipality->slug) }}" type="text" name="slug" id="slug">
-            <span class="help-block">Dit wordt gebruikt in de url. bijv. /gemeentes/[hier de slug]</span>
-
-            @error('slug') 
+                @enderror
+            </div>
+            
+            <div class="form-group">
+                <label for="slug">Url naam (slug)</label>
+                <input class="form-control @error('slug') is-invalid @enderror" value="{{ old('slug', $municipality->slug) }}" type="text" name="slug" id="slug">
+                <span class="help-block">Dit wordt gebruikt in de url. bijv. /gemeentes/[hier de slug]</span>
+                
+                @error('slug') 
                 <div class="invalid-feedback">
                     {{ $errors->first("slug") }}
                 </div>
@@ -39,7 +40,7 @@
             <input class="form-control @error('legend') is-invalid @enderror" value="{{ old('legend', $municipality->legend) }}" type="text" name="legend" id="legend">
             <span class="help-block">Dit wordt gebruikt om de legenda weer te geven.</span>
 
-            @error('legend') 
+            @error('legend')
                 <div class="invalid-feedback">
                     {{ $errors->first("legend") }}
                 </div>

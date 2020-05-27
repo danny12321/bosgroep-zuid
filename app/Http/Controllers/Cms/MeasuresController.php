@@ -17,13 +17,22 @@ class MeasuresController extends Controller
     public function create(Municipality $municipality)
     {
         return view('pages.cms.measure.create', [
-            'municipality' => $municipality
+            'municipality' => $municipality,
         ]);
     }
 
     public function store()
     {
-        Measure::create($this->validateMeasure());
+        $this->validateMeasure();
+
+        Measure::create([
+            'name' => request('name'),
+            'description' => request('description'),
+            'municipality_id' => request('municipality_id'),
+            'guidespecie_id' => request('guidespecie_id'),
+            'problem_id' => request('problem_id')
+        ]);
+
         return redirect()->route('cms_municipality_show', ['municipality' => request("municipality_id")]);
     }
 
@@ -37,14 +46,16 @@ class MeasuresController extends Controller
     {
         return request()->validate([
             'name' => ['required'],
-            'description' => ['required']
+            'description' => ['required'],
+            'municipality_id' => ['required']
         ]);
     }
 
-    public function edit( Measure $measure)
+    public function edit(Measure $measure)
     {
         return view('pages.cms.measure.edit', [
-            'measure' => $measure
+            'measure' => $measure,
+            'municipality' => Municipality::where('id', '=', $measure->municipality_id)->get()->first()
         ]);
     }
 
@@ -55,6 +66,8 @@ class MeasuresController extends Controller
 
         $measure->name = request("name");
         $measure->description = request("description");
+        $measure->guidespecie_id = request("guidespecie_id");
+        $measure->problem_id = request("problem_id");
         
         $measure->save();
 
