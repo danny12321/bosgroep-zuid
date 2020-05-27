@@ -12,11 +12,9 @@
     <div class="m-map--container">
         <div id="map" class="m-map--container__map"></div>
         <div class="m-map--container__selections">
-            @include('modules.selectionlist', ['selections' => $selections, 'filters' => $filters])    
-
+            @include('modules.selectionlist', ['municipality' => $municipality])
         </div>
     </div>
- 
 
     <script src="{{ asset('js/map.js') }}" defer></script>
 	
