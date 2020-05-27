@@ -94,7 +94,6 @@ export default class Map {
             measuresHTMLElements.forEach(el => {
                 measureHeader.style.display = 'block'
                 if(id == el.getAttribute('data-measure')) {
-                    console.log(el)
                     el.style.display = 'block'
                 }
             });

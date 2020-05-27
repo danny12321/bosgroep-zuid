@@ -13,6 +13,7 @@
                 <h2>Navigatie</h2>
 
                 <ul>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
                     <li><a href="{{ route('login') }}">Login</a></li>
                 </ul>
