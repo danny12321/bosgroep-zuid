@@ -173,16 +173,16 @@
     "id": "b4da2ef4-8b02-4f49-9475-3dd17afcb841",
     "name": "Add layer",
     "commands": [{
-      "id": "b38177f8-42e2-4d18-a196-6ca6227da2c2",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1294x1050",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "5ad0a0e4-b72d-4639-83a2-c15c24106521",
       "comment": "",
       "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b38177f8-42e2-4d18-a196-6ca6227da2c2",
+      "command": "setWindowSize",
+      "target": "1294x1050",
       "target": "/",
       "targets": [],
       "value": ""
@@ -986,96 +986,16 @@
       "value": "${laag}"
     }]
   }, {
-<<<<<<< HEAD
-    "id": "c0f430b9-7fa1-4fd7-adc4-6ef9293bf255",
-    "name": "Edit Adres",
-    "commands": [{
-      "id": "e5999fc4-137a-42a1-befc-d8fcdbfe9e9a",
-=======
     "id": "012e97c8-14e9-4cf4-a876-3492518e971e",
     "name": "Sorted search list",
     "commands": [{
       "id": "d42ac5a6-9e9f-493f-9505-d7eec50cd514",
->>>>>>> d42cd01747311a2d42c8463333a7b975f18cddda
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-<<<<<<< HEAD
-      "id": "43bc55ce-5826-4034-8d5a-24229aa65c7d",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1288x1050",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a0438107-8c59-479a-be4c-fe3507a02fb1",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=Login",
-      "targets": [
-        ["linkText=Login", "linkText"],
-        ["css=.ml-auto > .nav-item:nth-child(1) > .nav-link", "css:finder"],
-        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
-        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
-        ["xpath=//a[@href='http://127.0.0.1:8000/login']", "xpath:href"],
-        ["xpath=//ul[2]/li/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "da782c57-9bcd-40d4-a4c0-7d5adbcb2c90",
-      "comment": "",
-      "command": "type",
-      "target": "id=email",
-      "targets": [],
-      "value": "test@test.com"
-    }, {
-      "id": "9cdddd9f-0d61-4b14-86bb-92aeb5d33864",
-      "comment": "",
-      "command": "type",
-      "target": "id=password",
-      "targets": [],
-      "value": "test"
-    }, {
-      "id": "51947122-9945-4f12-be87-e20be5fe2c68",
-      "comment": "",
-      "command": "click",
-      "target": "css=.btn-primary",
-      "targets": [
-        ["css=.btn-primary", "css:finder"],
-        ["xpath=//button[@type='submit']", "xpath:attributes"],
-        ["xpath=//div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,' Login')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "0e141af8-a9f1-45e1-9e06-601482017f2d",
-      "comment": "",
-      "command": "click",
-      "target": "id=navbarDropdown",
-      "targets": [
-        ["id=navbarDropdown", "id"],
-        ["linkText=Test", "linkText"],
-        ["css=#navbarDropdown", "css:finder"],
-        ["xpath=//a[contains(text(),'Test')]", "xpath:link"],
-        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
-        ["xpath=//div[@id='navbarSupportedContent']/ul[2]/li/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
-        ["xpath=//ul[2]/li/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Test ')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "c3923397-92af-4571-bd2f-6a7c1abaf294",
-      "comment": "",
-      "command": "assertText",
-      "target": "linkText=Logout",
-      "targets": [],
-      "value": "Logout"
-=======
       "id": "4a82c5d1-fffb-4723-ab46-0ccd37bf74ba",
       "comment": "",
       "command": "click",
@@ -1145,7 +1065,6 @@
       "target": "css=body > div.app > div.content-container > div.container > div.m-map--container > div > div > div > a",
       "targets": [],
       "value": ""
->>>>>>> d42cd01747311a2d42c8463333a7b975f18cddda
     }]
   }],
   "suites": [{
