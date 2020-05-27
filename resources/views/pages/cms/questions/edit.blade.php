@@ -28,8 +28,9 @@
                         <div class="col-md-10 form-group">
                             <input type="text" class="form-control" value="{{ $answer->answer }}" placeholder="Antwoord">
                         </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-info">Selecteer lagen</button>
+                        <div class="col-md-2 flex">
+                            <button id="openLayers" class="btn btn-info">Selecteer lagen</button>
+                            <button id="removeAnswer"class="btn btn-danger">Verwijder</button>
                         </div>
 
                         <div class="col-md-12">
