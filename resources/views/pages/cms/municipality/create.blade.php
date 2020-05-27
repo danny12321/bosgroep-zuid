@@ -9,7 +9,7 @@
 
         <h1>Gemeente toevoegen</h1>
         
-        <form id="municipality-form" method="POST" action="{{ route('cms_municipality_store') }}">
+        <form id="municipality-form" method="POST" action="{{ route('cms_municipality_store') }}" enctype="multipart/form-data">
             @csrf
             
             <div class="form-group">
@@ -69,6 +69,18 @@
             @error('zoom') 
                 <div class="invalid-feedback">
                     {{ $errors->first("zoom") }}
+                </div>
+            @enderror
+        </div>
+        
+        <div class="form-group">
+            <label for="logo">Gemeente logo</label>
+            <br>
+            <input type="file" id="logo" name="logo" accept="image/jpg, image/jpeg, image/png" >
+
+            @error('logo') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("logo") }}
                 </div>
             @enderror
         </div>

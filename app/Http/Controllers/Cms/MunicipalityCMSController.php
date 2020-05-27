@@ -11,6 +11,7 @@ use App\Selection;
 use App\Measure;
 use App\Problem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MunicipalityCMSController extends Controller
 {
@@ -39,10 +40,10 @@ class MunicipalityCMSController extends Controller
         return view('pages.cms.municipality.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $this->validateLayer();
-        Municipality::create([
+        $municipality = Municipality::create([
             'name' => request("name"),
             'slug' => request("slug"),
             'legend' => request("legend"),
@@ -50,12 +51,21 @@ class MunicipalityCMSController extends Controller
             'long'=> request("long"),
             'zoom' => request("zoom")
         ]);
-
+        
+        if($request->hasFile('logo'))
+        {
+            $extencion = $request->file('logo')->getClientOriginalExtension();
+            $fileNameToStore = $municipality->id . '.' . $extencion;
+            $request->file('logo')->storeAs('public/assets/img/municipality', $fileNameToStore);
+            $municipality->logo = "storage/assets/img/municipality/" . $fileNameToStore;
+            $municipality->save();
+        }
         return redirect()->route('cms_municipality_index');
     }
 
     public function destroy(Municipality $municipality)
     {
+        Storage::delete("public". substr($municipality->logo, 7));
         $municipality->delete();
         return redirect()->route('cms_municipality_index');
     }
@@ -67,7 +77,7 @@ class MunicipalityCMSController extends Controller
         ]);
     }
 
-    public function update(Municipality $municipality)
+    public function update(Municipality $municipality, Request $request)
     {
         $this->validateLayer();
 
@@ -76,7 +86,15 @@ class MunicipalityCMSController extends Controller
         $municipality->legend = request("legend");
         $municipality->lat = request("lat");
         $municipality->long = request("long");
-        $municipality->zoom = request("zoom");
+      $municipality->zoom = request("zoom");
+
+        if($request->hasFile('logo'))
+        {
+            $extencion = $request->file('logo')->getClientOriginalExtension();
+            $fileNameToStore = $municipality->id . '.' . $extencion;
+            $request->file('logo')->storeAs('public/assets/img/municipality', $fileNameToStore);
+            $municipality->logo = "storage/assets/img/municipality/" . $fileNameToStore;    
+        }
 
         $municipality->save();
 

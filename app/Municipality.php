@@ -14,6 +14,7 @@ class Municipality extends Model
         'legend',
         'lat',
         'long',
+        'logo',
         'zoom'
     ];
 

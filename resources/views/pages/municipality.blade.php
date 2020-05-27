@@ -7,8 +7,14 @@
 
 @section('content')
 	<div class="container">
-		<h1>{{ $municipality->name }}</h1>
-
+		@if (is_null($municipality->logo))
+			<h1>{{ $municipality->name }}</h1>
+		@else
+			<h1>
+			<img src="{{asset($municipality->logo)}}"  height="40px" width="auto">	
+			{{ $municipality->name }}</h1>
+		@endif
+		
 		@if (count($municipality->questions) > 0)
 			<div>
 				<span>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\HomePage;
 use Illuminate\Http\Request;
 use App\Selection;
 use App\Layer;
@@ -22,7 +23,8 @@ class MapController extends Controller
             'measures' => $measures,
             'layers' => Layer::where('municipality_id', '=', Municipality::where('slug', $slug)->firstOrFail()->id)->get(),
             'selections' => Selection::where('municipality_id', '=', $municipality->id)->whereNull('parent_id')->get(),
-            'filters' => $filters
+            'filters' => $filters,
+            'url_geoserver' => HomePage::First()->url_geoserver
         ]);
     }
 }

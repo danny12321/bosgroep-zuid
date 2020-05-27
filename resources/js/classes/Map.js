@@ -7,6 +7,7 @@ export default class Map {
         this.measures = measures;
         this.targetElement = targetElement
         this.layers = [];
+        this.url_geoserver = document.querySelector('.m-php__url-geoserver').innerHTML;
         this.map = this.createMap(zoom);
         this.allLayers = allLayers;
 
@@ -116,7 +117,7 @@ export default class Map {
     }
 
     addLayer(layerName, opacity) {
-        let layerContainer = new LayerContainer(layerName, opacity);
+        let layerContainer = new LayerContainer(layerName, opacity, this.url_geoserver);
         this.layers.push(layerContainer);
     }
 
