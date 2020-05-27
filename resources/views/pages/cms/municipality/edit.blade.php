@@ -3,7 +3,7 @@
 @section('content')
     <h1>Gemeente wijzigen</h1>
 
-    <form method="post" action="{{ route('cms_municipality_update', ['municipality' => $municipality->id]) }}">
+    <form method="post" action="{{ route('cms_municipality_update', ['municipality' => $municipality->id]) }}"  enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -48,6 +48,18 @@
             @error('long') 
                 <div class="invalid-feedback">
                     {{ $errors->first("long") }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="logo">Gemeente logo</label>
+            <br>
+            <input type="file" id="logo" name="logo" accept="image/jpg, image/jpeg, image/png" >
+
+            @error('logo') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("logo") }}
                 </div>
             @enderror
         </div>

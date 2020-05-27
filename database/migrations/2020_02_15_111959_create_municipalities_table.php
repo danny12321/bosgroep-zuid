@@ -19,6 +19,7 @@ class CreateMunicipalitiesTable extends Migration
             $table->string('slug', 100)->unique();
             $table->decimal('lat', 10, 7);
             $table->decimal('long', 10, 7);
+            $table->string('logo')->nullable();
         });
     }
 
