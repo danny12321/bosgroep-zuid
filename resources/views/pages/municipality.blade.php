@@ -32,10 +32,27 @@
 			</div>
 		</div>
 
-		<div class="m-map--container">				
+		<div class="m-map--container">
 			<div class="m-map--container__measures">
 
 			</div>
+		</div>
+
+		<div class="m-map--container">
+			@if (count($measures))
+				<div class="m-map--container__measures">
+					<h2>Maatregelen</h2>
+					@foreach ($measures as $measure)
+						<div>
+							<p>{{$measure->name}} - {{$measure->description}}</p>
+							@if ($measure->pdf_path)
+								<i class="fas fa-file-pdf"></i>
+								<a href={{ asset('storage/maatregelen/'.$measure->pdf_path) }}>Pdf</a>
+							@endif
+						</div>
+					@endforeach
+				</div>
+			@endif
 		</div>
 		
 	</div>

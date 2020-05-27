@@ -67,10 +67,26 @@
                 </div>
             </div>
             
+            {{-- <input name="municipality_id" type="hidden" value="{{$municipality->id}}">
+            
+            <button type="submit" class="btn btn-primary">Opslaan</button> --}}
+        
+            {{-- @enderror --}}
+        
+            <div class="form-group">
+                <label for="pdf">Pdf</label>
+                <input class="form-control @error('pdf') is-invalid @enderror" type="file" name="pdf" id="pdf">
+                
+                @error('pdf') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("pdf") }}
+                </div>
+                @enderror
+            </div>
+            
             <input name="municipality_id" type="hidden" value="{{$municipality->id}}">
             
             <button type="submit" class="btn btn-primary">Opslaan</button>
         </form>
-        
     </div>
 @endsection

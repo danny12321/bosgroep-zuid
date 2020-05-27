@@ -3,8 +3,8 @@
 @section('content')
 <div class="m-card">
     <h1>Maatregel wijzigen</h1>
-    
-    <form method="post" action="{{ route('cms_measure_update', ['measure' => $measure->id]) }}">
+
+    <form method="post" action="{{ route('cms_measure_update', ['measure' => $measure->id]) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -77,12 +77,25 @@
                 <button class="btn btn-danger" type="submit" form="delete-form">Verwijder</button>
             </div>
             
-        </form>
         
-        <form action="{{ route('cms_measure_destroy', ['measure' => $measure]) }}" id="delete-form" method="post">
-            @csrf
-            @method('DELETE')
             
+            <div class="form-group">
+                <label for="pdf">Pdf</label>
+                <input class="form-control @error('pdf') is-invalid @enderror" type="file" name="pdf" id="pdf">
+                
+                @error('pdf') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("pdf") }}
+                </div>
+                @enderror
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Opslaan</button>
         </form>
     </div>
+<form action="{{ route('cms_measure_destroy', ['measure' => $measure]) }}" id="delete-form" method="post">
+    @csrf
+    @method('DELETE')
+    
+</form>
 @endsection

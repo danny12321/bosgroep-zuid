@@ -12,6 +12,7 @@ class Measure extends Model
         'description',
         'municipality_id',
         'guidespecie_id',
-        'problem_id'
+        'problem_id',
+        'pdf_path',
     ];
 }
