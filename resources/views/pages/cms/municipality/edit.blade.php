@@ -35,6 +35,18 @@
         </div>
 
         <div class="form-group">
+            <label for="legend">Legenda url</label>
+            <input class="form-control @error('legend') is-invalid @enderror" value="{{ old('legend', $municipality->legend) }}" type="text" name="legend" id="legend">
+            <span class="help-block">Dit wordt gebruikt om de legenda weer te geven.</span>
+
+            @error('legend') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("legend") }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
             <label>Standaard kaart weergaven</label>
             <div id="map"
                 style="height: 500px"

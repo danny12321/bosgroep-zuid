@@ -32,6 +32,18 @@
                 </div>
             @enderror
         </div>
+        
+        <div class="form-group">
+            <label for="legend">Legenda url</label>
+            <input class="form-control @error('legend') is-invalid @enderror" value="{{ old('legend', 'http://gmd.has.nl:8080/geoserver/biodiversiteithorst/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=biodiversiteithorst:StijlStressfactoren&legend_options=dx:5;&TRANSPARENT=true') }}" type="url" name="legend" id="legend">
+            <span class="help-block">Dit wordt gebruikt om de legenda weer te geven.</span>
+
+            @error('legend') 
+                <div class="invalid-feedback">
+                    {{ $errors->first("legend") }}
+                </div>
+            @enderror
+        </div>
 
         <div class="form-group">
             <label>Standaard kaart weergaven</label>
