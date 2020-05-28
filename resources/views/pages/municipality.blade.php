@@ -33,6 +33,7 @@
 
 		<div class="l-city__map">
 			<div class="m-map--container">
+				<img src="{{ $municipality->legend }}" alt="Legenda" class="m-map--container__legend">
 				<div id="map" class="m-map--container__map"></div>
 				<div class="m-map--container__selections">
 					@include('modules.selectionlist', ['selections' => $selections, 'filters' => $filters])
