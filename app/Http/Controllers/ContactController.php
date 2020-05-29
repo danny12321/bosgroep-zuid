@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Mail\FeedbackMail;
 
 use Illuminate\Support\Facades\Mail;
@@ -11,7 +12,17 @@ class ContactController extends Controller
    
     public function index()
     {
-        return view('pages.contact');
+        $contact = Contact::first();
+        $info = collect();
+        $info->push([
+            'adres' => $contact->address,
+            'emailadres' => $contact->showEmail,
+            'telefoon' => $contact->phonenumber,
+            'fax' => $contact->faxnumber
+        ]);
+        return view('pages.contact',[
+            'contact' => $info->first()
+        ]);
     }
 
     public function send(){
