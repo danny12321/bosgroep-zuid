@@ -17,11 +17,11 @@
                             <div class="m-login__input-container__icon">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <input id="email" type="email" placeholder="{{ __('E-Mail Address') }}" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="username" type="text" placeholder="Gebruikersnaam" class="@error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
                         </div>
                     </div>
 
-                    @error('email')
+                    @error('username')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
