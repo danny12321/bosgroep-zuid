@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="l-home__header">
+    <div class="l-home__header" style="background-image: url({{ asset($HomeImage) }})">
         <div class="l-home__header__filter">
             <h1>Neem contact met ons op</h1>
         </div>

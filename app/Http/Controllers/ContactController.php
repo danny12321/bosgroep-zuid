@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Mail\FeedbackMail;
-
+use App\HomePage;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -12,6 +12,8 @@ class ContactController extends Controller
    
     public function index()
     {
+        $homepage = HomePage::first();
+
         $contact = Contact::first();
         $info = collect();
         $info->push([
@@ -20,8 +22,10 @@ class ContactController extends Controller
             'telefoon' => $contact->phonenumber,
             'fax' => $contact->faxnumber
         ]);
+
         return view('pages.contact',[
-            'contact' => $info->first()
+            'contact' => $info->first(),
+            "HomeImage" => $homepage->homeImage,
         ]);
     }
 
